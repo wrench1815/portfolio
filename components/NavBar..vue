@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <!-- Navbar brand -->
       <NuxtLink
-        class="navbar-brand rounded-circle bg-dark text-light p-1"
+        class="navbar-brand rounded-circle bg-dark text-light p-2"
         to="/"
         >HK</NuxtLink
       >
@@ -31,7 +31,7 @@
           <!-- Link -->
           <li class="nav-item my-md-2">
             <NuxtLink
-              class="nav-link d-inline-block bg-dark px-md-2 py-md-1 text-white rounded-9 bg-gradient"
+              class="nav-link d-inline-block bg-dark px-md-2 py-md-1 text-white rounded-2 bg-gradient"
               to="/"
               >Home</NuxtLink
             >
