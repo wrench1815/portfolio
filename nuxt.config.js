@@ -24,13 +24,13 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/mdb.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['@nuxtjs/fontawesome', '@nuxtjs/google-fonts'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -42,6 +42,27 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+
+  // @nuxtjs/fontawesome: https://github.com/nuxt-community/fontawesome-module#readme
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: true,
+      brands: true,
+      regular: true,
+    },
+  },
+
+  // @nuxtjs/google-fonts: https://google-fonts.nuxtjs.org/setup
+  googleFonts: {
+    display: 'swap',
+    download: true,
+    overwriting: false,
+    inject: true,
+    families: {
+      Roboto: [300, 400, 500, 700],
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
