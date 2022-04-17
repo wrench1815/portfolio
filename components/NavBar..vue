@@ -7,10 +7,11 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand rounded-circle bg-dark text-light p-1" href="#"
-        >HK</a
+      <NuxtLink
+        class="navbar-brand rounded-circle bg-dark text-light p-1"
+        to="/"
+        >HK</NuxtLink
       >
-
       <!-- Toggle button -->
       <button
         class="navbar-toggler bg-dark"
@@ -29,7 +30,11 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <!-- Link -->
           <li class="nav-item my-md-2">
-            <a class="nav-link d-inline-block bg-dark px-md-2 py-md-1 text-white rounded-9 bg-gradient" href="#">Home</a>
+            <NuxtLink
+              class="nav-link d-inline-block bg-dark px-md-2 py-md-1 text-white rounded-9 bg-gradient"
+              to="/"
+              >Home</NuxtLink
+            >
           </li>
         </ul>
       </div>

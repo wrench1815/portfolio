@@ -2,12 +2,7 @@
   <header>
     <div class="page-header">
       <div
-        class="position-absolut fixed-top position-fixe me-auto w-100 w-lg-50 h-100 z-index d-non d-sm-non d-md-bloc"
-        style="
-          background-image: url(https://images.unsplash.com/photo-1632067117908-826d2531dba9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);
-          background-size: cover;
-          z-index: -1;
-        "
+        class="position-absolut fixed-top position-fixe me-auto w-100 w-lg-50 h-100 z-index header-img"
         loading="lazy"
       ></div>
       <div class="container">
@@ -68,4 +63,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.header-img {
+  background-image: url(~assets/images/technology.jpg);
+  background-size: cover;
+  z-index: -1;
+}
+</style>
