@@ -21,11 +21,34 @@
               class="card card-body blur d-flex justify-content-center shadow-lg p-5 mt-5"
             >
               <h1>Hardeep Kumar</h1>
-              <p class="lead">I develop: Full Stack, Backend, APIs</p>
-              <p class="lead">
-                Technologies I use: Django, Django Rest Framework, Nuxt, Vue,
-                Bootstrap
-              </p>
+              <vue-typed-js
+                :strings="['Full Stack', 'Backend', 'APIs']"
+                :loop="true"
+                :backDelay="1000"
+                :backSpeed="30"
+              >
+                <p class="lead font-weight-bold">
+                  I develop: <span class="typing font-weight-normal"></span>
+                </p>
+              </vue-typed-js>
+
+              <vue-typed-js
+                :strings="[
+                  'Django',
+                  'Django Rest Framework',
+                  'Nuxt',
+                  'Vue',
+                  'Bootstrap',
+                ]"
+                :loop="true"
+                :backDelay="1000"
+                :backSpeed="30"
+              >
+                <p class="lead font-weight-bold">
+                  Technologies I use:
+                  <span class="typing font-weight-normal"></span>
+                </p>
+              </vue-typed-js>
               <!-- <div class="buttons">
                 <button type="button" class="btn bg-gradient-primary mt-4">
                   Get Started
