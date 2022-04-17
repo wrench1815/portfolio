@@ -7,9 +7,12 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio',
+    title: 'Portfolio | Hardeep Kumar',
     htmlAttrs: {
       lang: 'en',
+    },
+    bodyAttrs: {
+      class: 'bg-gradient-gray',
     },
     meta: [
       { charset: 'utf-8' },
@@ -24,7 +27,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/mdb.js'],
+  plugins: ['~/plugins/mdb.js', '~/plugins/vueTyped.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
