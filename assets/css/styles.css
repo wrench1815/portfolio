@@ -140,8 +140,75 @@ option {
   font-family: 'Fira Code', monospace !important;
 }
 
+/* z-index */
+/* positive */
+.z-index-1 {
+  z-index: 1 !important;
+}
+
+.z-index-2 {
+  z-index: 2 !important;
+}
+
+.z-index-3 {
+  z-index: 3 !important;
+}
+
+.z-index-4 {
+  z-index: 4 !important;
+}
+
+.z-index-5 {
+  z-index: 5 !important;
+}
+
+/* negative */
+.z-index-n1 {
+  z-index: -1 !important;
+}
+
+.z-index-n2 {
+  z-index: -2 !important;
+}
+
+.z-index-n3 {
+  z-index: -3 !important;
+}
+
+.z-index-n4 {
+  z-index: -4 !important;
+}
+
+.z-index-n5 {
+  z-index: -5 !important;
+}
+
 /* Additional CSS */
 
 .bg-gradient-gray {
   background: linear-gradient(to left, #f7f7f7 0%, #7c7c7c 50%);
+}
+
+.bg-pattern {
+  background-color: #e5e5f7;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #e5e5f7 20%,
+      #e5e5f7 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      )
+      25px 25px,
+    linear-gradient(#7f7f7f 2px, transparent 2px) 0 -1px,
+    linear-gradient(90deg, #7f7f7f 2px, #e5e5f7 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 }
