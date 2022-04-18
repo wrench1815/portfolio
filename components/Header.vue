@@ -2,7 +2,7 @@
   <header>
     <div class="page-header">
       <div
-        class="position-absolut fixed-top position-fixe me-auto w-100 w-lg-50 h-100 z-index header-img"
+        class="fixed-top me-auto w-100 w-lg-50 h-100 z-index header-img"
         loading="lazy"
       ></div>
       <div class="container">
