@@ -4,6 +4,7 @@
     <div class="bg-pattern vw-100 vh-100 position-fixed z-index-n4"></div>
     <NavBar />
     <Nuxt />
+    <UtilsToUp />
   </div>
 </template>
 
