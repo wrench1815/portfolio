@@ -39,23 +39,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/fontawesome',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
-  },
-
-  // @nuxtjs/fontawesome: https://github.com/nuxt-community/fontawesome-module#readme
-  fontawesome: {
-    component: 'fa',
-    icons: {
-      solid: true,
-      brands: true,
-      regular: true,
-    },
   },
 
   // @nuxtjs/google-fonts: https://google-fonts.nuxtjs.org/setup
