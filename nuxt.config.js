@@ -58,7 +58,9 @@ export default {
     overwriting: false,
     inject: true,
     families: {
-      Roboto: [300, 400, 500, 700],
+      Mansalva: true,
+      'Nanum Pen Script': true,
+      'Fira Code': true,
     },
   },
 
