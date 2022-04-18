@@ -14,6 +14,7 @@
       <div class="d-flex align-items-center ms-auto me-0 d-lg-none">
         <!-- Icons -->
         <ul class="navbar-nav d-flex flex-row me-1">
+          <!-- Github -->
           <li class="nav-item me-3 me-lg-0">
             <a
               class="nav-link"
@@ -23,8 +24,23 @@
               <i class="ri-github-fill"></i>
             </a>
           </li>
+          <!-- Twitter -->
           <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="#"><i class="ri-twitter-fill"></i></a>
+            <a
+              class="nav-link"
+              href="https://twitter.com/wrench1815"
+              target="_blank"
+              ><i class="ri-twitter-fill"></i
+            ></a>
+          </li>
+          <!-- Discord -->
+          <li class="nav-item me-3 me-lg-0">
+            <a
+              class="nav-link"
+              href="https://discordapp.com/users/457360898122711041"
+              target="_blank"
+              ><i class="ri-discord-fill"></i
+            ></a>
           </li>
         </ul>
       </div>
@@ -83,7 +99,12 @@
             </a>
           </li>
           <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="#"><i class="ri-twitter-fill"></i></a>
+            <a
+              class="nav-link"
+              href="https://twitter.com/wrench1815"
+              target="_blank"
+              ><i class="ri-twitter-fill"></i
+            ></a>
           </li>
         </ul>
       </div>
