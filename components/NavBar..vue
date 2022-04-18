@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <!-- Navbar brand -->
       <NuxtLink
-        class="navbar-brand rounded-circle bg-dark text-light px-2"
+        class="navbar-brand rounded-circle bg-dark text-white px-2"
         to="/"
         >HK</NuxtLink
       >
@@ -22,7 +22,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="ri-menu-2-line"></i>
+        <i class="ri-menu-2-fill fw-bold"></i>
       </button>
 
       <!-- Collapsible wrapper -->
