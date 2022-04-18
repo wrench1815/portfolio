@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <!-- Navbar brand -->
       <NuxtLink
-        class="navbar-brand rounded-circle bg-dark text-light p-2"
+        class="navbar-brand rounded-circle bg-dark text-light px-2"
         to="/"
         >HK</NuxtLink
       >
@@ -22,16 +22,16 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <fa :icon="['fas', 'bars']" />
+        <i class="ri-menu-2-line"></i>
       </button>
 
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <!-- Link -->
-          <li class="nav-item my-md-2">
+          <li class="nav-item my-2">
             <NuxtLink
-              class="nav-link d-inline-block bg-dark px-md-2 py-md-1 text-white rounded-2 bg-gradient"
+              class="nav-link d-inline-block bg-dark px-2 py-1 text-white rounded-2"
               to="/"
               >Home</NuxtLink
             >
