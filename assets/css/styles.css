@@ -141,6 +141,10 @@ option {
 }
 
 /* z-index */
+.z-index-0 {
+  z-index: 0 !important;
+}
+
 /* positive */
 .z-index-1 {
   z-index: 1 !important;
@@ -212,4 +216,10 @@ option {
     linear-gradient(#7f7f7f 2px, transparent 2px) 0 -1px,
     linear-gradient(90deg, #7f7f7f 2px, #e5e5f7 2px) -1px 0;
   background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+/* hide scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
