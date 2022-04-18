@@ -22,7 +22,7 @@
                 :backDelay="1000"
                 :backSpeed="30"
               >
-                <p class="lead font-weight-bold">
+                <p class="lead font-weight-bold fs-4 mb-0">
                   I develop: <span class="typing font-weight-normal"></span>
                 </p>
               </vue-typed-js>
@@ -39,7 +39,7 @@
                 :backDelay="1000"
                 :backSpeed="30"
               >
-                <p class="lead font-weight-bold">
+                <p class="lead font-weight-bold fs-4 mb-0">
                   Technologies I use:
                   <span class="typing font-weight-normal"></span>
                 </p>

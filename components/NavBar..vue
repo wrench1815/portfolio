@@ -8,7 +8,7 @@
     <div class="container-fluid">
       <!-- Navbar brand -->
       <NuxtLink
-        class="navbar-brand rounded-circle bg-dark text-white px-2"
+        class="navbar-brand rounded-circle bg-dark text-white p-2"
         to="/"
         >HK</NuxtLink
       >
