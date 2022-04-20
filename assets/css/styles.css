@@ -195,7 +195,6 @@ option {
 
 .bg-pattern {
   background-color: #e5e5f7;
-  opacity: 0.8;
   background: radial-gradient(
       circle,
       transparent 20%,
@@ -222,4 +221,10 @@ option {
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
+}
+
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: none !important;
+  }
 }
