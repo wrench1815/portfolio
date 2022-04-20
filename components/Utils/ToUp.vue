@@ -25,7 +25,7 @@ export default {
   methods: {
     toUp() {
       setTimeout(() => {
-        window.scrollTo(0, 0)
+        window.scroll({ top: 0, behavior: 'smooth' })
       }, 100)
     },
   },
