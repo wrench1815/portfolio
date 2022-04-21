@@ -1,7 +1,7 @@
 <template>
   <!-- Start:Navbar -->
   <nav
-    class="navbar navbar-expand-lg bg-light navbar-light shadow-0 position-sticky top-0 z-index-5"
+    class="navbar navbar-expand-lg bg-white navbar-light shadow-0 position-sticky top-0 z-index-5"
   >
     <!-- Container wrapper -->
     <div class="container-fluid">
