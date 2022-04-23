@@ -17,7 +17,7 @@
           <!-- Github -->
           <li class="nav-item me-3 me-lg-0">
             <a
-              class="nav-link"
+              class="nav-link social-link"
               href="https://github.com/wrench1815"
               target="_blank"
             >
@@ -27,7 +27,7 @@
           <!-- Twitter -->
           <li class="nav-item me-3 me-lg-0">
             <a
-              class="nav-link"
+              class="nav-link social-link"
               href="https://twitter.com/wrench1815"
               target="_blank"
               ><i class="ri-twitter-fill"></i
@@ -36,7 +36,7 @@
           <!-- Discord -->
           <li class="nav-item me-3 me-lg-0">
             <a
-              class="nav-link"
+              class="nav-link social-link"
               href="https://discordapp.com/users/457360898122711041"
               target="_blank"
               ><i class="ri-discord-fill"></i
@@ -73,14 +73,14 @@
             >
           </li>
           <!-- About -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <nuxt-link
               class="nav-link"
               :to="'/'"
               exact-active-class="text-primary"
               >About</nuxt-link
             >
-          </li>
+          </li> -->
         </ul>
       </div>
       <!-- Start:Collapsible Menu -->
@@ -89,21 +89,32 @@
       <div class="d-flex align-items-center ms-auto me-0 d-none d-lg-block">
         <!-- Icons -->
         <ul class="navbar-nav d-flex flex-row me-1">
+          <!-- GitHub -->
           <li class="nav-item me-3 me-lg-0">
             <a
-              class="nav-link"
+              class="nav-link social-link"
               href="https://github.com/wrench1815"
               target="_blank"
             >
               <i class="ri-github-fill"></i>
             </a>
           </li>
+          <!-- Twitter -->
           <li class="nav-item me-3 me-lg-0">
             <a
-              class="nav-link"
+              class="nav-link social-link"
               href="https://twitter.com/wrench1815"
               target="_blank"
               ><i class="ri-twitter-fill"></i
+            ></a>
+          </li>
+          <!-- Discord -->
+          <li class="nav-item me-3 me-lg-0">
+            <a
+              class="nav-link social-link"
+              href="https://discordapp.com/users/457360898122711041"
+              target="_blank"
+              ><i class="ri-discord-fill"></i
             ></a>
           </li>
         </ul>
@@ -119,4 +130,8 @@
 export default {}
 </script>
 
-<style scoped></style>
+<style scoped>
+.social-link:hover {
+  color: var(--mdb-primary) !important;
+}
+</style>
