@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NavBar />
+    <Lazy-NavBar />
     <div class="bg-pattern h-100 position-fixe z-index-n">
       <Nuxt />
-      <UtilsToUp />
+      <Lazy-Utils-ToUp />
     </div>
   </div>
 </template>
