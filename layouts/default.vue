@@ -1,9 +1,10 @@
 <template>
-  <div class="vh-100">
-    <div class="bg-gradient-gray vw-100 vh-100 position-fixed z-index-n5"></div>
-    <div class="bg-pattern vw-100 vh-100 position-fixed z-index-n4"></div>
-    <NavBar />
-    <Nuxt />
+  <div>
+    <Lazy-NavBar />
+    <div class="bg-pattern h-100 position-fixe z-index-n">
+      <Nuxt />
+      <Lazy-Utils-ToUp />
+    </div>
   </div>
 </template>
 

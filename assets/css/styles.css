@@ -5,21 +5,56 @@
 100: 100%,
 auto: auto,
  */
+
+/* vh */
+.vh-25 {
+  height: 25vh !important;
+}
+
+.vh-50 {
+  height: 50vh !important;
+}
+
+.vh-75 {
+  height: 75vh !important;
+}
+
 @media (min-width: 576px) {
   .w-sm-25 {
     width: 25% !important;
   }
+
   .w-sm-50 {
     width: 50% !important;
   }
+
   .w-sm-75 {
     width: 75% !important;
   }
+
   .w-sm-100 {
     width: 100% !important;
   }
+
   .w-sm-auto {
     width: auto !important;
+  }
+
+  /* vh */
+  .vh-sm-25 {
+    height: 25vh !important;
+  }
+
+  .vh-sm-50 {
+    height: 50vh !important;
+  }
+
+  .vh-sm-75 {
+    height: 75vh !important;
+  }
+
+  .vh-sm-100 {
+    height: 100vh !important;
   }
 }
 @media (min-width: 768px) {
@@ -42,6 +77,23 @@ auto: auto,
   .w-md-auto {
     width: auto !important;
   }
+
+  /* vh */
+  .vh-md-25 {
+    height: 25vh !important;
+  }
+
+  .vh-md-50 {
+    height: 50vh !important;
+  }
+
+  .vh-md-75 {
+    height: 75vh !important;
+  }
+
+  .vh-md-100 {
+    height: 100vh !important;
+  }
 }
 @media (min-width: 992px) {
   .w-lg-25 {
@@ -63,6 +115,23 @@ auto: auto,
   .w-lg-auto {
     width: auto !important;
   }
+
+  /* vh */
+  .vh-lg-25 {
+    height: 25vh !important;
+  }
+
+  .vh-lg-50 {
+    height: 50vh !important;
+  }
+
+  .vh-lg-75 {
+    height: 75vh !important;
+  }
+
+  .vh-lg-100 {
+    height: 100vh !important;
+  }
 }
 @media (min-width: 1200px) {
   .w-xl-25 {
@@ -83,6 +152,23 @@ auto: auto,
 
   .w-xl-auto {
     width: auto !important;
+  }
+
+  /* vh */
+  .vh-xl-25 {
+    height: 25vh !important;
+  }
+
+  .vh-xl-50 {
+    height: 50vh !important;
+  }
+
+  .vh-xl-75 {
+    height: 75vh !important;
+  }
+
+  .vh-xl-100 {
+    height: 100vh !important;
   }
 }
 
@@ -141,6 +227,10 @@ option {
 }
 
 /* z-index */
+.z-index-0 {
+  z-index: 0 !important;
+}
+
 /* positive */
 .z-index-1 {
   z-index: 1 !important;
@@ -191,7 +281,6 @@ option {
 
 .bg-pattern {
   background-color: #e5e5f7;
-  opacity: 0.8;
   background: radial-gradient(
       circle,
       transparent 20%,
@@ -212,4 +301,16 @@ option {
     linear-gradient(#7f7f7f 2px, transparent 2px) 0 -1px,
     linear-gradient(90deg, #7f7f7f 2px, #e5e5f7 2px) -1px 0;
   background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+/* hide scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: none !important;
+  }
 }
