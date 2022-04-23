@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="position-sticky bottom-0 d-flex justify-content-end align-items-center"
-  >
+  <div class="position-fixed bottom-0 end-0">
     <div
       class="btn btn-secondary btn-floating m-2"
       @click="toUp()"
