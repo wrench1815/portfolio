@@ -72,6 +72,15 @@
               >Home</nuxt-link
             >
           </li>
+          <!-- Blog -->
+          <li class="nav-item">
+            <nuxt-link
+              class="nav-link"
+              :to="'/blog'"
+              exact-active-class="text-primary"
+              >Blog</nuxt-link
+            >
+          </li>
           <!-- About -->
           <!-- <li class="nav-item">
             <nuxt-link
