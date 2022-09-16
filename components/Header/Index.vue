@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .header-img {
   background-size: cover;
   background-position: center;
@@ -84,6 +84,10 @@ export default {
 .blob-anim {
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   animation: morphing 10s infinite;
+}
+
+.blob {
+  border-radius: 30% 70% 70% 30%/30% 30% 70% 70% !important;
 }
 
 .blob-anim-delay {
@@ -105,6 +109,9 @@ export default {
   }
   75% {
     border-radius: 33% 67% 58% 42%/63% 68% 32% 37%;
+  }
+  100% {
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
   }
 }
 </style>
