@@ -5,9 +5,10 @@
       data-mdb-ripple-color="primary"
     >
       <img
-        :src="featureImage"
+        :data-src="featureImage"
         class="card-img-top blob"
         alt="Fissure in Sandstone"
+        v-lazy-load
       />
       <a href="#!">
         <div class="mask"></div>
