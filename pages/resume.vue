@@ -21,49 +21,52 @@
                   class="card-body pb-0 pe-lg-0 d-flex flex-column align-items-center align-items-lg-start align-items-xxl-center"
                 >
                   <!-- name -->
-                  <h1 class="ff-IBM fw-bold">Hardeep Kumar</h1>
+                  <h1 class="fw-bold" :class="IBM">Hardeep Kumar</h1>
 
                   <!-- role -->
-                  <span class="h5 ff-hind text-muted">Web Developer</span>
+                  <span class="h5 text-muted" :class="hind">Web Developer</span>
                 </div>
 
                 <div
                   class="d-flex flex-column align-items-center align-items-lg-start align-items-xxl-center"
                 >
                   <ul class="list-unstyled mt-5">
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-mail-line"></i
                       ><a
-                        class="ff-hind link-primary"
+                        class="link-primary"
+                        :class="hind"
                         href="mailto:hardeepkumar1815@gmail.com"
                         target="_blank"
                         >hardeepkumar1815@gmail.com</a
                       >
                     </li>
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-map-pin-line"></i>Jammu, J & K
                     </li>
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-time-line"></i>Full Time/Intern
                     </li>
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-user-3-line"></i>Full Stack
                     </li>
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-phone-line"></i
                       ><a
-                        class="ff-hind link-primary"
+                        class="link-primary"
+                        :class="hind"
                         target="_blank"
                         href="tel:+917889555278"
                         >+91 7889555278</a
                       >
                     </li>
-                    <li class="d-flex gap-1 ff-hind fs-5 mb-2 text-break">
+                    <li class="d-flex gap-1 fs-5 mb-2 text-break" :class="hind">
                       <i class="fw-bold ri-compass-discover-line"></i>
                       <a
                         href="https://hardeepkumar.in"
                         target="_blank"
-                        class="ff-hind link-primary"
+                        class="link-primary"
+                        :class="hind"
                         >hardeepkumar.in</a
                       >
                     </li>
@@ -72,11 +75,11 @@
 
                 <div class="pt-0 d-none d-lg-block">
                   <div class="card-body px-lg-0">
-                    <h3 class="ff-IBM fw-bold">Technical Skills</h3>
+                    <h3 class="fw-bold" :class="IBM">Technical Skills</h3>
 
                     <ul class="list-unstyled mt-3">
                       <li class="mb-3">
-                        <div class="ff-hind">Django</div>
+                        <div class=" " :class="hind">Django</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-100 bg-primary"
@@ -89,7 +92,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Nuxt/Vue</div>
+                        <div class=" " :class="hind">Nuxt/Vue</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-75 bg-primary"
@@ -102,7 +105,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Python</div>
+                        <div class=" " :class="hind">Python</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-75 bg-primary"
@@ -115,7 +118,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Javascript</div>
+                        <div class=" " :class="hind">Javascript</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-50 bg-primary"
@@ -128,7 +131,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">HTML/CSS</div>
+                        <div class=" " :class="hind">HTML/CSS</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-85 bg-primary"
@@ -141,7 +144,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Linux</div>
+                        <div class=" " :class="hind">Linux</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-90 bg-primary"
@@ -161,8 +164,8 @@
 
             <div class="col">
               <div class="card-body">
-                <h3 class="ff-IBM fw-bold">Professional Summary</h3>
-                <p class="fs-5 ff-hind">
+                <h3 class="fw-bold" :class="IBM">Professional Summary</h3>
+                <p class="fs-5" :class="hind">
                   Full Stack Web Developer with a strong-hold on DJango and Nuxt
                   JS. Skilled at Creating APIs with Django, Consuming APIs in
                   Nuxt, Deployment and CI/CD. Practiced Django for 2+ years and
@@ -171,32 +174,34 @@
               </div>
 
               <div class="card-body mt-3">
-                <h3 class="ff-IBM fw-bold">Employment</h3>
+                <h3 class="fw-bold" :class="IBM">Employment</h3>
 
                 <div class="py-3">
                   <div
                     class="d-flex flex-column flex-lg-row justify-content-between"
                   >
-                    <div class="h5 ff-IBM fw-bold">
+                    <div class="h5 fw-bold" :class="IBM">
                       Web Development Intern(Django)
                     </div>
-                    <div class="h5 ff-hind fw-bold text-muted">Intern</div>
+                    <div class="h5 fw-bold text-muted" :class="hind">
+                      Intern
+                    </div>
                   </div>
 
                   <div class="row">
                     <div
                       class="col-12 col-lg-8 d-flex flex-column flex-lg-row justify-content-between"
                     >
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-compass-3-line"></i>Link List Technologies
                         LLP
                       </div>
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-map-pin-line"></i>Gurugram, Haryana
                       </div>
                     </div>
                     <div class="col d-flex justify-content-lg-end">
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-time-line"></i>6 Sep, 2021
                       </div>
                     </div>
@@ -205,11 +210,11 @@
               </div>
 
               <div class="card-body d-none d-lg-block">
-                <h3 class="ff-IBM fw-bold">Education</h3>
+                <h3 class="fw-bold" :class="IBM">Education</h3>
 
                 <div class="py-3">
                   <div class="d-flex justify-content-between">
-                    <div class="h5 ff-IBM fw-bold">
+                    <div class="h5 fw-bold" :class="IBM">
                       Bachelor of Computer Applications
                     </div>
                   </div>
@@ -218,11 +223,11 @@
                     <div
                       class="col d-flex flex-column flex-lg-row justify-content-between"
                     >
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-map-pin-line"></i>GGM Science College,
                         Jammu
                       </div>
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-time-line"></i>July 2019 - Current
                       </div>
                     </div>
@@ -231,7 +236,7 @@
 
                 <div class="py-3">
                   <div class="d-flex justify-content-between">
-                    <div class="h5 ff-IBM fw-bold">
+                    <div class="h5 fw-bold" :class="IBM">
                       Higher Education(11-12th)
                     </div>
                   </div>
@@ -240,11 +245,11 @@
                     <div
                       class="col d-flex flex-column flex-lg-row justify-content-between"
                     >
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-map-pin-line"></i>Shiksha Niketan Sr.
                         Secondary School, Jammu
                       </div>
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-time-line"></i>May 2016 - Apr 2018
                       </div>
                     </div>
@@ -253,7 +258,7 @@
 
                 <div class="py-3">
                   <div class="d-flex justify-content-between">
-                    <div class="h5 ff-IBM fw-bold">
+                    <div class="h5 fw-bold" :class="IBM">
                       Base Education(till 10th)
                     </div>
                   </div>
@@ -262,11 +267,11 @@
                     <div
                       class="col d-flex flex-column flex-lg-row justify-content-between"
                     >
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-map-pin-line"></i>Birmingham Intl. Public
                         School, Bishnah
                       </div>
-                      <div class="d-flex gap-1 ff-hind text-muted">
+                      <div class="d-flex gap-1 text-muted" :class="hind">
                         <i class="ri-time-line"></i>till May 2018
                       </div>
                     </div>
@@ -283,11 +288,11 @@
               <div class="col-12 col-lg-3">
                 <div class="card-body pt-0">
                   <div class="card-body px-0">
-                    <h3 class="ff-IBM fw-bold">Technical Skills</h3>
+                    <h3 class="fw-bold" :class="IBM">Technical Skills</h3>
 
                     <ul class="list-unstyled mt-3">
                       <li class="mb-3">
-                        <div class="ff-hind">Django</div>
+                        <div class=" " :class="hind">Django</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-100 bg-primary"
@@ -300,7 +305,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Nuxt/Vue</div>
+                        <div class=" " :class="hind">Nuxt/Vue</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-75 bg-primary"
@@ -313,7 +318,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Python</div>
+                        <div class=" " :class="hind">Python</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-75 bg-primary"
@@ -326,7 +331,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Javascript</div>
+                        <div class=" " :class="hind">Javascript</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-50 bg-primary"
@@ -339,7 +344,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">HTML/CSS</div>
+                        <div class=" " :class="hind">HTML/CSS</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-85 bg-primary"
@@ -352,7 +357,7 @@
                       </li>
 
                       <li class="mb-3">
-                        <div class="ff-hind">Linux</div>
+                        <div class=" " :class="hind">Linux</div>
                         <div class="progress mt-1">
                           <div
                             class="progress-bar w-90 bg-primary"
@@ -372,11 +377,11 @@
               <!-- start:Education -->
               <div class="col">
                 <div class="card-body">
-                  <h3 class="ff-IBM fw-bold">Education</h3>
+                  <h3 class="fw-bold" :class="IBM">Education</h3>
 
                   <div class="py-3">
                     <div class="d-flex justify-content-between">
-                      <div class="h5 ff-IBM fw-bold">
+                      <div class="h5 fw-bold" :class="IBM">
                         Bachelor of Computer Applications
                       </div>
                     </div>
@@ -385,11 +390,11 @@
                       <div
                         class="col d-flex flex-column flex-lg-row justify-content-between"
                       >
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-map-pin-line"></i>GGM Science College,
                           Jammu
                         </div>
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-time-line"></i>July 2019 - Current
                         </div>
                       </div>
@@ -398,7 +403,7 @@
 
                   <div class="py-3">
                     <div class="d-flex justify-content-between">
-                      <div class="h5 ff-IBM fw-bold">
+                      <div class="h5 fw-bold" :class="IBM">
                         Higher Education(11-12th)
                       </div>
                     </div>
@@ -407,11 +412,11 @@
                       <div
                         class="col d-flex flex-column flex-lg-row justify-content-between"
                       >
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-map-pin-line"></i>Shiksha Niketan Sr.
                           Secondary School, Jammu
                         </div>
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-time-line"></i>May 2016 - Apr 2018
                         </div>
                       </div>
@@ -420,7 +425,7 @@
 
                   <div class="py-3">
                     <div class="d-flex justify-content-between">
-                      <div class="h5 ff-IBM fw-bold">
+                      <div class="h5 fw-bold" :class="IBM">
                         Base Education(till 10th)
                       </div>
                     </div>
@@ -429,11 +434,11 @@
                       <div
                         class="col d-flex flex-column flex-lg-row justify-content-between"
                       >
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-map-pin-line"></i>Birmingham Intl. Public
                           School, Bishnah
                         </div>
-                        <div class="d-flex gap-1 ff-hind text-muted">
+                        <div class="d-flex gap-1 text-muted" :class="hind">
                           <i class="ri-time-line"></i>till May 2018
                         </div>
                       </div>
@@ -1011,6 +1016,18 @@
         </section>
       </div>
     </div>
+
+    <!-- font toggler -->
+    <section class="position-fixed top-50 end-0 d-none">
+      <button
+        class="btn btn-warning btn-floating"
+        @click="toggleResumeDisplayFonts"
+      >
+        <span class="d-flex justify-content-center align-items-center">
+          <i class="ri-font-color ri-lg"></i>
+        </span>
+      </button>
+    </section>
   </section>
 </template>
 
@@ -1018,9 +1035,23 @@
 export default {
   name: 'Resume',
 
+  data() {
+    return {
+      hind: '',
+      IBM: '',
+    }
+  },
+
   methods: {
     getPDF() {
       this.$refs.html2Pdf.generatePdf()
+    },
+
+    toggleResumeDisplayFonts() {
+      this.hind == '' ? (this.hind = 'ff-hind') : (this.hind = '')
+      this.IBM == '' ? (this.IBM = 'ff-IBM') : (this.IBM = '')
+
+      console.log('clicked')
     },
   },
 }
