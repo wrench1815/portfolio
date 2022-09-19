@@ -12,7 +12,7 @@ export default {
       lang: 'en',
     },
     bodyAttrs: {
-      class: 'bg-gradient-gray',
+      class: 'bg-light',
     },
     meta: [
       { charset: 'utf-8' },
