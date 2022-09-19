@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <Lazy-BlogPagination class="mx-3 mb-4" />
+    <Lazy-BlogPagination class="mx-3" />
   </section>
 </template>
 

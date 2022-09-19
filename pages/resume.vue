@@ -3,7 +3,7 @@
     <div class="card rounded-0 shadow-0">
       <h3 class="mx-auto">Resume</h3>
     </div>
-    <div class="container-fluid py-4">
+    <div class="container-fluid pt-4">
       <div class="bg-white rounded-5">
         <section>
           <div class="row">
@@ -1000,6 +1000,7 @@
           </button>
         </section>
       </div>
+      <Lazy-Utils-Fading-Bg :direction="'down'" />
     </div>
 
     <!-- font toggler -->
