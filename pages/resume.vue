@@ -1050,8 +1050,6 @@ export default {
     toggleResumeDisplayFonts() {
       this.hind == '' ? (this.hind = 'ff-hind') : (this.hind = '')
       this.IBM == '' ? (this.IBM = 'ff-IBM') : (this.IBM = '')
-
-      console.log('clicked')
     },
   },
 }
