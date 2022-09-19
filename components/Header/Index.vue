@@ -32,7 +32,7 @@
           >
             <div
               class="header-img d-none d-md-block calc-head-height border border-white border-2 blob-anim"
-              :lazy-background="headerImage"
+              :style="{ backgroundImage: `url(${headerImage})` }"
             ></div>
           </div>
           <div
@@ -41,7 +41,7 @@
             <img
               class="img-fluid d-md-none border border-3 border-white blob-anim"
               :data-src="headerImage"
-              alt=""
+              alt="Hardeep Kumar"
               v-lazy-load
             />
           </div>
