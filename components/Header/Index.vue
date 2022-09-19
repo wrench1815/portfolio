@@ -32,7 +32,7 @@
           >
             <div
               class="header-img d-none d-md-block calc-head-height border border-white border-2 blob-anim"
-              :lazy-background="headerImage"
+              :style="{ backgroundImage: `url(${headerImage})` }"
             ></div>
           </div>
           <div
@@ -41,7 +41,7 @@
             <img
               class="img-fluid d-md-none border border-3 border-white blob-anim"
               :data-src="headerImage"
-              alt=""
+              alt="Hardeep Kumar"
               v-lazy-load
             />
           </div>
@@ -59,8 +59,8 @@ export default {
   data() {
     return {
       headerImage:
-        'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
-      windowHeight: '',
+        'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1663592209/IMG_20200214_151850square_qdcao8.jpg',
+      //   'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
     }
   },
 }

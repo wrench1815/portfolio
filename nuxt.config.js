@@ -12,15 +12,15 @@ export default {
       lang: 'en',
     },
     bodyAttrs: {
-      class: 'bg-gradient-gray',
+      class: 'bg-light',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Meta Description' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -31,6 +31,7 @@ export default {
     '~/plugins/mdb.js',
     '~/plugins/vueTyped.js',
     '~/plugins/remixIcons.js',
+    '~/plugins/vue-html2pdf.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,6 +60,9 @@ export default {
         loadingClass: 'isLoading',
         loadedClass: 'isLoaded',
         appendClass: 'lazyLoad',
+
+        // Default image must be in the static folder
+        defaultImage: '/white.png',
       },
     ],
   ],
@@ -79,6 +83,8 @@ export default {
       Mansalva: true,
       'Nanum Pen Script': true,
       'Fira Code': true,
+      Hind: true,
+      'IBM Plex Sans': true,
     },
   },
 

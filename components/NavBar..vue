@@ -50,9 +50,10 @@
       <button
         class="navbar-toggler ms-0"
         type="button"
+        id="navBarToggler"
         data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
+        data-mdb-target="#navBarContent"
+        aria-controls="navBarContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
@@ -61,7 +62,7 @@
       <!-- End:Menu Button -->
 
       <!-- Start:Collapsible Menu -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navBarContent">
         <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
           <!-- Home -->
           <li class="nav-item">
@@ -81,15 +82,15 @@
               >Blog</nuxt-link
             >
           </li>
-          <!-- About -->
-          <!-- <li class="nav-item">
+          <!-- Resume -->
+          <li class="nav-item">
             <nuxt-link
               class="nav-link"
-              :to="'/'"
+              :to="'/resume'"
               exact-active-class="text-primary"
-              >About</nuxt-link
+              >Resume</nuxt-link
             >
-          </li> -->
+          </li>
         </ul>
       </div>
       <!-- Start:Collapsible Menu -->
@@ -136,7 +137,17 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'NavBar',
+
+  watch: {
+    $route() {
+      if (document.querySelector('#navBarContent').classList.contains('show')) {
+        document.querySelector('#navBarToggler').click()
+      }
+    },
+  },
+}
 </script>
 
 <style scoped>
