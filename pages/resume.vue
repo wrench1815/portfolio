@@ -493,10 +493,9 @@
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
                       <img
-                        :data-src="myImage"
+                        :src="myImage"
                         class="img-fluid avatar rounded-circle avatar-size object-cover object-top"
                         alt="Hardeep Kumar"
-                        v-lazy-load
                       />
                     </div>
                     <div
@@ -540,7 +539,6 @@
                       <li
                         class="d-flex align-items-baseline gap-1 ff-hind fs-5 mb-2 text-break"
                       >
-                        <!-- <i class="fw-bold ri-map-pin-line"></i>Jammu, J & K -->
                         <span
                           ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -562,7 +560,6 @@
                       <li
                         class="d-flex align-items-baseline gap-1 ff-hind fs-5 mb-2 text-break"
                       >
-                        <!-- <i class="fw-bold ri-time-line"></i>Full Time/Intern -->
                         <span
                           ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -606,13 +603,6 @@
                       <li
                         class="d-flex align-items-baseline gap-1 ff-hind fs-5 mb-2 text-break"
                       >
-                        <!-- <i class="fw-bold ri-phone-line"></i
-                        ><a
-                          class="ff-hind link-primary"
-                          target="_blank"
-                          href="tel:+917889555278"
-                          >+91 7889555278</a
-                        > -->
                         <span
                           ><svg
                             xmlns="http://www.w3.org/2000/svg"
