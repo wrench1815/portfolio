@@ -1039,6 +1039,19 @@ export default {
     }
   },
 
+  head() {
+    return {
+      title: 'Resume | Hardeep Kumar',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Resume of Hardeep Kumar, the Owner of Site',
+        },
+      ],
+    }
+  },
+
   methods: {
     getPDF() {
       this.$refs.html2Pdf.generatePdf()

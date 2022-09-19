@@ -30,9 +30,20 @@
 <script>
 export default {
   name: 'BlogIndex',
+
+  head() {
+    return {
+      title: 'Blog | Hardeep Kumar',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Blog Index for my Portfolio',
+        },
+      ],
+    }
+  },
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
