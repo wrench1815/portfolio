@@ -12,9 +12,10 @@
               <div class="card-body">
                 <div class="d-flex justify-content-center">
                   <img
-                    src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
-                    class="img-fluid avatar rounded-circle avatar-size"
-                    alt=""
+                    :data-src="myImage"
+                    class="img-fluid avatar rounded-circle avatar-size object-top"
+                    alt="Hardeep Kumar"
+                    v-lazy-load
                   />
                 </div>
                 <div
@@ -492,9 +493,10 @@
                   <div class="card-body">
                     <div class="d-flex justify-content-center">
                       <img
-                        src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
-                        class="img-fluid avatar rounded-circle avatar-size"
-                        alt=""
+                        :data-src="myImage"
+                        class="img-fluid avatar rounded-circle avatar-size object-cover object-top"
+                        alt="Hardeep Kumar"
+                        v-lazy-load
                       />
                     </div>
                     <div
@@ -636,13 +638,6 @@
                       <li
                         class="d-flex align-items-baseline gap-1 ff-hind fs-5 mb-2 text-break"
                       >
-                        <!-- <i class="fw-bold ri-compass-discover-line"></i>
-                        <a
-                          href="https://hardeepkumar.in"
-                          target="_blank"
-                          class="ff-hind link-primary"
-                          >hardeepkumar.in</a
-                        > -->
                         <span
                           ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -1039,6 +1034,8 @@ export default {
     return {
       hind: '',
       IBM: '',
+      myImage:
+        'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1663592209/IMG_20200214_151850square_qdcao8.jpg',
     }
   },
 
