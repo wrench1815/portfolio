@@ -2,7 +2,7 @@
   <footer>
     <Lazy-Utils-Fading-Bg :direction="'up'" />
     <div class="bg-white">
-      <div class="card-body pb-1 d-flex flex-column align-items-lg-center">
+      <div class="card-body pb-3 d-flex flex-column align-items-lg-center">
         <div class="d-flex flex-wrap gap-1">
           built with <i class="ri-heart-3-fill text-danger"></i>
         </div>
