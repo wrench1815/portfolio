@@ -31,6 +31,7 @@ export default {
     '~/plugins/mdb.js',
     '~/plugins/vueTyped.js',
     '~/plugins/remixIcons.js',
+    '~/plugins/vue-html2pdf.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -79,6 +80,8 @@ export default {
       Mansalva: true,
       'Nanum Pen Script': true,
       'Fira Code': true,
+      Hind: true,
+      'IBM Plex Sans': true,
     },
   },
 
