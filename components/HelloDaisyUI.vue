@@ -27,7 +27,7 @@ onMounted(() => {
       </div>
 
       <div class="text-center">
-        <p>Try swapping Themes</p>
+        <p class="text-xl pb-3">Try swapping Themes</p>
         <button
           class="btn btn-circle swap swap-rotate"
           data-toggle-theme="pastel,dracula"
