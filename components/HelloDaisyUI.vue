@@ -13,9 +13,9 @@ onMounted(() => {
     >
       <div class="card bg-base-100 shadow-xl border border-accent">
         <div class="card-body">
-          <h2 class="card-title">Hello Daisy UI</h2>
-          <p>Hello and Welcome.</p>
-          <p>
+          <h2 class="card-title text-2xl">Hello Daisy UI</h2>
+          <p class="font-serif text-2xl">Hello and Welcome.</p>
+          <p class="font-serif text-2xl">
             This a mix of Tailwind with Daisy UI. Ain't it
             <span class="font-bold">Awesome?</span>
           </p>
