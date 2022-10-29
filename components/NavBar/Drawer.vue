@@ -32,7 +32,7 @@ addIcons(RiCloseFill);
         </li>
         <li>
           <NuxtLink
-            to="/"
+            to="/about"
             class="flex justify-center items-center"
             active-class="active"
             >About</NuxtLink

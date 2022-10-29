@@ -27,7 +27,7 @@ addIcons(RiMenu2Fill, RiSunFill, RiMoonFill);
           <NuxtLink to="/" active-class="active">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/" active-class="active">About</NuxtLink>
+          <NuxtLink to="/about" active-class="active">About</NuxtLink>
         </li>
       </ul>
     </div>
