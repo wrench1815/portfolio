@@ -2,6 +2,10 @@ import GoogleFontsModule from '@nuxtjs/google-fonts';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  build: {
+    transpile: ['oh-vue-icons'],
+  },
+
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
 
   // tailwind
@@ -17,6 +21,12 @@ export default defineNuxtConfig({
       Mansalva: true,
       'Nanum Pen Script': true,
       'Fira Code': true,
+    },
+  },
+
+  vite: {
+    optimizeDeps: {
+      exclude: ['oh-vue-icons/icons'],
     },
   },
 });
