@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { OhVueIcon, addIcons } from 'oh-vue-icons';
-import { RiMenu2Fill, RiSunFill, RiMoonFill } from 'oh-vue-icons/icons';
 import { themeChange } from 'theme-change';
 
 const themeLoaderSet = ref(false);
@@ -9,8 +7,6 @@ onMounted(() => {
   themeChange(false);
   themeLoaderSet.value = true;
 });
-
-addIcons(RiMenu2Fill, RiSunFill, RiMoonFill);
 </script>
 
 <template>
@@ -46,25 +42,17 @@ addIcons(RiMenu2Fill, RiSunFill, RiMoonFill);
         v-show="themeLoaderSet"
       >
         <!-- sun icon -->
-        <OhVueIcon
-          name="ri-sun-fill"
-          class="swap-on fill-primary"
-          scale="1.2"
-        />
+        <v-icon name="ri-sun-fill" class="swap-on fill-primary" scale="1.2" />
 
         <!-- moon icon -->
-        <OhVueIcon
-          name="ri-moon-fill"
-          class="swap-off fill-primary"
-          scale="1.2"
-        />
+        <v-icon name="ri-moon-fill" class="swap-off fill-primary" scale="1.2" />
       </div>
     </div>
     <!-- end:Theme Toggle -->
 
     <div class="flex-none lg:hidden">
       <label for="mainDrawer" class="btn btn-primary"
-        ><OhVueIcon name="ri-menu-2-fill" class="text-white"
+        ><v-icon name="ri-menu-2-fill" class="text-white"
       /></label>
     </div>
   </div>

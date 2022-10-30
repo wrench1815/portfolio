@@ -1,9 +1,4 @@
-<script lang="ts" setup>
-import { OhVueIcon, addIcons } from 'oh-vue-icons';
-import { RiCloseFill } from 'oh-vue-icons/icons';
-
-addIcons(RiCloseFill);
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="drawer-side">
@@ -16,7 +11,7 @@ addIcons(RiCloseFill);
           for="mainDrawer"
           class="m-2 p-1 h-8 w-8 border border-primary rounded-full cursor-pointer"
         >
-          <OhVueIcon name="ri-close-fill" scale="1.2" class="text-primary" />
+          <v-icon name="ri-close-fill" scale="1.2" class="text-primary" />
         </label>
       </div>
 
