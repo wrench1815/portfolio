@@ -14,9 +14,6 @@
     "daisyui": "^2.31.0",
     "nuxt": "^3.0.0-rc.12",
     "oh-vue-icons": "^1.0.0-rc3",
-    "theme-change": "^2.2.0"
-  },
-  "dependencies": {
     "typed.js": "^2.0.12"
   }
 }

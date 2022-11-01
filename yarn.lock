@@ -4672,11 +4672,6 @@ terser@^5.0.0:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
-theme-change@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/theme-change/-/theme-change-2.2.0.tgz#dcc48ffe6b806258bc5f1caf8220527589e354c0"
-  integrity sha512-vvgZEEfmH3yZGq2bWHyzs2AOG1SRfNnCvWbEnPzGpdvvCmAWtOsEdg4H6k/OMapegG+LEQvQ76tQoN9B+FT7rg==
-
 through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
