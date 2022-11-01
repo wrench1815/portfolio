@@ -1,9 +1,13 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const headerImage = ref(
+  'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1663592209/IMG_20200214_151850square_qdcao8.jpg'
+);
+</script>
 
 <template>
   <div class="border-solid border-4 blob blob-anim-delay border-primary">
     <img
-      src="@/assets/image/person.jpg"
+      :src="headerImage"
       class="rounded-lg shadow-2xl border-transparent border-solid border-2 md:max-w-sm blob blob-anim"
     />
   </div>
