@@ -6,10 +6,7 @@
       <div class="hero-content flex-col-reverse md:flex-row-reverse">
         <HomeHeaderImage />
         <div class="prose">
-          <h1 class="font-medium">
-            Myself Hardeep Kumar and I develop
-            <span class="text-primary">Vue/Nuxt</span>
-          </h1>
+          <HomeHeaderAnimText />
 
           <HomeHeaderSocials />
         </div>
