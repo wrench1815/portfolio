@@ -2,7 +2,7 @@
 
 <template>
   <section class="container px-4 mx-auto">
-    <div class="hero">
+    <div class="hero min-h-screen">
       <div class="hero-content flex-col-reverse md:flex-row-reverse">
         <HomeHeaderImage />
         <div class="prose">
