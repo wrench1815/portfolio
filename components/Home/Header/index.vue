@@ -4,10 +4,7 @@
   <section class="container px-4 mx-auto">
     <div class="hero">
       <div class="hero-content flex-col-reverse md:flex-row-reverse">
-        <img
-          src="@/assets/image/person.jpg"
-          class="rounded-lg shadow-2xl md:max-w-sm"
-        />
+        <HomeHeaderImage />
         <div class="prose">
           <h1 class="font-medium">
             Myself Hardeep Kumar and I develop
