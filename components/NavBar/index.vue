@@ -1,13 +1,4 @@
-<script lang="ts" setup>
-import { themeChange } from 'theme-change';
-
-const themeLoaderSet = ref(false);
-
-onMounted(() => {
-  themeChange(false);
-  themeLoaderSet.value = true;
-});
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="w-full navbar bg-base-100">
@@ -30,23 +21,7 @@ onMounted(() => {
 
     <!-- start:Theme Toggle -->
     <div class="flex-none">
-      <div
-        class="btn btn-circle bg-transparent border-none loading disabled text-primary"
-        v-show="!themeLoaderSet"
-      ></div>
-
-      <div
-        class="btn-circle swap swap-rotate"
-        data-toggle-theme="pastel,dracula"
-        data-act-class="swap-active"
-        v-show="themeLoaderSet"
-      >
-        <!-- sun icon -->
-        <v-icon name="ri-sun-fill" class="swap-on fill-primary" scale="1.2" />
-
-        <!-- moon icon -->
-        <v-icon name="ri-moon-fill" class="swap-off fill-primary" scale="1.2" />
-      </div>
+      <NavBarThemeToggle />
     </div>
     <!-- end:Theme Toggle -->
 
