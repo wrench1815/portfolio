@@ -13,10 +13,12 @@ const props = defineProps<{
   <a
     :href="social.link"
     target="_blank"
-    class="after:content-[''] after:block after:w-0 after:h-[0.06rem] after:bg-error after:transition-all after:duration-300 after:ease-in-out hover:text-error hover:after:w-full hover:after:bg-error no-underline"
+    class="no-underline after:content-[''] after:block after:w-0 after:h-[0.06rem] after:bg-error after:transition-all after:duration-300 after:ease-in-out hover:text-error hover:after:w-full hover:after:bg-error"
   >
-    <v-icon :name="social.icon" /> @{{ social.username }}</a
-  >
+    <span class="font-serif text-2xl flex items-center gap-1">
+      <v-icon :name="social.icon" /> @{{ social.username }}
+    </span>
+  </a>
   <!-- End:Social Link -->
 </template>
 
