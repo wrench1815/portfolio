@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-fonts": "^3.0.0-0",
+    "@nuxtjs/tailwindcss": "^6.0.0",
+    "@tailwindcss/typography": "^0.5.7",
+    "daisyui": "^2.31.0",
+    "nuxt": "^3.0.0-rc.12",
+    "oh-vue-icons": "^1.0.0-rc3",
+    "typed.js": "^2.0.12"
+  }
+}
