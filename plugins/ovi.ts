@@ -7,6 +7,7 @@ import {
   RiMenu2Fill,
   RiSunFill,
   RiMoonFill,
+  MdWavinghand,
 } from 'oh-vue-icons/icons';
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -18,7 +19,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     RiCloseFill,
     RiMenu2Fill,
     RiSunFill,
-    RiMoonFill
+    RiMoonFill,
+    MdWavinghand
   );
 
   // register Component
