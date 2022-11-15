@@ -8,6 +8,8 @@ import {
   RiSunFill,
   RiMoonFill,
   MdWavinghand,
+  SiDiscord,
+  MdLogodev,
 } from 'oh-vue-icons/icons';
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -20,7 +22,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     RiMenu2Fill,
     RiSunFill,
     RiMoonFill,
-    MdWavinghand
+    MdWavinghand,
+    SiDiscord,
+    MdLogodev
   );
 
   // register Component
