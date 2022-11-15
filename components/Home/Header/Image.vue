@@ -8,7 +8,7 @@ const headerImage = ref(
   <div class="border-solid border-4 blob blob-anim-delay border-primary">
     <img
       :src="headerImage"
-      class="rounded-lg shadow-2xl border-transparent border-solid border-2 md:max-w-sm blob blob-anim"
+      class="rounded-lg md:shadow-2xl border-transparent border-solid border-2 md:max-w-sm blob blob-anim"
     />
   </div>
 </template>
