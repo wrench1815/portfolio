@@ -1,19 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './composables/**/*.{js,ts}',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-    './app.{js,ts,vue}',
-    './App.{js,ts,vue}',
-    './Error.{js,ts,vue}',
-    './error.{js,ts,vue}',
-  ],
+  content: [],
   theme: {
     extend: {},
+    configViewer: {
+      fonts: [
+        'https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap',
+        'https://fonts.googleapis.com/css2?family=Mansalva&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+      ],
+    },
     fontFamily: {
       sans: ['Mansalva', 'cursive'],
       serif: ['"Nanum Pen Script"', 'cursive'],
