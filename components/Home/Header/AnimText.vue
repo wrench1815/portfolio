@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Typed from 'typed.js';
 
-const typing = ref(null);
+const typing = ref<string>('');
 const loading = ref(true);
 
 onMounted(() => {

@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="w-full navbar bg-base-100/70 sticky top-0 z-50 backdrop-blur-md">
+  <div
+    class="w-full navbar bg-base-100 sticky top-0 z-50 md:backdrop-blur-md md:bg-base-100/70"
+  >
     <!-- Brand -->
     <div class="flex-1">
       <NuxtLink to="/" class="normal-case text-3xl text-primary">HK</NuxtLink>

@@ -1,14 +1,4 @@
 <script lang="ts" setup>
-import { addIcons } from 'oh-vue-icons';
-import {
-  RiGithubFill,
-  SiDiscord,
-  RiTwitterFill,
-  MdLogodev,
-} from 'oh-vue-icons/icons';
-
-addIcons(RiGithubFill, SiDiscord, RiTwitterFill, MdLogodev);
-
 const socialLinks = [
   {
     username: 'wrench1815',

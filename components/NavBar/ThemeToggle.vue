@@ -3,7 +3,7 @@ const theme = ref('pastel');
 const loading = ref(true);
 
 function swapTheme() {
-  const ele = document.querySelector('html');
+  const ele = document.querySelector('html') as HTMLHtmlElement;
 
   if (theme.value == 'dracula') {
     localStorage.setItem('theme', 'pastel');
@@ -19,7 +19,7 @@ function swapTheme() {
 function initThemeCheck(
   ele: HTMLHtmlElement,
   prefersModeDark: MediaQueryList,
-  localTheme: string
+  localTheme: string | null
 ) {
   if (prefersModeDark.matches) {
     if (localTheme == 'dracula') {
@@ -50,9 +50,9 @@ function initThemeCheck(
 }
 
 onMounted(() => {
-  const ele = document.querySelector('html');
+  const ele = document.querySelector('html') as HTMLHtmlElement;
   const prefersModeDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const localTheme = localStorage.getItem('theme');
+  const localTheme: string | null = localStorage.getItem('theme');
 
   initThemeCheck(ele, prefersModeDark, localTheme);
 

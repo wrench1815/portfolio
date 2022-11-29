@@ -1,8 +1,18 @@
 <script lang="ts" setup>
+const drawerToggle = ref(false);
+const route = useRoute();
+
 function setVH() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
+
+watch(
+  () => route.fullPath,
+  () => {
+    drawerToggle.value = false;
+  }
+);
 
 onMounted(() => {
   setVH();
@@ -15,7 +25,12 @@ onMounted(() => {
 <template>
   <div>
     <div class="drawer drawer-end h-screen">
-      <input id="mainDrawer" type="checkbox" class="drawer-toggle" />
+      <input
+        id="mainDrawer"
+        type="checkbox"
+        class="drawer-toggle"
+        v-model="drawerToggle"
+      />
       <div class="drawer-content flex flex-col">
         <!-- Navbar -->
         <NavBar />
