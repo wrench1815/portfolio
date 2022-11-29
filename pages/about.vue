@@ -43,10 +43,10 @@ const myselfImage = ref(
       <section class="font-serif prose-lg mt-6">
         <h2>
           I'm <span class="text-primary">Hardeep Kumar</span>, a 22 years old
-          Web Developer. Nice to meet you:
+          Web Developer. Nice to meet you.
         </h2>
 
-        <h3>My stacks looks as follow.</h3>
+        <h3>My stacks looks as follow:</h3>
         <ul class="font-bold">
           <li>
             I develop Full-Stack using
