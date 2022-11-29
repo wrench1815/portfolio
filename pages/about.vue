@@ -65,7 +65,7 @@ const myselfImage = ref(
             >.
           </li>
           <li>
-            Vue I develop frontend using
+            I develop frontend using
             <span class="bg-secondary text-secondary-content px-1 rounded"
               >Vue</span
             >
