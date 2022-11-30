@@ -1,5 +1,11 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      meta: [{ name: 'copyright', content: 'Hardeep Kumar' }],
+    },
+  },
+
   build: {
     transpile: ['oh-vue-icons'],
   },
