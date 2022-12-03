@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     transpile: ['oh-vue-icons'],
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/content'],
 
   // tailwind
   tailwindcss: {},
@@ -27,6 +27,9 @@ export default defineNuxtConfig({
       'Fira Code': true,
     },
   },
+
+  // @nuxt/content: https://content.nuxtjs.org/api/configuration
+  content: {},
 
   vite: {
     optimizeDeps: {
