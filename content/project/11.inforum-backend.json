@@ -1,0 +1,32 @@
+{
+  "title": "Inforum (Backend)",
+  "description": "A Forum + Blogging Web Application I built with a team of 3 people for 5th semester College Project. The Idea was to create a StackOverflow like community Forum Application aimed specifically for the Students of the College.\nThis is the Backend for the Application which was written by me, using ASP dotnet 6. We used SQL Server 2019 for it's database and JWT Token based Authentication system for Auth. Since we opted for a REST based API backend, we made use of swagger docs as well and kept our API compliant to OAS as much as possible. And it was hosted on Heroku, for as long the free tier was available.",
+  "technology": [
+    {
+      "name": "ASP Dotnet",
+      "link": "https://dotnet.microsoft.com/en-us/apps/aspnet"
+    },
+    {
+      "name": "Core Admin",
+      "link": "https://github.com/edandersen/core-admin"
+    },
+    {
+      "name": "Microsoft Identity",
+      "link": "https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity"
+    },
+    {
+      "name": "EntityFramework",
+      "link": "https://learn.microsoft.com/en-us/ef/core/"
+    },
+    {
+      "name": "Swashbuckle",
+      "link": "https://github.com/domaindrivendev/Swashbuckle.AspNetCore"
+    },
+    {
+      "name": "SQL Server 19",
+      "link": "https://www.microsoft.com/en-in/sql-server/sql-server-2019"
+    }
+  ],
+  "github": "wrench1815/InforumBackend",
+  "live": ""
+}

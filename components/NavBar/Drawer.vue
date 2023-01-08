@@ -17,6 +17,8 @@
 
       <ul class="menu p-4 gap-2 overflow-y-auto">
         <!-- Sidebar content here -->
+
+        <!-- Home -->
         <li>
           <NuxtLink
             to="/"
@@ -25,12 +27,24 @@
             >Home</NuxtLink
           >
         </li>
+
+        <!-- About -->
         <li>
           <NuxtLink
             to="/about"
             class="flex justify-center items-center"
             active-class="active"
             >About</NuxtLink
+          >
+        </li>
+
+        <!-- Project -->
+        <li>
+          <NuxtLink
+            to="/project"
+            class="flex justify-center items-center"
+            active-class="active"
+            >Project</NuxtLink
           >
         </li>
       </ul>

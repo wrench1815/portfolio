@@ -1,0 +1,16 @@
+{
+  "title": "Image Viewer",
+  "description": "A Simple Image Viewer built using Windows Forms and C#. This project, I worked on in 2020, when I was learning C# and wanted to make GUI Application. So I decided to build a very simple Image Viewer as an Exercise and it turned out good.",
+  "technology": [
+    {
+      "name": "C#",
+      "link": "https://learn.microsoft.com/en-us/dotnet/csharp"
+    },
+    {
+      "name": "Windows Forms",
+      "link": "https://learn.microsoft.com/en-us/dotnet/desktop/winforms"
+    }
+  ],
+  "github": "wrench1815/Image-Viewer",
+  "live": ""
+}

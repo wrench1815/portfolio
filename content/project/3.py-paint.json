@@ -1,0 +1,16 @@
+{
+  "title": "pyPaint",
+  "description": "A Windows paint application built using Python 3 and TKinter. One on my ventures that I had while learning python some years ago. Can run on non windows OS too but Originally built for Windows.",
+  "technology": [
+    {
+      "name": "Python 3",
+      "link": "https://www.python.org"
+    },
+    {
+      "name": "TKinter",
+      "link": "https://docs.python.org/3/library/tkinter.html"
+    }
+  ],
+  "github": "wrench1815/pyPaint",
+  "live": ""
+}

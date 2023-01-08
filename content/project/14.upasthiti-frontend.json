@@ -1,0 +1,52 @@
+{
+  "title": "Upasthiti (Frontend)",
+  "description": "An Attendance Management system that was a project idea given by one of my professor but due to the shortened Semester tenure, it was incomplete and still is. I built this project with 2 very talented Frontend Developers. (can't disclose names) The Idea was to make it possible to handle State-wide student Attendance data and generate useful Insights out of it, including but not limited to the Geographical density of students in various parts of State, stats related to migrating students, day to day analysis of students in classes etc.\nThis is the Frontend for the Application which was written by me and 2 more people (can't disclose name) using Nuxt 2. We used MDB for it's Design System with our own custom color pallette. Since our backend was REST based API, we decided to make our site a SPA. We had various logcial components in the project that would allow access to site based on roles. We created many custom components for various UI elements like togglers, timelines, tables etc. It was hosted on Vercel but after Heroku free tier ended, it was removed from Vercel.",
+  "technology": [
+    {
+      "name": "Nuxt 2",
+      "link": "https://nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Auth",
+      "link": "https://auth.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Axios",
+      "link": "https://axios.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Google Fonts",
+      "link": "https://google-fonts.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Moment",
+      "link": "https://github.com/nuxt-community/moment-module"
+    },
+    {
+      "name": "Nuxt Lazy Load",
+      "link": "https://gitlab.com/broj42/nuxt-lazy-load"
+    },
+    {
+      "name": "Remix Icon",
+      "link": "https://remixicon.com"
+    },
+    {
+      "name": "VeeValidate",
+      "link": "https://vee-validate.logaretm.com/v3/"
+    },
+    {
+      "name": "Vue Select",
+      "link": "https://vue-select.org"
+    },
+    {
+      "name": "vue2 Datepicker",
+      "link": "https://github.com/mengxiong10/vue2-datepicker"
+    },
+    {
+      "name": "Vue Sweetalerts 2",
+      "link": "https://github.com/avil13/vue-sweetalert2"
+    }
+  ],
+  "github": "wrench1815/upasthiti",
+  "live": ""
+}

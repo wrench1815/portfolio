@@ -1,0 +1,48 @@
+{
+  "title": "Inforum (Frontend)",
+  "description": "A Forum + Blogging Web Application I built with a team of 3 people for 5th semester College Project. The Idea was to create a StackOverflow like community Forum Application aimed specifically for the Students of the College.\nThis is the Frontend for the Application which was written by me and one more person (cannot disclose name) using Nuxt 2. We used MDB for it's Design System with our own custom color pallette. Since our backend was REST based API, we decided to make our site a SPA. We had various logcial components in the project that would allow access to site based on roles. We also wrote our own form Validation system. We also made use of TinyMCE to add the ability to create Rich content for users.\nWe also used Cloudinary for using media fiels like images and also had uploader in our frontend that would upload the media to Cloudinary and then we'd use the returned and store in Database for further use. It was hosted on Vercel but after Heroku free tier ended, it was removed from Vercel.",
+  "technology": [
+    {
+      "name": "Nuxt 2",
+      "link": "https://nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Auth",
+      "link": "https://auth.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Axios",
+      "link": "https://axios.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Cloudinary",
+      "link": "https://cloudinary.nuxtjs.org"
+    },
+    {
+      "name": "TinyMCE",
+      "link": "https://github.com/tinymce/tinymce-vue"
+    },
+    {
+      "name": "Nuxt Lazy Load",
+      "link": "https://gitlab.com/broj42/nuxt-lazy-load"
+    },
+    {
+      "name": "Particles.js",
+      "link": "https://github.com/VincentGarreau/particles.js/"
+    },
+    {
+      "name": "Prism js",
+      "link": "https://prismjs.com"
+    },
+    {
+      "name": "Vue Advanced Cropper",
+      "link": "https://github.com/advanced-cropper/vue-advanced-cropper"
+    },
+    {
+      "name": "Vue Sweetalerts 2",
+      "link": "https://github.com/avil13/vue-sweetalert2"
+    }
+  ],
+  "github": "wrench1815/inforum_frontend",
+  "live": ""
+}

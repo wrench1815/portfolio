@@ -1,0 +1,24 @@
+{
+  "title": "Product API",
+  "description": "An API for Products emulating Flipkart and Amazon vendor to provide a dummy API backend. This Project was built by me for my Batchmate who needed an API backend to list out projects for their Project.",
+  "technology": [
+    {
+      "name": "Python 3",
+      "link": "https://www.python.org"
+    },
+    {
+      "name": "Django",
+      "link": "https://www.djangoproject.com"
+    },
+    {
+      "name": "Django REST Framework",
+      "link": "https://www.django-rest-framework.org"
+    },
+    {
+      "name": "PostgreSQL",
+      "link": "https://www.postgresql.org"
+    }
+  ],
+  "github": "wrench1815/productapi",
+  "live": ""
+}

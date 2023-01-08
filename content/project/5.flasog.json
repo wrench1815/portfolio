@@ -1,0 +1,32 @@
+{
+  "title": "Flasog",
+  "description": "A Blog Site I built will learning Flask. This Project was my first Portfolio/Blog Site. And where all the Web Development of mine started. Thie Project used various packages like SQLAlchemy, PageDown(WYSIWYG), Pillow etc.to build the full on Blogging system with sqlite as Database.",
+  "technology": [
+    {
+      "name": "Flask",
+      "link": "https://flask.palletsprojects.com"
+    },
+    {
+      "name": "SQLAlchemy",
+      "link": "https://www.sqlalchemy.org"
+    },
+    {
+      "name": "Flask PageDown",
+      "link": "https://github.com/miguelgrinberg/Flask-PageDown"
+    },
+    {
+      "name": "Flask Admin",
+      "link": "https://github.com/miguelgrinberg/Flask-PageDown"
+    },
+    {
+      "name": "Flask Bootstrap",
+      "link": "https://github.com/mbr/flask-bootstrap"
+    },
+    {
+      "name": "WTForms",
+      "link": "https://wtforms.readthedocs.io/en/3.0.x/"
+    }
+  ],
+  "github": "wrench1815/Flasog",
+  "live": ""
+}

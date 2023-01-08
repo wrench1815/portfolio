@@ -1,0 +1,40 @@
+{
+  "title": "Portfolio",
+  "description": "A Portfolio site of mine that showcases my projects. Yes this very site.",
+  "technology": [
+    {
+      "name": "Nuxt 3",
+      "link": "https://nuxt.com"
+    },
+    {
+      "name": "Nuxt Content",
+      "link": "https://content.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Image",
+      "link": "https://v1.image.nuxtjs.org"
+    },
+    {
+      "name": "Nuxt Tailwind CSS",
+      "link": "https://tailwindcss.nuxt.dev"
+    },
+    {
+      "name": "Daisy UI",
+      "link": "https://daisyui.com"
+    },
+    {
+      "name": "Tailwind CSS Typography",
+      "link": "https://tailwindcss.com/docs/typography-plugin"
+    },
+    {
+      "name": "Oh Vue Icons",
+      "link": "https://oh-vue-icons.js.org"
+    },
+    {
+      "name": "Typed js",
+      "link": "https://github.com/mattboldt/typed.js"
+    }
+  ],
+  "github": "wrench1815/portfolio",
+  "live": "https://hardeepkumar.in"
+}

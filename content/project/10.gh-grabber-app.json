@@ -1,0 +1,28 @@
+{
+  "title": "GH Grabber (Android App)",
+  "description": "An Android Application to grab User public Information from GitHub using GitHub's API. It grabs the public Information of user like their name, email, repositories etc.",
+  "technology": [
+    {
+      "name": "Javascript",
+      "link": "https://www.ecma-international.org/"
+    },
+    {
+      "name": "Vue 3",
+      "link": "https://vuejs.org"
+    },
+    {
+      "name": "capacitor",
+      "link": "https://capacitorjs.com"
+    },
+    {
+      "name": "Ionic",
+      "link": "https://ionicframework.com"
+    },
+    {
+      "name": "GitHub API",
+      "link": "https://docs.github.com/en/rest"
+    }
+  ],
+  "github": "wrench1815/gh_grabber_ionic",
+  "live": ""
+}

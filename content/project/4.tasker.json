@@ -1,0 +1,16 @@
+{
+  "title": "Tasker",
+  "description": "A Task manager built using Flask. This is just a simple Task Manager (todo crud) to manage one's tasks.",
+  "technology": [
+    {
+      "name": "Flask",
+      "link": "https://flask.palletsprojects.com"
+    },
+    {
+      "name": "SQLAlchemy",
+      "link": "https://www.sqlalchemy.org"
+    }
+  ],
+  "github": "wrench1815/tasker",
+  "live": ""
+}

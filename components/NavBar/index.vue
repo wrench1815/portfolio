@@ -12,11 +12,20 @@
     <div class="flex-1 hidden lg:block">
       <ul class="menu menu-horizontal menu-compact gap-1 p-1">
         <!-- Navbar menu content here -->
+
+        <!-- Home -->
         <li>
           <NuxtLink to="/" active-class="active">Home</NuxtLink>
         </li>
+
+        <!-- About -->
         <li>
           <NuxtLink to="/about" active-class="active">About</NuxtLink>
+        </li>
+
+        <!-- Project -->
+        <li>
+          <NuxtLink to="/project" active-class="active">Project</NuxtLink>
         </li>
       </ul>
     </div>
