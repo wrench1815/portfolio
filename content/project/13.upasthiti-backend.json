@@ -1,0 +1,40 @@
+{
+  "title": "Upasthti (Backend)",
+  "description": "An Attendance Management system that was a project idea given by one of my professor but due to the shortened Semester tenure, it was incomplete and still is. I built this project with 2 very talented Frontend Developers. (can't disclose names) The Idea was to make it possible to handle State-wide student Attendance data and generate useful Insights out of it, including but not limited to the Geographical density of students in various parts of State, stats related to migrating students, day to day analysis of students in classes etc.\nThis is the Backend for the Application which was written by me, using Django. We used PostgreSQL for it's database and JWT refresh token based Authentication system for Auth. Since we opted for a REST based API backend, we made use of swagger docs as well and kept our API compliant to OAS as much as possible. And it was hosted on Heroku, for as long the free tier was available.",
+  "technology": [
+    {
+      "name": "Python 3",
+      "link": "https://www.python.org"
+    },
+    {
+      "name": "Django",
+      "link": "https://www.djangoproject.com"
+    },
+    {
+      "name": "Django REST Framework",
+      "link": "https://www.django-rest-framework.org"
+    },
+    {
+      "name": "PostgreSQL",
+      "link": "https://www.postgresql.org"
+    },
+    {
+      "name": "Django Jazzmin",
+      "link": "https://github.com/farridav/django-jazzmin"
+    },
+    {
+      "name": "DRF Spectacular",
+      "link": "https://github.com/tfranzel/drf-spectacular"
+    },
+    {
+      "name": "Cloudinary",
+      "link": "https://cloudinary.com"
+    },
+    {
+      "name": "Django Filter",
+      "link": "https://github.com/carltongibson/django-filter"
+    }
+  ],
+  "github": "wrench1815/upasthiti_api",
+  "live": ""
+}

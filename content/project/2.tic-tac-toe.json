@@ -1,0 +1,12 @@
+{
+  "title": "Tic Tac Toe",
+  "description": "A Basic Command Line game made using c++,named Tic Tac Toe. There will be two players, 'Player1' and 'Player 2' WHo will compete against each other in a Game of Tic Tac Toe.\nThe C++ Version used is ISO so Turbo won't work.",
+  "technology": [
+    {
+      "name": "C++",
+      "link": "https://isocpp.org"
+    }
+  ],
+  "github": "wrench1815/Tic-Tac-Toe",
+  "live": ""
+}

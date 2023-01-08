@@ -12,6 +12,7 @@ import {
   MdLogodev,
   OiLinkExternal,
   RiStopFill,
+  RiExternalLinkLine,
 } from 'oh-vue-icons/icons';
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -28,7 +29,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     SiDiscord,
     MdLogodev,
     OiLinkExternal,
-    RiStopFill
+    RiStopFill,
+    RiExternalLinkLine
   );
 
   // register Component

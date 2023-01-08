@@ -5,9 +5,7 @@ module.exports = {
     extend: {},
     configViewer: {
       fonts: [
-        'https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap',
-        'https://fonts.googleapis.com/css2?family=Mansalva&display=swap',
-        'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fira+Code&family=Mansalva&family=Nanum+Pen+Script&display=swap',
       ],
     },
     fontFamily: {

@@ -1,0 +1,28 @@
+{
+  "title": "GH Grabber",
+  "description": "A Web Application to grab User public Information from GitHub using GitHub's API. It grabs the public Information of user like their name, email, repositories etc.",
+  "technology": [
+    {
+      "name": "Javascript",
+      "link": "https://www.ecma-international.org/"
+    },
+    {
+      "name": "Vue 2",
+      "link": "https://v2.vuejs.org"
+    },
+    {
+      "name": "Nuxt 2",
+      "link": "https://nuxtjs.org"
+    },
+    {
+      "name": "Material Design Bootstrap",
+      "link": "https://mdbootstrap.com"
+    },
+    {
+      "name": "GitHub API",
+      "link": "https://docs.github.com/en/rest"
+    }
+  ],
+  "github": "wrench1815/gh-grabber",
+  "live": "https://gh-grabber.vercel.app"
+}

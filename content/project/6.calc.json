@@ -1,0 +1,16 @@
+{
+  "title": "Calc",
+  "description": "A Calculator to perform simple Addition, Subtraction, Multiplication and Division built using JS and MDB",
+  "technology": [
+    {
+      "name": "Javascript",
+      "link": "https://www.ecma-international.org/"
+    },
+    {
+      "name": "Material Design Bootstrap",
+      "link": "https://mdbootstrap.com"
+    }
+  ],
+  "github": "wrench1815/calc",
+  "live": "https://wrench1815.github.io/Calc"
+}

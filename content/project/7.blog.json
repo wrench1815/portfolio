@@ -1,0 +1,36 @@
+{
+  "title": "Wrenchlog (also blog)",
+  "description": "A Blog Site I built will learning Django. This Project was my many Portfolio/Blog Site. This Project used various packages django like django-ckeditor, django Jazzmin, Pillow etc.to build the full on Blogging system with PostgreSQL as Database. I also used Dropbox with Django storages for storing media files. It used to be hosted on Heroku.",
+  "technology": [
+    {
+      "name": "Python 3",
+      "link": "https://www.python.org"
+    },
+    {
+      "name": "Django",
+      "link": "https://www.djangoproject.com"
+    },
+    {
+      "name": "PostgreSQL",
+      "link": "https://www.postgresql.org"
+    },
+    {
+      "name": "Django Jazzmin",
+      "link": "https://github.com/farridav/django-jazzmin"
+    },
+    {
+      "name": "Django CKEditor",
+      "link": "https://github.com/django-ckeditor/django-ckeditor"
+    },
+    {
+      "name": "Dropbox",
+      "link": "https://www.dropbox.com"
+    },
+    {
+      "name": "Django Storages",
+      "link": "https://github.com/jschneier/django-storages"
+    }
+  ],
+  "github": "wrench1815/blog",
+  "live": ""
+}
