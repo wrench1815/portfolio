@@ -1,3 +1,10 @@
 {
-  "css.validate": false
+  "css.validate": false,
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**",
+    "**/.nuxt/**"
+  ]
 }
