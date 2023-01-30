@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-const headerImage = ref(
-  'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg'
-);
+const headerImage = ref('myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh');
 </script>
 
 <template>
   <div class="border-solid border-4 blob blob-anim-delay border-primary">
-    <img
+    <NuxtImg
+      provider="cloudinary"
       :src="headerImage"
+      alt="Hardeep Kumar AI generated"
       class="rounded-lg border-transparent border-solid border-2 aspect-square object-cover md:max-w-sm md:shadow-2xl blob blob-anim"
     />
   </div>

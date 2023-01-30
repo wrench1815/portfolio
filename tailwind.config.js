@@ -5,12 +5,12 @@ module.exports = {
     extend: {},
     configViewer: {
       fonts: [
-        'https://fonts.googleapis.com/css2?family=Fira+Code&family=Mansalva&family=Nanum+Pen+Script&display=swap',
+        'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
       ],
     },
     fontFamily: {
-      sans: ['Mansalva', 'cursive'],
-      serif: ['"Nanum Pen Script"', 'cursive'],
+      sans: ['Rubik', 'sans-serif'],
+      serif: ['Rubik', 'sans-serif'],
       mono: ['"Fira Code"', 'monospace'],
     },
 
@@ -64,7 +64,50 @@ module.exports = {
 
   // daisyUI config
   daisyui: {
-    themes: ['pastel', 'dracula'],
-    darkTheme: 'dracula',
+    themes: [
+      {
+        nordLight: {
+          primary: '#88C0D0',
+
+          secondary: '#81A1C1',
+
+          accent: '#B48EAD',
+
+          neutral: '#2E3440',
+
+          'base-100': '#D8DEE9',
+
+          info: '#5E81Ac',
+
+          success: '#A3BE8C',
+
+          warning: '#D08770',
+
+          error: '#BF616A',
+        },
+      },
+      {
+        nordDark: {
+          primary: '#88C0D0',
+
+          secondary: '#81A1C1',
+
+          accent: '#B48EAD',
+
+          neutral: '#D8DEE9',
+
+          'base-100': '#2E3440',
+
+          info: '#5E81Ac',
+
+          success: '#A3BE8C',
+
+          warning: '#D08770',
+
+          error: '#BF616A',
+        },
+      },
+    ],
+    darkTheme: 'nordDark',
   },
 };

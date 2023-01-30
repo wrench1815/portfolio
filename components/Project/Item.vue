@@ -30,9 +30,7 @@ function setRandomBtnColor() {
 
     <!-- card -->
     <template v-for="item in props.projects" :key="item._path">
-      <div
-        class="card lg:card-side bg-base-100 shadow-xl border border-primary"
-      >
+      <div class="card bg-base-100 shadow-xl border border-primary">
         <!-- rounded circle on top -->
         <div
           class="bg-primary w-4 h-4 absolute left-0 right-0 mx-auto -mt-6 rounded-full"

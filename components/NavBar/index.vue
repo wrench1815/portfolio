@@ -6,7 +6,9 @@
   >
     <!-- Brand -->
     <div class="flex-1">
-      <NuxtLink to="/" class="normal-case text-3xl text-primary">HK</NuxtLink>
+      <NuxtLink to="/" class="normal-case text-3xl text-primary no-underline"
+        >HK</NuxtLink
+      >
     </div>
 
     <div class="flex-1 hidden lg:block">
@@ -15,17 +17,23 @@
 
         <!-- Home -->
         <li>
-          <NuxtLink to="/" active-class="active">Home</NuxtLink>
+          <NuxtLink to="/" class="no-underline" active-class="active"
+            >Home</NuxtLink
+          >
         </li>
 
         <!-- About -->
         <li>
-          <NuxtLink to="/about" active-class="active">About</NuxtLink>
+          <NuxtLink to="/about" class="no-underline" active-class="active"
+            >About</NuxtLink
+          >
         </li>
 
         <!-- Project -->
         <li>
-          <NuxtLink to="/project" active-class="active">Project</NuxtLink>
+          <NuxtLink to="/project" class="no-underline" active-class="active"
+            >Project</NuxtLink
+          >
         </li>
       </ul>
     </div>
@@ -38,7 +46,7 @@
 
     <div class="flex-none lg:hidden">
       <label for="mainDrawer" class="btn btn-primary"
-        ><v-icon name="ri-menu-2-fill" class="text-white"
+        ><v-icon name="ri-menu-2-fill" class="text-base-100"
       /></label>
     </div>
   </div>

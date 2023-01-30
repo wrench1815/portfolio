@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-const theme = ref('pastel');
+const theme = ref('nordLight');
 const loading = ref(true);
 
 function swapTheme() {
   const ele = document.querySelector('html') as HTMLHtmlElement;
 
-  if (theme.value == 'dracula') {
-    localStorage.setItem('theme', 'pastel');
-    ele.setAttribute('data-theme', 'pastel');
-    theme.value = 'pastel';
+  if (theme.value == 'nordDark') {
+    localStorage.setItem('theme', 'nordLight');
+    ele.setAttribute('data-theme', 'nordLight');
+    theme.value = 'nordLight';
   } else {
-    localStorage.setItem('theme', 'dracula');
-    ele.setAttribute('data-theme', 'dracula');
-    theme.value = 'dracula';
+    localStorage.setItem('theme', 'nordDark');
+    ele.setAttribute('data-theme', 'nordDark');
+    theme.value = 'nordDark';
   }
 }
 
@@ -22,29 +22,29 @@ function initThemeCheck(
   localTheme: string | null
 ) {
   if (prefersModeDark.matches) {
-    if (localTheme == 'dracula') {
-      localStorage.setItem('theme', 'dracula');
-      ele.setAttribute('data-theme', 'dracula');
-      theme.value = 'dracula';
-    } else if (localTheme == 'pastel') {
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+    if (localTheme == 'nordDark') {
+      localStorage.setItem('theme', 'nordDark');
+      ele.setAttribute('data-theme', 'nordDark');
+      theme.value = 'nordDark';
+    } else if (localTheme == 'nordLight') {
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     } else {
-      localStorage.setItem('theme', 'dracula');
-      ele.setAttribute('data-theme', 'dracula');
-      theme.value = 'dracula';
+      localStorage.setItem('theme', 'nordDark');
+      ele.setAttribute('data-theme', 'nordDark');
+      theme.value = 'nordDark';
     }
   } else {
-    if (localTheme == 'dracula') {
-      ele.setAttribute('data-theme', 'dracula');
-      theme.value = 'dracula';
-    } else if (localTheme == 'pastel') {
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+    if (localTheme == 'nordDark') {
+      ele.setAttribute('data-theme', 'nordDark');
+      theme.value = 'nordDark';
+    } else if (localTheme == 'nordLight') {
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     } else {
-      localStorage.setItem('theme', 'pastel');
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+      localStorage.setItem('theme', 'nordLight');
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     }
   }
 }
@@ -60,31 +60,31 @@ onMounted(() => {
 
   prefersModeDark.addEventListener('change', () => {
     if (prefersModeDark.matches) {
-      localStorage.setItem('theme', 'dracula');
-      ele.setAttribute('data-theme', 'dracula');
-      theme.value = 'dracula';
+      localStorage.setItem('theme', 'nordDark');
+      ele.setAttribute('data-theme', 'nordDark');
+      theme.value = 'nordDark';
     } else {
-      localStorage.setItem('theme', 'pastel');
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+      localStorage.setItem('theme', 'nordLight');
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     }
   });
 
   window.onstorage = () => {
     const currentLocalTheme = localStorage.getItem('theme');
 
-    if (currentLocalTheme == 'dracula') {
-      localStorage.setItem('theme', 'dracula');
-      ele.setAttribute('data-theme', 'dracula');
-      theme.value = 'dracula';
-    } else if (currentLocalTheme == 'pastel') {
-      localStorage.setItem('theme', 'pastel');
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+    if (currentLocalTheme == 'nordDark') {
+      localStorage.setItem('theme', 'nordDark');
+      ele.setAttribute('data-theme', 'nordDark');
+      theme.value = 'nordDark';
+    } else if (currentLocalTheme == 'nordLight') {
+      localStorage.setItem('theme', 'nordLight');
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     } else {
-      localStorage.setItem('theme', 'pastel');
-      ele.setAttribute('data-theme', 'pastel');
-      theme.value = 'pastel';
+      localStorage.setItem('theme', 'nordLight');
+      ele.setAttribute('data-theme', 'nordLight');
+      theme.value = 'nordLight';
     }
   };
 });
@@ -97,19 +97,19 @@ onMounted(() => {
   ></div>
 
   <div
-    class="btn-circle swap swap-rotate"
+    class="btn-circle swap swap-rotate text-primary transition-all duration-300 ease-in-out"
     :class="{
-      'swap-active': theme == 'dracula',
-      '': theme == 'pastel',
+      'swap-active': theme == 'nordDark',
+      '': theme == 'nordLight',
     }"
     @click="swapTheme"
     v-else
   >
     <!-- sun icon -->
-    <v-icon name="ri-sun-fill" class="swap-on fill-primary" scale="1.2" />
+    <v-icon name="ri-sun-fill" class="swap-on" scale="1.2" />
 
     <!-- moon icon -->
-    <v-icon name="ri-moon-fill" class="swap-off fill-primary" scale="1.2" />
+    <v-icon name="ri-moon-fill" class="swap-off" scale="1.2" />
   </div>
 </template>
 

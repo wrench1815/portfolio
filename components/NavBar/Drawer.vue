@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="drawer-side">
+  <div class="drawer-side prose-ul:m-0 prose-li:my-0">
     <label for="mainDrawer" class="drawer-overlay"></label>
     <div class="w-full bg-base-100 md:w-80">
       <div
@@ -9,9 +9,9 @@
       >
         <label
           for="mainDrawer"
-          class="m-2 p-1 h-8 w-8 border border-primary rounded-full cursor-pointer"
+          class="m-2 h-8 w-8 flex items-center justify-center border border-primary text-primary transition-all duration-300 ease-in-out rounded-full cursor-pointer hover:bg-primary hover:shadow-lg hover:text-base-100"
         >
-          <v-icon name="ri-close-fill" scale="1.2" class="text-primary" />
+          <v-icon name="ri-close-fill" scale="1.2" />
         </label>
       </div>
 
@@ -22,7 +22,7 @@
         <li>
           <NuxtLink
             to="/"
-            class="flex justify-center items-center"
+            class="flex justify-center items-center no-underline"
             active-class="active"
             >Home</NuxtLink
           >
@@ -32,7 +32,7 @@
         <li>
           <NuxtLink
             to="/about"
-            class="flex justify-center items-center"
+            class="flex justify-center items-center no-underline"
             active-class="active"
             >About</NuxtLink
           >
@@ -42,7 +42,7 @@
         <li>
           <NuxtLink
             to="/project"
-            class="flex justify-center items-center"
+            class="flex justify-center items-center no-underline"
             active-class="active"
             >Project</NuxtLink
           >

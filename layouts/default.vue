@@ -23,7 +23,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div
+    class="prose max-w-full prose-img:m-0 prose-p:m-0 prose-headings:mt-2 prose-headings:mb-2"
+  >
     <div class="drawer drawer-end h-screen">
       <input
         id="mainDrawer"

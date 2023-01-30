@@ -57,7 +57,7 @@ useHead({
 
 <template>
   <main class="container mx-auto px-4">
-    <section class="prose max-w-none">
+    <section class="prose max-w-full">
       <div class="flex gap-2">
         <h1 class="mb-12">Hii!!!</h1>
         <v-icon
@@ -91,7 +91,7 @@ useHead({
         </span>
       </div>
 
-      <section class="font-serif prose-lg mt-6">
+      <section class="prose-lg mt-6">
         <h2>
           I'm <span class="text-primary">Hardeep Kumar</span>, a 22 years old
           Web Developer. Nice to meet you.

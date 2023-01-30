@@ -24,7 +24,7 @@ const socialLinks = [
 </script>
 
 <template>
-  <h3 class="font-medium text-2xl text-center md:text-start">Connect on</h3>
+  <h3 class="text-center md:text-start">Connect on</h3>
   <div class="flex flex-row gap-3 flex-wrap justify-center md:justify-start">
     <HomeHeaderLink v-for="(item, i) in socialLinks" :key="i" :social="item" />
   </div>

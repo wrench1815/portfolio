@@ -57,9 +57,8 @@ useHead({
 
 <template>
   <main class="container mx-auto px-4">
-    <section
-      class="prose max-w-none prose-headings:mt-2 prose-headings:mb-2 prose-p:font-serif prose-p:prose-2xl"
-    >
+    <section class="prose-headings:mt-2 prose-headings:mb-2">
+      <!-- prose-p:prose-2xl -->
       <ContentList :query="query">
         <template v-slot="{ list }">
           <ProjectItem :projects="list" />
