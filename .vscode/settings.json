@@ -6,5 +6,6 @@
     "**/.hg/**",
     "**/.svn/**",
     "**/.nuxt/**"
-  ]
+  ],
+  "volar.vueserver.disableFileWatcher": false
 }
