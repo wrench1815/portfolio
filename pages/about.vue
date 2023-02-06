@@ -162,7 +162,7 @@ useHead({
           <span class="bg-primary text-primary-content px-1 rounded">
             Git, GitHub, CI/CD and writing tests using Django's inbuilt Testing
             Framework </span
-          >. Aside fron this, I'm very familiar with PaaS'
+          >. Aside from this, I'm very familiar with PaaS'
           <span class="bg-primary text-primary-content px-1 rounded">
             Railway, Heroku and Vercel</span
           >. And ofcourse I've my fair share with
