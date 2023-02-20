@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^2.2.2",
-    "@nuxt/image-edge": "^1.0.0-27827328.bc9ddc0",
+    "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "@tailwindcss/typography": "^0.5.7",
     "daisyui": "^2.31.0",
