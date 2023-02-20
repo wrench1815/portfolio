@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const routeList = useRouteList()
+</script>
 
 <template>
   <div class="drawer-side prose-ul:m-0 prose-li:my-0">
@@ -16,35 +18,12 @@
       </div>
 
       <ul class="menu p-4 gap-2 overflow-y-auto">
-        <!-- Sidebar content here -->
-
-        <!-- Home -->
-        <li>
+        <li v-for="item in routeList">
           <NuxtLink
-            to="/"
+            :to="item.to"
             class="flex justify-center items-center no-underline"
             active-class="active"
-            >Home</NuxtLink
-          >
-        </li>
-
-        <!-- About -->
-        <li>
-          <NuxtLink
-            to="/about"
-            class="flex justify-center items-center no-underline"
-            active-class="active"
-            >About</NuxtLink
-          >
-        </li>
-
-        <!-- Project -->
-        <li>
-          <NuxtLink
-            to="/project"
-            class="flex justify-center items-center no-underline"
-            active-class="active"
-            >Project</NuxtLink
+            >{{ item.name }}</NuxtLink
           >
         </li>
       </ul>
