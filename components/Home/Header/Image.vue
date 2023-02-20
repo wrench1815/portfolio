@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const headerImage = ref('myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh');
+const headerImage = ref('myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh')
 </script>
 
 <template>

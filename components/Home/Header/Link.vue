@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 const props = defineProps<{
   social: {
-    link: string;
-    username: string;
-    icon: string;
-  };
-}>();
+    link: string
+    username: string
+    icon: string
+  }
+}>()
 </script>
 
 <template>

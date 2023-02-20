@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types';
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
 const query: QueryBuilderParams = {
   path: '/project/',
   sort: [{ _id: -1, $numeric: true }],
-};
+}
 
 useHead({
   title: 'Project',
@@ -52,7 +52,7 @@ useHead({
         'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg',
     },
   ],
-});
+})
 </script>
 
 <template>

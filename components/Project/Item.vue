@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { ProjectsDataTypes } from '../../types/ProjectData';
+import { ProjectsDataTypes } from '../../types/ProjectData'
 
 const props = defineProps<{
-  projects: [ProjectsDataTypes];
-}>();
+  projects: [ProjectsDataTypes]
+}>()
 
 function setRandomBtnColor() {
   const btnColors = [
@@ -16,8 +16,8 @@ function setRandomBtnColor() {
     'btn-warning',
     'btn-error',
     'btn-base-100',
-  ];
-  return btnColors[Math.floor(Math.random() * btnColors.length)];
+  ]
+  return btnColors[Math.floor(Math.random() * btnColors.length)]
 }
 </script>
 

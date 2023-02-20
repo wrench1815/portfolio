@@ -1,25 +1,25 @@
 <script lang="ts" setup>
-const drawerToggle = ref(false);
-const route = useRoute();
+const drawerToggle = ref(false)
+const route = useRoute()
 
 function setVH() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
 watch(
   () => route.fullPath,
   () => {
-    drawerToggle.value = false;
+    drawerToggle.value = false
   }
-);
+)
 
 onMounted(() => {
-  setVH();
+  setVH()
   window.addEventListener('resize', () => {
-    setVH();
-  });
-});
+    setVH()
+  })
+})
 </script>
 
 <template>

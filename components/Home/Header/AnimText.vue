@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import Typed from 'typed.js';
+import Typed from 'typed.js'
 
-const typing = ref<string>('');
-const loading = ref(true);
+const typing = ref<string>('')
+const loading = ref(true)
 
 onMounted(() => {
-  loading.value = false;
+  loading.value = false
 
   new Typed(typing.value, {
     strings: ['Full Stack', 'Backend', 'APIs', 'Vue/Nuxt', 'POC'],
@@ -13,8 +13,8 @@ onMounted(() => {
     backSpeed: 30,
     backDelay: 1000,
     loop: true,
-  });
-});
+  })
+})
 </script>
 
 <template>

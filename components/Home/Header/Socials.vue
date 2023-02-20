@@ -20,7 +20,7 @@ const socialLinks = [
     link: 'https://dev.to/wrench1815',
     icon: 'md-logodev',
   },
-];
+]
 </script>
 
 <template>

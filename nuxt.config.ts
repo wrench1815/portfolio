@@ -30,4 +30,4 @@ export default defineNuxtConfig({
       exclude: ['oh-vue-icons/icons'],
     },
   },
-});
+})
