@@ -8,7 +8,7 @@ const headerImage = ref('myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh')
       provider="cloudinary"
       :src="headerImage"
       alt="Hardeep Kumar AI generated"
-      class="rounded-lg border-transparent border-solid border-2 aspect-square object-cover md:max-w-sm md:shadow-2xl blob blob-anim"
+      class="rounded-lg border-transparent border-solid border-2 aspect-square object-cover md:h-96 md:max-w-sm md:shadow-2xl blob blob-anim"
     />
   </div>
 </template>
