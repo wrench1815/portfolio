@@ -16,6 +16,36 @@ html {
   a {
     @apply link-slide-out-anim no-underline;
   }
+
+  /* scrollbar */
+  *::-webkit-scrollbar {
+    @apply w-2 bg-transparent;
+  }
+
+  *::-webkit-scrollbar:horizontal {
+    @apply h-2;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply rounded-xl;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-2xl;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    @apply bg-primary;
+  }
+
+  * {
+    scrollbar-gutter: unset;
+    scrollbar-color: hsl(var(--p)) transparent;
+  }
 }
 
 @layer utilities {
