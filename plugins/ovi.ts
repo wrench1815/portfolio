@@ -1,4 +1,4 @@
-import { OhVueIcon, addIcons } from 'oh-vue-icons';
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import {
   RiGithubFill,
   RiTwitterFill,
@@ -12,8 +12,8 @@ import {
   MdLogodev,
   OiLinkExternal,
   RiStopFill,
-  RiExternalLinkLine,
-} from 'oh-vue-icons/icons';
+  BiBriefcase,
+} from 'oh-vue-icons/icons'
 
 export default defineNuxtPlugin((nuxtApp) => {
   // register icons
@@ -30,9 +30,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     MdLogodev,
     OiLinkExternal,
     RiStopFill,
-    RiExternalLinkLine
-  );
+    BiBriefcase
+  )
 
   // register Component
-  nuxtApp.vueApp.component('v-icon', OhVueIcon);
-});
+  nuxtApp.vueApp.component('v-icon', OhVueIcon)
+})

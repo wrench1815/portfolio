@@ -7,5 +7,8 @@
     "**/.svn/**",
     "**/.nuxt/**"
   ],
-  "volar.vueserver.disableFileWatcher": false
+  "volar.vueserver.disableFileWatcher": false,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

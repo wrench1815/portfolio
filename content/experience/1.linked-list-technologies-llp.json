@@ -1,0 +1,28 @@
+{
+  "job_title": "Web Developer Intern",
+  "description": "Built Full-Stack Management Web Applications for various client over the time period of 2 months. Also worked on AWS to deploy various Applications build with Django that used Postgres, Redis. Learnt about Web Sockets and used it in Django to build a Real-Time Chat System.",
+  "technology": [
+    {
+      "name": "Python",
+      "link": "https://www.python.org"
+    },
+    {
+      "name": "Django",
+      "link": "https://www.djangoproject.com"
+    },
+    {
+      "name": "Django Channels",
+      "link": "https://channels.readthedocs.io/en/stable/"
+    },
+    {
+      "name": "Bootstrap",
+      "link": "https://getbootstrap.com"
+    }
+  ],
+  "employer": "Linked List Technologies LLP",
+  "employer_website": "https://linkedlist.tech",
+  "employer_address": "Gurugram, Haryana, India",
+  "job_type": "Internship",
+  "start_date": "6 September 2021",
+  "end_date": "6 November 2021"
+}

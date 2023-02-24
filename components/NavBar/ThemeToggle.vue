@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-const theme = ref('nordLight');
-const loading = ref(true);
+const theme = ref('nordLight')
+const loading = ref(true)
 
 function swapTheme() {
-  const ele = document.querySelector('html') as HTMLHtmlElement;
+  const ele = document.querySelector('html') as HTMLHtmlElement
 
   if (theme.value == 'nordDark') {
-    localStorage.setItem('theme', 'nordLight');
-    ele.setAttribute('data-theme', 'nordLight');
-    theme.value = 'nordLight';
+    localStorage.setItem('theme', 'nordLight')
+    ele.setAttribute('data-theme', 'nordLight')
+    theme.value = 'nordLight'
   } else {
-    localStorage.setItem('theme', 'nordDark');
-    ele.setAttribute('data-theme', 'nordDark');
-    theme.value = 'nordDark';
+    localStorage.setItem('theme', 'nordDark')
+    ele.setAttribute('data-theme', 'nordDark')
+    theme.value = 'nordDark'
   }
 }
 
@@ -23,71 +23,71 @@ function initThemeCheck(
 ) {
   if (prefersModeDark.matches) {
     if (localTheme == 'nordDark') {
-      localStorage.setItem('theme', 'nordDark');
-      ele.setAttribute('data-theme', 'nordDark');
-      theme.value = 'nordDark';
+      localStorage.setItem('theme', 'nordDark')
+      ele.setAttribute('data-theme', 'nordDark')
+      theme.value = 'nordDark'
     } else if (localTheme == 'nordLight') {
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     } else {
-      localStorage.setItem('theme', 'nordDark');
-      ele.setAttribute('data-theme', 'nordDark');
-      theme.value = 'nordDark';
+      localStorage.setItem('theme', 'nordDark')
+      ele.setAttribute('data-theme', 'nordDark')
+      theme.value = 'nordDark'
     }
   } else {
     if (localTheme == 'nordDark') {
-      ele.setAttribute('data-theme', 'nordDark');
-      theme.value = 'nordDark';
+      ele.setAttribute('data-theme', 'nordDark')
+      theme.value = 'nordDark'
     } else if (localTheme == 'nordLight') {
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     } else {
-      localStorage.setItem('theme', 'nordLight');
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      localStorage.setItem('theme', 'nordLight')
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     }
   }
 }
 
 onMounted(() => {
-  const ele = document.querySelector('html') as HTMLHtmlElement;
-  const prefersModeDark = window.matchMedia('(prefers-color-scheme: dark)');
-  const localTheme: string | null = localStorage.getItem('theme');
+  const ele = document.querySelector('html') as HTMLHtmlElement
+  const prefersModeDark = window.matchMedia('(prefers-color-scheme: dark)')
+  const localTheme: string | null = localStorage.getItem('theme')
 
-  initThemeCheck(ele, prefersModeDark, localTheme);
+  initThemeCheck(ele, prefersModeDark, localTheme)
 
-  loading.value = false;
+  loading.value = false
 
   prefersModeDark.addEventListener('change', () => {
     if (prefersModeDark.matches) {
-      localStorage.setItem('theme', 'nordDark');
-      ele.setAttribute('data-theme', 'nordDark');
-      theme.value = 'nordDark';
+      localStorage.setItem('theme', 'nordDark')
+      ele.setAttribute('data-theme', 'nordDark')
+      theme.value = 'nordDark'
     } else {
-      localStorage.setItem('theme', 'nordLight');
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      localStorage.setItem('theme', 'nordLight')
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     }
-  });
+  })
 
   window.onstorage = () => {
-    const currentLocalTheme = localStorage.getItem('theme');
+    const currentLocalTheme = localStorage.getItem('theme')
 
     if (currentLocalTheme == 'nordDark') {
-      localStorage.setItem('theme', 'nordDark');
-      ele.setAttribute('data-theme', 'nordDark');
-      theme.value = 'nordDark';
+      localStorage.setItem('theme', 'nordDark')
+      ele.setAttribute('data-theme', 'nordDark')
+      theme.value = 'nordDark'
     } else if (currentLocalTheme == 'nordLight') {
-      localStorage.setItem('theme', 'nordLight');
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      localStorage.setItem('theme', 'nordLight')
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     } else {
-      localStorage.setItem('theme', 'nordLight');
-      ele.setAttribute('data-theme', 'nordLight');
-      theme.value = 'nordLight';
+      localStorage.setItem('theme', 'nordLight')
+      ele.setAttribute('data-theme', 'nordLight')
+      theme.value = 'nordLight'
     }
-  };
-});
+  }
+})
 </script>
 
 <template>

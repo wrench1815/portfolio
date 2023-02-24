@@ -1,8 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const routeList = useRouteList()
+</script>
 
 <template>
   <div
-    class="w-full navbar bg-base-100 sticky top-0 z-50 md:backdrop-blur-md md:bg-base-100/70"
+    class="w-full navbar bg-base-100 sticky top-0 z-50 h-16 md:backdrop-blur-md md:bg-base-100/70"
   >
     <!-- Brand -->
     <div class="flex-1">
@@ -13,27 +15,10 @@
 
     <div class="flex-1 hidden lg:block">
       <ul class="menu menu-horizontal menu-compact gap-1 p-1">
-        <!-- Navbar menu content here -->
-
-        <!-- Home -->
-        <li>
-          <NuxtLink to="/" class="no-underline" active-class="active"
-            >Home</NuxtLink
-          >
-        </li>
-
-        <!-- About -->
-        <li>
-          <NuxtLink to="/about" class="no-underline" active-class="active"
-            >About</NuxtLink
-          >
-        </li>
-
-        <!-- Project -->
-        <li>
-          <NuxtLink to="/project" class="no-underline" active-class="active"
-            >Project</NuxtLink
-          >
+        <li v-for="item in routeList">
+          <NuxtLink :to="item.to" class="no-underline" active-class="active">{{
+            item.name
+          }}</NuxtLink>
         </li>
       </ul>
     </div>

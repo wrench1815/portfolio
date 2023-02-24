@@ -1,0 +1,28 @@
+{
+  "job_title": "Frontend Developer Intern",
+  "description": "Work on B2C Edu Product that provides a Learning platform. My work revolves around Frotend, using VueJS and Nuxt to develop Front facing Elements of the application with Tailwind CSS.",
+  "technology": [
+    {
+      "name": "Vue JS",
+      "link": "https://vuejs.org"
+    },
+    {
+      "name": "Nuxt",
+      "link": "https://nuxt.com"
+    },
+    {
+      "name": "Tailwind CSS",
+      "link": "https://tailwindcss.com"
+    },
+    {
+      "name": "Tailwind UI",
+      "link": "https://tailwindui.com"
+    }
+  ],
+  "employer": "Toplearnr Technologies Inc",
+  "employer_website": "https://www.toplearnr.com",
+  "employer_address": "Vancouver, British Columbia, Canada",
+  "job_type": "Internship",
+  "start_date": "6 December 2022",
+  "end_date": "Current"
+}

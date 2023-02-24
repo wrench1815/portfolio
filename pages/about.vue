@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const myselfImage = ref(
   'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg'
-);
+)
 
 useHead({
   title: 'About',
@@ -52,7 +52,7 @@ useHead({
         'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg',
     },
   ],
-});
+})
 </script>
 
 <template>

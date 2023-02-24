@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { ProjectsDataTypes } from '../../types/ProjectData';
+import { IProjects } from '../../types/Project'
 
 const props = defineProps<{
-  projects: [ProjectsDataTypes];
-}>();
+  projects: [IProjects]
+}>()
 
 function setRandomBtnColor() {
   const btnColors = [
@@ -16,8 +16,8 @@ function setRandomBtnColor() {
     'btn-warning',
     'btn-error',
     'btn-base-100',
-  ];
-  return btnColors[Math.floor(Math.random() * btnColors.length)];
+  ]
+  return btnColors[Math.floor(Math.random() * btnColors.length)]
 }
 </script>
 
@@ -72,7 +72,7 @@ function setRandomBtnColor() {
 
             <a v-if="item.live.length" :href="item.live" target="_blank">
               <v-icon
-                name="ri-external-link-line"
+                name="oi-link-external"
                 scale="1.2"
                 class="hover:text-primary"
               />
