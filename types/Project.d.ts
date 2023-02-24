@@ -1,12 +1,12 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
-export interface TechnologyTypes {
+export interface ITechnology {
   name: string
   link: string
 }
 
-export interface ProjectsDataTypes extends ParsedContent {
-  technology: TechnologyTypes[]
+export interface IProjects extends ParsedContent {
+  technology: ITechnology[]
   github: string
   live: string
 }

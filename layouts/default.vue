@@ -24,7 +24,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="prose max-w-full prose-img:m-0 prose-p:m-0 prose-headings:mt-2 prose-headings:mb-2"
+    class="prose max-w-full prose-img:m-0 prose-p:m-0 prose-headings:mt-2 prose-headings:mb-2 prose-a:no-underline"
   >
     <div class="drawer drawer-end h-screen">
       <input
