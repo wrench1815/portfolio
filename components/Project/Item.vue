@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ProjectsDataTypes } from '../../types/ProjectData'
+import { IProjects } from '../../types/Project'
 
 const props = defineProps<{
-  projects: [ProjectsDataTypes]
+  projects: [IProjects]
 }>()
 
 function setRandomBtnColor() {
@@ -72,7 +72,7 @@ function setRandomBtnColor() {
 
             <a v-if="item.live.length" :href="item.live" target="_blank">
               <v-icon
-                name="ri-external-link-line"
+                name="oi-link-external"
                 scale="1.2"
                 class="hover:text-primary"
               />
