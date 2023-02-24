@@ -7,3 +7,55 @@
 html {
   --vh: calc(100vh / 100);
 }
+
+@layer base {
+  * {
+    @apply selection:!bg-primary selection:!text-primary-content;
+  }
+
+  a {
+    @apply link-slide-out-anim no-underline;
+  }
+}
+
+@layer utilities {
+  .link-slide-out-anim {
+    @apply inline-block relative after:content-[''] after:absolute after:w-full after:transform after:scale-x-0 after:h-[0.125rem] after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .link-slide-out-anim-primary {
+    @apply link-slide-out-anim text-primary after:bg-primary;
+  }
+
+  .link-slide-out-anim-secondary {
+    @apply link-slide-out-anim text-secondary after:bg-secondary;
+  }
+
+  .link-slide-out-anim-accent {
+    @apply link-slide-out-anim text-accent after:bg-accent;
+  }
+
+  .link-slide-out-anim-neutral {
+    @apply link-slide-out-anim text-neutral after:bg-neutral;
+  }
+
+  .link-slide-out-anim-base-100 {
+    @apply link-slide-out-anim text-base-100 after:bg-base-100;
+  }
+
+  .link-slide-out-anim-info {
+    @apply link-slide-out-anim text-info after:bg-info;
+  }
+
+  .link-slide-out-anim-success {
+    @apply link-slide-out-anim text-success after:bg-success;
+  }
+
+  .link-slide-out-anim-warning {
+    @apply link-slide-out-anim text-warning after:bg-warning;
+  }
+
+  .link-slide-out-anim-error {
+    @apply link-slide-out-anim text-error after:bg-error;
+  }
+}
