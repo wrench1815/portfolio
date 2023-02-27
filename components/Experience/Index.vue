@@ -7,10 +7,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <main class="grid gap-4 grid-cols-1 md:grid-cols-2">
-    <div v-for="item in props.experiences">
+  <main class="relative border-l-2 border-primary">
+    <template v-for="item in props.experiences">
       <ExperienceItem :experience="item" />
-    </div>
+    </template>
   </main>
 </template>
 
