@@ -10,7 +10,7 @@ html {
 
 @layer base {
   * {
-    @apply selection:!bg-primary selection:!text-primary-content;
+    @apply selection:!bg-neutral selection:!text-neutral-content;
   }
 
   a {
@@ -31,20 +31,20 @@ html {
   }
 
   *::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-2xl;
+    @apply bg-neutral rounded-2xl;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary;
+    @apply bg-neutral;
   }
 
   *::-webkit-scrollbar-thumb:active {
-    @apply bg-primary;
+    @apply bg-neutral;
   }
 
   * {
     scrollbar-gutter: unset;
-    scrollbar-color: hsl(var(--p)) transparent;
+    scrollbar-color: hsl(var(--n)) transparent;
   }
 }
 
@@ -53,8 +53,8 @@ html {
     @apply inline-block relative after:content-[''] after:absolute after:w-full after:transform after:scale-x-0 after:h-[0.125rem] after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 
-  .link-slide-out-anim-primary {
-    @apply link-slide-out-anim text-primary after:bg-primary;
+  .link-slide-out-anim-neutral {
+    @apply link-slide-out-anim text-neutral after:bg-neutral;
   }
 
   .link-slide-out-anim-secondary {
