@@ -42,7 +42,7 @@ function setRandomBtnColor() {
             <dd>{{ props.experience.job_type }}</dd>
           </div>
           <div>
-            <dt class="font-medium">Employer</dt>
+            <dt class="font-medium text-secondary">Employer</dt>
             <dd>{{ props.experience.employer }}</dd>
           </div>
           <div>
