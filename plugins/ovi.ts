@@ -13,6 +13,7 @@ import {
   OiLinkExternal,
   RiStopFill,
   BiBriefcase,
+  RiDownloadCloud2Line,
 } from 'oh-vue-icons/icons'
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -30,7 +31,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     MdLogodev,
     OiLinkExternal,
     RiStopFill,
-    BiBriefcase
+    BiBriefcase,
+    RiDownloadCloud2Line
   )
 
   // register Component

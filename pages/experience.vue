@@ -10,6 +10,7 @@ const query: QueryBuilderParams = {
 <template>
   <div class="container mx-auto p-4">
     <h1 class="pb-4">Work Experience</h1>
+    <Resume />
 
     <ContentList :query="query">
       <template v-slot="{ list }">
