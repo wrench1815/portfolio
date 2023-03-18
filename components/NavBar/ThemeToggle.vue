@@ -9,10 +9,30 @@ function swapTheme() {
     localStorage.setItem('theme', 'nordLight')
     ele.setAttribute('data-theme', 'nordLight')
     theme.value = 'nordLight'
+    useHead({
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon/hardeepkumar_favicon_light.png',
+          key: 'site-favicon',
+        },
+      ],
+    })
   } else {
     localStorage.setItem('theme', 'nordDark')
     ele.setAttribute('data-theme', 'nordDark')
     theme.value = 'nordDark'
+    useHead({
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon/hardeepkumar_favicon_dark.png',
+          key: 'site-favicon',
+        },
+      ],
+    })
   }
 }
 
@@ -26,25 +46,85 @@ function initThemeCheck(
       localStorage.setItem('theme', 'nordDark')
       ele.setAttribute('data-theme', 'nordDark')
       theme.value = 'nordDark'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_dark.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else if (localTheme == 'nordLight') {
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else {
       localStorage.setItem('theme', 'nordDark')
       ele.setAttribute('data-theme', 'nordDark')
       theme.value = 'nordDark'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_dark.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     }
   } else {
     if (localTheme == 'nordDark') {
       ele.setAttribute('data-theme', 'nordDark')
       theme.value = 'nordDark'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_dark.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else if (localTheme == 'nordLight') {
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else {
       localStorage.setItem('theme', 'nordLight')
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     }
   }
 }
@@ -63,10 +143,30 @@ onMounted(() => {
       localStorage.setItem('theme', 'nordDark')
       ele.setAttribute('data-theme', 'nordDark')
       theme.value = 'nordDark'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_dark.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else {
       localStorage.setItem('theme', 'nordLight')
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     }
   })
 
@@ -77,14 +177,44 @@ onMounted(() => {
       localStorage.setItem('theme', 'nordDark')
       ele.setAttribute('data-theme', 'nordDark')
       theme.value = 'nordDark'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_dark.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else if (currentLocalTheme == 'nordLight') {
       localStorage.setItem('theme', 'nordLight')
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     } else {
       localStorage.setItem('theme', 'nordLight')
       ele.setAttribute('data-theme', 'nordLight')
       theme.value = 'nordLight'
+      useHead({
+        link: [
+          {
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon/hardeepkumar_favicon_light.png',
+            key: 'site-favicon',
+          },
+        ],
+      })
     }
   }
 })

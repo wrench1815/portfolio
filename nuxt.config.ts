@@ -3,6 +3,14 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [{ name: 'copyright', content: 'Hardeep Kumar' }],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/favicon/hardeepkumar_favicon_light.png',
+          key: 'site-favicon',
+        },
+      ],
     },
   },
 
