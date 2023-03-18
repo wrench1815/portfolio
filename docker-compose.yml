@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  nuxt:
+    image: wrench1815/portfolio:latest
+    container_name: portfolio
+    build:
+      context: .
+      dockerfile: ./Nuxt.Dockerfile
+    command: yarn dev
+    volumes:
+    - .:/usr/src/app
+    - /usr/src/app/node_modules
+    ports:
+      - 3001:3001
+      - 24678:24678
