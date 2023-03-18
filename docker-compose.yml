@@ -4,6 +4,8 @@ services:
   nuxt:
     image: wrench1815/portfolio:latest
     container_name: portfolio
+    depends_on:
+      - postgres
     build:
       context: .
       dockerfile: ./Nuxt.Dockerfile
@@ -14,3 +16,17 @@ services:
     ports:
       - 3001:3001
       - 24678:24678
+
+  postgres:
+    image: postgres:15.2-alpine3.17
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_DB=${PG_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  postgres_data:
