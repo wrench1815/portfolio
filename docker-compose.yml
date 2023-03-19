@@ -9,17 +9,23 @@ services:
     build:
       context: .
       dockerfile: ./Nuxt.Dockerfile
-    command: yarn dev
+    command: top
+    networks:
+      - inter_network
     volumes:
     - .:/usr/src/app
     - /usr/src/app/node_modules
     ports:
       - 3001:3001
       - 24678:24678
+      - 5555:5555
 
   postgres:
     image: postgres:15.2-alpine3.17
     container_name: postgres
+    hostname: postgres
+    networks:
+      - inter_network
     environment:
       - POSTGRES_USER=${PG_USER}
       - POSTGRES_PASSWORD=${PG_PASSWORD}
@@ -28,5 +34,9 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+
 volumes:
   postgres_data:
+
+networks:
+  inter_network:
