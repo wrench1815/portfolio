@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("NUXT_PRISMA_DATABASE_URL")
+}
+
+// Work Experience
+
+model WorkExperience {
+  id           Int          @id @default(autoincrement())
+  name         String?
+  type         String?
+  employer     String?
+  address      String?
+  website      String?
+  start_time   DateTime
+  end_time     DateTime
+  technologies Technology[]
+  date_added   DateTime     @default(now())
+}
+
+model Technology {
+  id               Int              @id @default(autoincrement())
+  name             String?
+  website          String?
+  date_added       DateTime         @default(now())
+  work_experiences WorkExperience[]
+}
