@@ -4,7 +4,7 @@ const routeList = useRouteList()
 
 <template>
   <div
-    class="w-full navbar bg-base-100 sticky top-0 z-50 h-16 md:backdrop-blur-md md:bg-base-100/70"
+    class="w-full navbar sticky top-0 z-50 h-16 bg-[radial-gradient(transparent_0.06rem,_hsl(var(--b1))_0.06rem)] bg-[length:0.3rem_0.3rem] nav-backdrop"
   >
     <!-- Brand -->
     <div class="flex-1">
@@ -37,4 +37,14 @@ const routeList = useRouteList()
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.nav-backdrop {
+  backdrop-filter: saturate(50%);
+}
+
+@media (min-width: 768px) {
+  .nav-backdrop {
+    backdrop-filter: saturate(50%) blur(4px);
+  }
+}
+</style>
