@@ -24,7 +24,13 @@ export default defineNuxtConfig({
   tailwindcss: {},
 
   // @nuxt/content: https://content.nuxtjs.org/api/configuration
-  content: {},
+  content: {
+    watch: {
+      ws: {
+        hostname: process.env.HOSTNAME,
+      },
+    },
+  },
 
   // @nuxt/image-edge: https://v1.image.nuxtjs.org/get-started
   image: {
