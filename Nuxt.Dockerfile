@@ -5,6 +5,7 @@ WORKDIR /usr/src/app
 RUN apk update && apk upgrade
 RUN apk add git
 
+RUN npm install --global npm@latest
 RUN npm install --global nuxi@latest
 COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install
