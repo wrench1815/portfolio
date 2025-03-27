@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite'
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   app: {
@@ -18,19 +20,19 @@ export default defineNuxtConfig({
     transpile: ['oh-vue-icons'],
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image-edge'],
+  modules: ['@nuxt/image', '@nuxt/content'],
 
   // tailwind
   tailwindcss: {},
 
   // @nuxt/content: https://content.nuxtjs.org/api/configuration
-  content: {
-    watch: {
-      ws: {
-        hostname: process.env.HOSTNAME,
-      },
-    },
-  },
+  // content: {
+  //   watch: {
+  //     ws: {
+  //       hostname: process.env.HOSTNAME,
+  //     },
+  //   },
+  // },
 
   // @nuxt/image-edge: https://v1.image.nuxtjs.org/get-started
   image: {
@@ -40,8 +42,11 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ['oh-vue-icons/icons'],
     },
   },
+
+  compatibilityDate: '2025-03-24',
 })
