@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { IExperience } from '../../types/Experience'
+// import { type IExperience } from '~/types/Experience'
 
 const props = defineProps<{
-  experience: IExperience
+  experience: any
 }>()
 
 function setRandomBtnColor() {

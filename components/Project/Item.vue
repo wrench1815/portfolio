@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { IProjects } from '../../types/Project'
+// import { IProjects } from '../../types/Project'
 
 const props = defineProps<{
-  projects: [IProjects]
+  projects: [any]
 }>()
 
 function setRandomBtnColor() {

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { RiSunFill, RiMoonFill } from '@remixicon/vue'
 const theme = ref('nordLight')
 const loading = ref(true)
 
@@ -236,10 +237,10 @@ onMounted(() => {
     v-else
   >
     <!-- sun icon -->
-    <v-icon name="ri-sun-fill" class="swap-on" scale="1.2" />
+    <RiSunFill name="ri-sun-fill" class="swap-on" scale="1.2" />
 
     <!-- moon icon -->
-    <v-icon name="ri-moon-fill" class="swap-off" scale="1.2" />
+    <RiMoonFill name="ri-moon-fill" class="swap-off" scale="1.2" />
   </div>
 </template>
 

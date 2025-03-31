@@ -16,14 +16,7 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    transpile: ['oh-vue-icons'],
-  },
-
   modules: ['@nuxt/image', '@nuxt/content'],
-
-  // tailwind
-  tailwindcss: {},
 
   // @nuxt/content: https://content.nuxtjs.org/api/configuration
   // content: {
@@ -41,11 +34,10 @@ export default defineNuxtConfig({
     },
   },
 
+  css: ['./assets/css/tailwind.css'],
+
   vite: {
     plugins: [tailwindcss()],
-    optimizeDeps: {
-      exclude: ['oh-vue-icons/icons'],
-    },
   },
 
   compatibilityDate: '2025-03-24',
