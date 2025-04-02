@@ -1,8 +1,9 @@
 <script lang="ts" setup>
 // import { IProjects } from '../../types/Project'
+import type { ProjectCollectionItem } from '@nuxt/content'
 
 const props = defineProps<{
-  projects: [any]
+  projects: ProjectCollectionItem[]
 }>()
 
 function setRandomBtnColor() {
@@ -27,9 +28,8 @@ function setRandomBtnColor() {
     <div
       class="absolute bg-primary w-0.5 top-0 bottom-0 left-0 right-0 m-auto"
     ></div>
-
     <!-- card -->
-    <template v-for="item in props.projects" :key="item._path">
+    <template v-for="item in props.projects" :key="item.id">
       <div class="card bg-base-100 shadow-xl border border-primary">
         <!-- rounded circle on top -->
         <div
@@ -70,7 +70,7 @@ function setRandomBtnColor() {
               />
             </a>
 
-            <a v-if="item.live.length" :href="item.live" target="_blank">
+            <a v-if="item.live?.length" :href="item.live" target="_blank">
               <v-icon
                 name="oi-link-external"
                 scale="1.2"

@@ -18,16 +18,7 @@ export default defineNuxtConfig({
 
   modules: ['@nuxt/image', '@nuxt/content'],
 
-  // @nuxt/content: https://content.nuxtjs.org/api/configuration
-  // content: {
-  //   watch: {
-  //     ws: {
-  //       hostname: process.env.HOSTNAME,
-  //     },
-  //   },
-  // },
-
-  // @nuxt/image-edge: https://v1.image.nuxtjs.org/get-started
+  // @nuxt/image: https://v1.image.nuxt.com/get-started/installation
   image: {
     cloudinary: {
       baseURL: `https://res.cloudinary.com/${process.env.NUXT_CLOUDINARY_CLOUD_NAME}/image/upload/`,

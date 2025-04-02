@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import type { ProjectCollectionItem } from '@nuxt/content'
 
-const query: QueryBuilderParams = {
-  path: '/project/',
-  sort: [{ _id: -1, $numeric: true }],
-}
+// fetch and sort
+const { data: projects } = await useAsyncData<ProjectCollectionItem[]>(
+  'project',
+  () => queryCollection('project').order('id', 'DESC').all()
+)
 
 useHead({
   title: 'Project',
@@ -58,15 +59,7 @@ useHead({
 <template>
   <main class="container mx-auto px-4">
     <section class="prose-headings:mt-2 prose-headings:mb-2">
-      <ContentList :query="query">
-        <template v-slot="{ list }">
-          <ProjectItem :projects="list" />
-        </template>
-
-        <template #not-found>
-          <p>No projects found.</p>
-        </template>
-      </ContentList>
+      <ProjectItem v-if="projects?.length" :projects="projects" />
     </section>
   </main>
 </template>
