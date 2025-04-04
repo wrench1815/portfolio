@@ -1,10 +1,7 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-
-const query: QueryBuilderParams = {
-  path: '/experience/',
-  sort: [{ _id: -1, $numeric: true }],
-}
+const { data: experiences } = await useAsyncData('experiences', () =>
+  queryCollection('experience').order('id', 'DESC').all()
+)
 </script>
 
 <template>
@@ -12,15 +9,11 @@ const query: QueryBuilderParams = {
     <h1 class="pb-4">Work Experience</h1>
     <Resume />
 
-    <ContentList :query="query">
-      <template v-slot="{ list }">
-        <Experience :experiences="list" />
-      </template>
+    <Experience :experiences="experiences" />
 
-      <template #not-found>
-        <p>No projects found.</p>
-      </template>
-    </ContentList>
+    <template v-if="experiences?.length === 0">
+      <p>No projects found.</p>
+    </template>
   </div>
 </template>
 

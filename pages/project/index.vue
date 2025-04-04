@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { ProjectCollectionItem } from '@nuxt/content'
 
-// fetch and sort
 const { data: projects } = await useAsyncData<ProjectCollectionItem[]>(
   'project',
   () => queryCollection('project').order('id', 'DESC').all()
