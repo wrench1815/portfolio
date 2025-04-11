@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { RiMenu2Fill } from '@remixicon/vue'
 const routeList = useRouteList()
 </script>
 
@@ -29,10 +30,10 @@ const routeList = useRouteList()
     </div>
     <!-- end:Theme Toggle -->
 
-    <div class="flex-none lg:hidden">
-      <label for="mainDrawer" class="btn btn-primary"
-        ><v-icon name="ri-menu-2-fill" class="text-base-100"
-      /></label>
+    <div class="flex-none ml-2 lg:hidden">
+      <label for="mainDrawer" class="btn btn-primary btn-circle">
+        <RiMenu2Fill class="text-base-100" />
+      </label>
     </div>
   </div>
 </template>

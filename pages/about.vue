@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import WavingHand from '~/components/SVG/WavingHand.vue'
+
 const myselfImage = ref(
   'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg'
 )
@@ -60,12 +62,7 @@ useHead({
     <section class="prose max-w-full">
       <div class="flex gap-2">
         <h1 class="mb-12">Hii!!!</h1>
-        <v-icon
-          name="md-wavinghand"
-          scale="2.5"
-          animation="float"
-          class="text-primary"
-        />
+        <WavingHand class="hand-rotate" />
       </div>
       <div
         class="not-prose flex flex-col justify-center items-center relative gap-2"
@@ -225,4 +222,28 @@ useHead({
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+@reference "~/assets/css/tailwind.css";
+
+@keyframes hand-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+.hand-rotate {
+  @apply h-10 w-10 fill-primary inline-block;
+  animation: hand-wave 1.7s linear infinite;
+  transform-origin: bottom center;
+}
+</style>

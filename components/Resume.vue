@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { RiDownloadCloud2Line } from '@remixicon/vue'
+</script>
 
 <template>
   <div class="flex justify-center md:justify-end">
@@ -8,7 +10,7 @@
       download="hardeep_kumar_resume_sfj5og"
       target="_blank"
     >
-      <v-icon name="ri-download-cloud-2-line" />
+      <RiDownloadCloud2Line />
       <p class="pt-1">Download Resume</p>
     </a>
   </div>

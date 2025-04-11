@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { RiGithubFill, RiExternalLinkFill } from '@remixicon/vue'
 // import { IProjects } from '../../types/Project'
 import type { ProjectCollectionItem } from '@nuxt/content'
 
@@ -63,7 +64,7 @@ function setRandomBtnColor() {
               :href="`https://github.com/${item.github}`"
               target="_blank"
             >
-              <v-icon
+              <RiGithubFill
                 name="ri-github-fill"
                 scale="1.2"
                 class="hover:text-primary"
@@ -71,7 +72,7 @@ function setRandomBtnColor() {
             </a>
 
             <a v-if="item.live?.length" :href="item.live" target="_blank">
-              <v-icon
+              <RiExternalLinkFill
                 name="oi-link-external"
                 scale="1.2"
                 class="hover:text-primary"
