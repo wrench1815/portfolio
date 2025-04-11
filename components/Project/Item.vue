@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import { IProjects } from '../../types/Project'
+import { RiGithubFill, RiExternalLinkFill } from '@remixicon/vue'
+// import { IProjects } from '../../types/Project'
+import type { ProjectCollectionItem } from '@nuxt/content'
 
 const props = defineProps<{
-  projects: [IProjects]
+  projects: ProjectCollectionItem[]
 }>()
 
 function setRandomBtnColor() {
@@ -27,9 +29,8 @@ function setRandomBtnColor() {
     <div
       class="absolute bg-primary w-0.5 top-0 bottom-0 left-0 right-0 m-auto"
     ></div>
-
     <!-- card -->
-    <template v-for="item in props.projects" :key="item._path">
+    <template v-for="item in props.projects" :key="item.id">
       <div class="card bg-base-100 shadow-xl border border-primary">
         <!-- rounded circle on top -->
         <div
@@ -63,15 +64,15 @@ function setRandomBtnColor() {
               :href="`https://github.com/${item.github}`"
               target="_blank"
             >
-              <v-icon
+              <RiGithubFill
                 name="ri-github-fill"
                 scale="1.2"
                 class="hover:text-primary"
               />
             </a>
 
-            <a v-if="item.live.length" :href="item.live" target="_blank">
-              <v-icon
+            <a v-if="item.live?.length" :href="item.live" target="_blank">
+              <RiExternalLinkFill
                 name="oi-link-external"
                 scale="1.2"
                 class="hover:text-primary"

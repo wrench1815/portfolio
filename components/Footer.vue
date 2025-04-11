@@ -1,4 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { RiTwitterXFill, RiGithubFill } from '@remixicon/vue'
+import DevDotTo from './SVG/DevDotTo.vue'
+</script>
 
 <template>
   <footer class="footer items-center p-4 bg-neutral text-neutral-content">
@@ -15,21 +18,21 @@
         href="https://twitter.com/wrench1815"
         target="_blank"
       >
-        <v-icon name="ri-twitter-fill" scale="1.2" />
+        <RiTwitterXFill />
       </a>
       <a
         class="text-base-100"
         href="https://dev.to/wrench1815/"
         target="_blank"
       >
-        <v-icon name="si-devdotto" scale="1.5" />
+        <DevDotTo class="w-6 h-6" />
       </a>
       <a
         class="text-base-100"
         href="https://github.com/wrench1815/"
         target="_blank"
       >
-        <v-icon name="ri-github-fill" scale="1.2" />
+        <RiGithubFill name="ri-github-fill" />
       </a>
     </div>
   </footer>

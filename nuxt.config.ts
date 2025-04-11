@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite'
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   app: {
@@ -14,34 +16,20 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    transpile: ['oh-vue-icons'],
-  },
+  modules: ['@nuxt/image', '@nuxt/content'],
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/image-edge'],
-
-  // tailwind
-  tailwindcss: {},
-
-  // @nuxt/content: https://content.nuxtjs.org/api/configuration
-  content: {
-    watch: {
-      ws: {
-        hostname: process.env.HOSTNAME,
-      },
-    },
-  },
-
-  // @nuxt/image-edge: https://v1.image.nuxtjs.org/get-started
+  // @nuxt/image: https://v1.image.nuxt.com/get-started/installation
   image: {
     cloudinary: {
       baseURL: `https://res.cloudinary.com/${process.env.NUXT_CLOUDINARY_CLOUD_NAME}/image/upload/`,
     },
   },
 
+  css: ['./assets/css/tailwind.css'],
+
   vite: {
-    optimizeDeps: {
-      exclude: ['oh-vue-icons/icons'],
-    },
+    plugins: [tailwindcss()],
   },
+
+  compatibilityDate: '2025-03-24',
 })

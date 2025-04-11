@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { IExperience } from '../../types/Experience'
+import { RiExternalLinkLine } from '@remixicon/vue'
+// import { type IExperience } from '~/types/Experience'
 
 const props = defineProps<{
-  experience: IExperience
+  experience: any
 }>()
 
 function setRandomBtnColor() {
@@ -52,10 +53,12 @@ function setRandomBtnColor() {
           <div>
             <dt class="font-medium text-secondary">Website</dt>
             <dd>
-              <a :href="props.experience.employer_website" target="_blank">{{
-                props.experience.employer_website
-              }}</a>
-              <v-icon name="oi-link-external" />
+              <div class="flex items-center gap-1">
+                <a :href="props.experience.employer_website" target="_blank"
+                  >{{ props.experience.employer_website }}
+                </a>
+                <RiExternalLinkLine class="h-4 w-4 -mt-1" />
+              </div>
             </dd>
           </div>
           <div>
