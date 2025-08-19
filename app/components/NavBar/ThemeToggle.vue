@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RiSunFill, RiMoonFill } from '@remixicon/vue'
+import { RiSunLine, RiMoonLine } from '@remixicon/vue'
 const theme = ref('nordLight')
 const loading = ref(true)
 
@@ -223,12 +223,12 @@ onMounted(() => {
 
 <template>
   <div
-    class="btn btn-circle bg-transparent border-none loading disabled text-primary"
+    class="btn btn-circle bg-base-100 border-none loading disabled text-nord-blue"
     v-if="loading"
   ></div>
 
   <div
-    class="btn-circle swap swap-rotate text-primary transition-all duration-300 ease-in-out"
+    class="btn btn-circle bg-base-100 swap swap-rotate"
     :class="{
       'swap-active': theme == 'nordDark',
       '': theme == 'nordLight',
@@ -237,10 +237,10 @@ onMounted(() => {
     v-else
   >
     <!-- sun icon -->
-    <RiSunFill name="ri-sun-fill" class="swap-on" scale="1.2" />
+    <RiSunLine class="swap-on" size="20" />
 
     <!-- moon icon -->
-    <RiMoonFill name="ri-moon-fill" class="swap-off" scale="1.2" />
+    <RiMoonLine class="swap-off" size="20" />
   </div>
 </template>
 

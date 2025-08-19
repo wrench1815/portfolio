@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "HOSTNAME=$(hostname -i) && nuxt dev -p 3001",
-    "dev:win": "set HOSTNAME=$(hostname -i) && nuxt dev -p 3001",
+    "dev": "nuxt dev -p 3001",
+    "dev:win": "nuxt dev -p 3001",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
