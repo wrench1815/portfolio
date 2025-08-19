@@ -10,16 +10,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@nuxt/content": "^3.6.3",
-    "@nuxt/image": "1.11.0",
-    "@remixicon/vue": "^4.6.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.12",
-    "@types/node": "^22.17.2",
-    "daisyui": "^5.0.50",
-    "nuxt": "^4.0.3",
-    "tailwindcss": "^4.1.12",
-    "typed.js": "^2.1.0"
+    "@types/node": "^22.17.2"
   },
   "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "pnpm": {
@@ -33,6 +24,17 @@
     ]
   },
   "dependencies": {
-    "better-sqlite3": "^12.2.0"
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/image": "1.11.0",
+    "@remixicon/vue": "^4.6.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.12",
+    "daisyui": "^5.0.50",
+    "nuxt": "^4.0.3",
+    "tailwindcss": "^4.1.12",
+    "typed.js": "^2.1.0",
+    "better-sqlite3": "^12.2.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
   }
 }
