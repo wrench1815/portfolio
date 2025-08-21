@@ -117,6 +117,26 @@ layer(base);
   @apply link-slide-out-anim text-neutral after:bg-neutral;
 }
 
+@utility animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@utility animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+@utility animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@utility animate-slide-in-left {
+  animation: slideInFromLeft 1.2s ease-out;
+}
+
 @utility link-slide-out-anim-secondary {
   @apply link-slide-out-anim text-secondary after:bg-secondary;
 }
@@ -242,26 +262,6 @@ layer(base);
     }
   }
 
-  .animate-fade-in {
-    animation: fade-in 1s ease-out;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-
-  .animate-slide-in-left {
-    animation: slideInFromLeft 1.2s ease-out;
-  }
-
   .scroll-indicator {
     animation: float 2s ease-in-out infinite;
   }
@@ -305,12 +305,6 @@ layer(base);
 
   .transition-element.open {
     animation: slideInFromLeft 1.2s ease-out;
-  }
-
-  /* Hover effects */
-  .theme-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    transition: all 0.3s ease;
   }
 
   .project-card:hover {
