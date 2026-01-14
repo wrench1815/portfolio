@@ -38,7 +38,7 @@
 </template>
 
 <style scoped>
-@reference "../../assets/css/tailwind.css";
+@reference "../../../assets/css/tailwind.css";
 
 .homeCard {
   @apply p-6 rounded-xl border border-nord-blue/55 hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 ease-in-out animate-slide-up card min-h-48 bg-base-200 flex items-center justify-center;

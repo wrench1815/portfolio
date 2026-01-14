@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import AnimatedBackground from '~/components/AnimatedBackground/AnimatedBackground.vue'
+import HeaderSection from '~/components/Home/Hero/HeaderSection.vue'
+import ThemeSection from '~/components/Home/Theme/ThemeSection.vue'
+
 useHead({
   meta: [
     {
@@ -50,7 +54,20 @@ useHead({
 </script>
 
 <template>
-  <HomeHeader />
+  <div class="relative min-h-screen overflow-x-hidden">
+    <!-- Animated Background -->
+    <AnimatedBackground />
+
+    <div class="relative z-10">
+      <section class="min-h-screen">
+        <HeaderSection />
+      </section>
+
+      <section class="min-h-screen">
+        <ThemeSection />
+      </section>
+    </div>
+  </div>
 </template>
 
 <style scoped></style>

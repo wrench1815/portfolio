@@ -12,7 +12,7 @@ const routeList = useRouteList()
       >
         <label
           for="mainDrawer"
-          class="m-2 h-8 w-8 flex items-center justify-center border border-primary text-primary transition-all duration-300 ease-in-out rounded-full cursor-pointer hover:bg-primary hover:shadow-lg hover:text-base-100"
+          class="m-2 h-8 w-8 flex items-center justify-center border border-primary text-primary rounded-full cursor-pointer hover:bg-primary hover:shadow-lg hover:text-base-100"
         >
           <RiCloseCircleFill />
         </label>

@@ -23,7 +23,7 @@ import CardGrid from './CardGrid.vue'
 
       <!-- Scroll Indicator -->
       <div class="flex flex-col items-center opacity-60 scroll-indicator">
-        <span class="text-sm mb-2">Scroll to explore sections</span>
+        <span class="text-sm mb-2">Scroll to explore</span>
         <RiArrowDownSLine class="w-6 h-6 animate-bounce" />
       </div>
     </div>
