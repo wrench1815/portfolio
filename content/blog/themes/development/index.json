@@ -1,0 +1,7 @@
+{
+  "type": "theme",
+  "slug": "development",
+  "name": "Development",
+  "description": "Web development, APIs, and backend systems",
+  "code": "dev"
+}

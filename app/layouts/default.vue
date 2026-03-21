@@ -11,7 +11,7 @@ watch(
   () => route.fullPath,
   () => {
     drawerToggle.value = false
-  }
+  },
 )
 
 onMounted(() => {
@@ -36,6 +36,8 @@ onMounted(() => {
       <div class="drawer-content flex flex-col">
         <!-- Navbar -->
         <NavBar />
+
+        <CursorFollowRing />
 
         <!-- content -->
         <slot />

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { RiSunFill, RiMoonFill } from '@remixicon/vue'
+import { RiSunLine, RiMoonLine } from '@remixicon/vue'
 const theme = ref('nordLight')
 const loading = ref(true)
 
@@ -40,7 +40,7 @@ function swapTheme() {
 function initThemeCheck(
   ele: HTMLHtmlElement,
   prefersModeDark: MediaQueryList,
-  localTheme: string | null
+  localTheme: string | null,
 ) {
   if (prefersModeDark.matches) {
     if (localTheme == 'nordDark') {
@@ -223,25 +223,27 @@ onMounted(() => {
 
 <template>
   <div
-    class="btn btn-circle bg-transparent border-none loading disabled text-primary"
+    class="btn btn-circle loading border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50"
     v-if="loading"
-  ></div>
+    aria-hidden="true"
+  />
 
-  <div
-    class="btn-circle swap swap-rotate text-primary transition-all duration-300 ease-in-out"
+  <button
+    v-else
+    type="button"
+    class="btn btn-circle swap swap-rotate border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50 !h-8 !w-8"
     :class="{
       'swap-active': theme == 'nordDark',
-      '': theme == 'nordLight',
     }"
+    aria-label="Toggle color theme"
     @click="swapTheme"
-    v-else
   >
     <!-- sun icon -->
-    <RiSunFill name="ri-sun-fill" class="swap-on" scale="1.2" />
+    <RiSunLine class="swap-on" size="20" />
 
     <!-- moon icon -->
-    <RiMoonFill name="ri-moon-fill" class="swap-off" scale="1.2" />
-  </div>
+    <RiMoonLine class="swap-off" size="20" />
+  </button>
 </template>
 
 <style scoped></style>

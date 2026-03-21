@@ -1,0 +1,7 @@
+{
+  "type": "topic",
+  "slug": "ui-patterns",
+  "title": "UI Patterns",
+  "description": "Reusable UI patterns, component design, and frontend architecture for scalable interfaces.",
+  "themeslug": "design"
+}
