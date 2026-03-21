@@ -137,6 +137,10 @@ layer(base);
   animation: slideInFromLeft 1.2s ease-out;
 }
 
+@utility animate-cursor-ring-spin {
+  animation: cursorRingRotate 18s linear infinite;
+}
+
 @utility link-slide-out-anim-secondary {
   @apply link-slide-out-anim text-secondary after:bg-secondary;
 }
@@ -165,6 +169,20 @@ layer(base);
   @apply link-slide-out-anim text-error after:bg-error;
 }
 
+@utility link-no-slide-anim {
+  @apply after:content-none;
+}
+
+/** Horizontal band: same as Tailwind `container` + px-4 (nav, breadcrumb inner, etc.) */
+@utility blog-content-inner {
+  @apply container mx-auto w-full px-4;
+}
+
+/** Themes / theme / topic / post main column */
+@utility blog-content-shell {
+  @apply blog-content-inner py-20;
+}
+
 @layer utilities {
   html {
     --vh: calc(100vh / 100);
@@ -173,7 +191,11 @@ layer(base);
 
 @layer base {
   * {
-    @apply selection:bg-neutral! selection:text-neutral-content!;
+    @apply selection:bg-secondary! selection:text-secondary-content! transition-colors duration-300;
+    /* opacity of elements foreced to 100% on selection */
+    ::selection {
+      opacity: 1 !important;
+    }
   }
 
   a {
@@ -259,6 +281,12 @@ layer(base);
     }
     100% {
       transform: perspective(1000px) rotateY(0deg);
+    }
+  }
+
+  @keyframes cursorRingRotate {
+    to {
+      transform: rotate(360deg);
     }
   }
 

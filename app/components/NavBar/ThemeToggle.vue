@@ -40,7 +40,7 @@ function swapTheme() {
 function initThemeCheck(
   ele: HTMLHtmlElement,
   prefersModeDark: MediaQueryList,
-  localTheme: string | null
+  localTheme: string | null,
 ) {
   if (prefersModeDark.matches) {
     if (localTheme == 'nordDark') {
@@ -223,25 +223,27 @@ onMounted(() => {
 
 <template>
   <div
-    class="btn btn-circle bg-base-100 border-none loading disabled text-nord-blue"
+    class="btn btn-circle loading border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50"
     v-if="loading"
-  ></div>
+    aria-hidden="true"
+  />
 
-  <div
-    class="btn btn-circle bg-base-100 swap swap-rotate"
+  <button
+    v-else
+    type="button"
+    class="btn btn-circle swap swap-rotate border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50 !h-8 !w-8"
     :class="{
       'swap-active': theme == 'nordDark',
-      '': theme == 'nordLight',
     }"
+    aria-label="Toggle color theme"
     @click="swapTheme"
-    v-else
   >
     <!-- sun icon -->
     <RiSunLine class="swap-on" size="20" />
 
     <!-- moon icon -->
     <RiMoonLine class="swap-off" size="20" />
-  </div>
+  </button>
 </template>
 
 <style scoped></style>

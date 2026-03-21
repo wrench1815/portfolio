@@ -1,0 +1,7 @@
+{
+  "type": "topic",
+  "slug": "ci-cd",
+  "title": "CI/CD",
+  "description": "Continuous integration, deployment pipelines, and automation workflows.",
+  "themeslug": "devops"
+}

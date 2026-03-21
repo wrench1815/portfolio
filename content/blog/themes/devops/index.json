@@ -1,0 +1,7 @@
+{
+  "type": "theme",
+  "slug": "devops",
+  "name": "DevOps",
+  "description": "Infrastructure, deployment, and automation",
+  "code": "ops"
+}

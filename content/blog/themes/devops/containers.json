@@ -1,0 +1,7 @@
+{
+  "type": "topic",
+  "slug": "containers",
+  "title": "Containers",
+  "description": "Docker, Kubernetes, and container orchestration for modern deployments.",
+  "themeslug": "devops"
+}

@@ -3,7 +3,8 @@ import { ref } from 'vue'
 
 // Define theme type
 interface Theme {
-  id: string
+  id?: string
+  slug?: string
   name: string
   description: string
   color: string
@@ -47,7 +48,6 @@ const themes = ref<Theme[]>([
   },
 ])
 
-const selectedTheme = ref<string | null>(null)
 const isLoading = ref(false)
 
 const getThemeColorClasses = (color: string) => {
@@ -84,15 +84,7 @@ const getThemeColorClasses = (color: string) => {
   return colorMap[color] ?? defaultColor
 }
 
-const toggleTheme = (themeId: string) => {
-  selectedTheme.value = selectedTheme.value === themeId ? null : themeId
-}
-
-const handleThemeClick = (theme: Theme) => {
-  toggleTheme(theme.id)
-  // Can emit event or trigger navigation here if needed
-  // emit('theme-selected', theme.id)
-}
+const themeToPath = (theme: Theme) => `/${theme.slug ?? theme.id}`
 </script>
 
 <template>
@@ -130,73 +122,74 @@ const handleThemeClick = (theme: Theme) => {
 
         <!-- Theme Cards -->
         <template v-else>
-          <div
+          <NuxtLink
             v-for="theme in themes"
-            :key="theme.id"
-            :class="[
-              'bg-base-200 border-2 p-5 cursor-pointer transition-all duration-300 font-mon relative overflow-hidden group',
-              selectedTheme === theme.id
-                ? 'border-nord-blue shadow-lg shadow-nord-blue/20'
-                : getThemeColorClasses(theme.color)?.border ??
-                  'border-nord-blue/30',
-              'hover:border-opacity-70 hover:shadow-xl',
-            ]"
-            style="border-style: dashed"
-            @click="handleThemeClick(theme)"
+            :key="theme.slug ?? theme.id"
+            :to="themeToPath(theme)"
+            class="link-no-slide-anim block"
           >
-            <!-- Terminal prompt indicator -->
             <div
               :class="[
-                'text-xs mb-3 flex items-center gap-2',
-                getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
-              ]"
-            >
-              <span class="opacity-60">$</span>
-              <span class="font-bold">{{ theme.code }}</span>
-            </div>
-
-            <!-- Theme Name with brackets -->
-            <h3
-              :class="[
-                'text-xl font-bold mb-3 flex items-center gap-2',
-                getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
-              ]"
-            >
-              <span class="opacity-40">&lt;</span>
-              <span>{{ theme.name.toUpperCase() }}</span>
-              <span class="opacity-40">/&gt;</span>
-            </h3>
-
-            <!-- Description -->
-            <p class="text-sm opacity-70 mb-4 leading-relaxed">
-              // {{ theme.description }}
-            </p>
-
-            <!-- Count Badge with terminal style -->
-            <div
-              :class="[
-                'inline-flex items-center gap-2 px-3 py-1.5 border text-xs font-bold',
-                getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
+                'theme-card bg-base-200 border-2 p-5 cursor-pointer transition-all duration-300 font-mon relative overflow-hidden group h-full',
                 getThemeColorClasses(theme.color)?.border ??
                   'border-nord-blue/30',
+                'hover:border-opacity-70 hover:shadow-xl',
               ]"
-              style="border-style: solid"
             >
-              <span class="opacity-60">[</span>
-              <span>{{ theme.count }}</span>
-              <span class="opacity-60">]</span>
-            </div>
+              <!-- Terminal prompt indicator -->
+              <div
+                :class="[
+                  'text-xs mb-3 flex items-center gap-2',
+                  getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
+                ]"
+              >
+                <span class="opacity-60">$</span>
+                <span class="font-bold">{{ theme.code }}</span>
+              </div>
 
-            <!-- Decorative code elements -->
-            <div
-              class="absolute top-2 right-2 text-xs opacity-10 group-hover:opacity-20 transition-opacity"
-              :class="
-                getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue'
-              "
-            >
-              { }
+              <!-- Theme Name with brackets -->
+              <h3
+                :class="[
+                  'text-xl font-bold mb-3 flex items-center gap-2',
+                  getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
+                ]"
+              >
+                <span class="opacity-40">&lt;</span>
+                <span>{{ theme.name.toUpperCase() }}</span>
+                <span class="opacity-40">/&gt;</span>
+              </h3>
+
+              <!-- Description -->
+              <p class="text-sm opacity-70 mb-4 leading-relaxed">
+                // {{ theme.description }}
+              </p>
+
+              <!-- Count Badge with terminal style -->
+              <div
+                :class="[
+                  'inline-flex items-center gap-2 px-3 py-1.5 border text-xs font-bold',
+                  getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue',
+                  getThemeColorClasses(theme.color)?.border ??
+                    'border-nord-blue/30',
+                ]"
+                style="border-style: solid"
+              >
+                <span class="opacity-60">[</span>
+                <span>{{ theme.count }}</span>
+                <span class="opacity-60">]</span>
+              </div>
+
+              <!-- Decorative code elements -->
+              <div
+                class="absolute top-2 right-2 text-xs opacity-10 group-hover:opacity-20 transition-opacity"
+                :class="
+                  getThemeColorClasses(theme.color)?.text ?? 'text-nord-blue'
+                "
+              >
+                { }
+              </div>
             </div>
-          </div>
+          </NuxtLink>
         </template>
       </div>
 
@@ -204,7 +197,7 @@ const handleThemeClick = (theme: Theme) => {
       <div class="text-center mt-12">
         <NuxtLink
           to="/themes"
-          class="inline-flex items-center gap-3 px-8 py-4 border-2 border-nord-blue/50 text-nord-blue font-mon text-base bg-base-200 hover:border-nord-blue hover:shadow-lg transition-all duration-300 group cta-button"
+          class="link-no-slide-anim inline-flex items-center gap-3 px-8 py-4 border-2 border-nord-blue/50 text-nord-blue font-mon text-base bg-base-200 hover:border-nord-blue hover:shadow-lg transition-all duration-300 group cta-button"
         >
           <span class="text-nord-green">$</span>
           <span>view all themes</span>
@@ -219,6 +212,14 @@ const handleThemeClick = (theme: Theme) => {
 </template>
 
 <style scoped>
+.theme-card {
+  border-style: dashed;
+}
+
+.theme-card:hover {
+  border-style: solid;
+}
+
 .cta-button {
   border-style: dashed;
 }

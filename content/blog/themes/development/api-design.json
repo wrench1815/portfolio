@@ -1,0 +1,7 @@
+{
+  "type": "topic",
+  "slug": "api-design",
+  "title": "API Design",
+  "description": "Best practices, patterns, and principles for designing RESTful APIs, GraphQL schemas, and microservice interfaces. Covering versioning, authentication, documentation, and more.",
+  "themeslug": "development"
+}

@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import rehypeWrapTables from './app/utils/rehype-wrap-tables'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -17,6 +18,22 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image', '@nuxt/content'],
+
+  content: {
+    build: {
+      markdown: {
+        toc: {
+          depth: 3,
+          searchDepth: 3,
+        },
+        rehypePlugins: {
+          'wrap-tables': {
+            instance: rehypeWrapTables,
+          },
+        },
+      },
+    },
+  },
 
   // @nuxt/image: https://v1.image.nuxt.com/get-started/installation
   image: {

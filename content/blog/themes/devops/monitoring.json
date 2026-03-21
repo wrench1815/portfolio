@@ -1,0 +1,7 @@
+{
+  "type": "topic",
+  "slug": "monitoring",
+  "title": "Monitoring",
+  "description": "Observability, logging, metrics, and alerting for production systems.",
+  "themeslug": "devops"
+}
