@@ -2,8 +2,8 @@
 type: post
 title: Coding Is Easy, Engineering Is Hard
 description: Why we confuse coding and engineering, and what it means to build systems that last.
-publishedAt: 2024-03-01
-readTime: 15 min
+publishedAt: 2026-03-01
+readTime: 6 min
 author: Hardeep Kumar
 category: API Design
 topicId: api-design

@@ -134,7 +134,7 @@ useHead({
 <template>
   <main class="blog-content-shell">
     <BlogBreadcrumb :items="blogBreadcrumbItems" />
-    <div class="mb-16 animate-slide-up">
+    <div class="mb-16">
       <div class="text-sm mb-2 font-mono opacity-60">
         <span class="text-nord-green">$</span> ls -la {{ themeSlug }}/{{
           topicSlug

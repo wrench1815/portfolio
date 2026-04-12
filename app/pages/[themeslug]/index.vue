@@ -108,6 +108,17 @@ function topicPostCount(slug: string): number {
   return postCountByTopicSlug.value.get(slug) ?? 0
 }
 
+/** Unknown first segment (e.g. /blah) is not a blog theme → generic error.vue, not CodeNotFoundState. */
+const themesFromDb = (Array.isArray(themeItems.value)
+  ? themeItems.value
+  : []) as ThemeItem[]
+if (!themesFromDb.some((t) => t.slug === themeSlugParam)) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+  })
+}
+
 useHead({
   title: computed(() =>
     theme.value ? `${theme.value.name} - Themes` : `${themeSlug.value} — theme`,
@@ -216,16 +227,6 @@ useHead({
       shell-command="listTopicsForTheme()"
       footer-highlight="topics.length"
       footer-tail="→ theme loaded above; zero topic rows for this themeslug"
-    />
-
-    <CodeNotFoundState
-      v-else-if="!themeExists"
-      :field-value="themeSlug"
-      content-type="theme"
-      where-field="slug"
-      shell-command="resolveTheme()"
-      footer-highlight="matchedTheme"
-      footer-tail="→ slug not in blog collection; nothing to mount"
     />
   </main>
 </template>
