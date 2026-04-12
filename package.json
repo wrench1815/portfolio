@@ -7,7 +7,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "content:read-time": "node scripts/update-read-time.mjs",
+    "content:read-time:dry": "node scripts/update-read-time.mjs --dry-run"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",

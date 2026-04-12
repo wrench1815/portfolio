@@ -31,6 +31,9 @@ export default defineNuxtConfig({
             instance: rehypeWrapTables,
           },
         },
+        highlight: {
+          theme: 'nord',
+        },
       },
     },
   },

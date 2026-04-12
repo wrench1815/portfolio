@@ -129,157 +129,168 @@ useHead({
       footer-tail="→ no document; query OK, no matching row"
     />
     <template v-else-if="postPayload && doc">
-    <header class="mb-10 animate-slide-up">
-      <div
-        class="mb-1 font-mono text-xs uppercase tracking-wider text-base-content/45"
-      >
-        stdin
-      </div>
-      <div class="mb-2 font-mono text-sm text-base-content/80">
-        <span class="text-success">$</span> cat
-        <span class="text-primary">{{ postSlug }}</span
-        ><span class="text-base-content/50">.md</span>
-      </div>
-      <p class="mb-6 font-mono text-xs text-base-content/55 break-words">
-        <span class="text-base-content/40">/*</span> {{ themeSlug }}/{{
-          topicSlug
-        }}/{{ postSlug }}
-        <span class="text-base-content/40">*/</span>
-      </p>
-
-      <h1
-        class="mb-4 text-3xl font-bold leading-tight text-base-content sm:text-4xl md:text-5xl"
-      >
-        <span class="font-mono font-normal text-primary">&lt;</span>{{ title
-        }}<span class="font-mono font-normal text-primary"> /&gt;</span>
-      </h1>
-
-      <p
-        v-if="description"
-        class="mb-6 text-base leading-relaxed text-base-content/85"
-      >
-        <span class="mr-2 font-mono text-sm text-base-content/45">//</span
-        >{{ description }}
-      </p>
-
-      <div
-        class="flex flex-wrap items-center gap-3 font-sans text-xs sm:text-sm"
-      >
+      <header class="mb-10 animate-slide-up">
         <div
-          v-if="publishedLabel"
-          class="inline-flex items-baseline gap-2 border-2 border-success/45 px-3 py-1.5"
-          style="border-style: solid"
+          class="mb-1 font-mono text-xs uppercase tracking-wider text-base-content/45"
         >
-          <span
-            class="font-mono text-[0.65rem] uppercase tracking-wide text-base-content/45"
-            >date</span
-          >
-          <span class="text-base-content/50">[</span>
-          <time class="font-mono text-sm font-semibold text-success">{{
-            publishedLabel
-          }}</time>
-          <span class="text-base-content/50">]</span>
+          stdin
         </div>
-        <div
-          v-if="doc.readTime"
-          class="inline-flex items-baseline gap-2 border-2 border-warning/60 px-3 py-1.5"
-          style="border-style: solid"
-        >
-          <span
-            class="font-mono text-[0.65rem] uppercase tracking-wide text-base-content/45"
-            >read</span
-          >
-          <span class="text-base-content/50">[</span>
-          <span class="font-mono text-sm font-medium text-base-content"
-            >{{ doc.readTime }} read</span
-          >
-          <span class="text-base-content/50">]</span>
+        <div class="mb-2 font-mono text-sm text-base-content/80">
+          <span class="text-success">$</span> cat
+          <span class="text-primary">{{ postSlug }}</span
+          ><span class="text-base-content/50">.md</span>
         </div>
-        <div
-          v-if="doc.category"
-          class="inline-flex items-baseline gap-2 border border-dashed border-error/45 px-3 py-1.5"
-          style="border-style: dashed"
-        >
-          <span
-            class="font-mono text-[0.65rem] uppercase tracking-wide text-error/60"
-            >tag</span
-          >
-          <span class="font-mono text-error/80">#</span>
-          <span class="font-medium text-error">{{ doc.category }}</span>
-        </div>
-      </div>
-    </header>
+        <p class="mb-6 font-mono text-xs text-base-content/55 break-words">
+          <span class="text-base-content/40">/*</span> {{ themeSlug }}/{{
+            topicSlug
+          }}/{{ postSlug }}
+          <span class="text-base-content/40">*/</span>
+        </p>
 
-    <div
-      :class="
-        hasToc
-          ? 'xl:grid xl:grid-cols-[minmax(0,1fr)_16rem] xl:items-start xl:gap-10 2xl:grid-cols-[minmax(0,1fr)_18.5rem] 2xl:gap-12'
-          : ''
-      "
-    >
-      <div class="min-w-0">
-        <details
-          v-if="hasToc"
-          class="toc-shell toc-mobile mb-6 border-2 border-dashed border-error/35 bg-base-200 transition-all duration-300 hover:border-error/55 hover:border-solid xl:hidden"
+        <h1
+          class="mb-4 text-3xl font-bold leading-tight text-base-content sm:text-4xl md:text-5xl"
         >
-          <summary
-            class="cursor-pointer list-none px-4 py-3 text-sm text-base-content transition-colors hover:bg-base-300/60 [&::-webkit-details-marker]:hidden"
-          >
-            <span class="font-mono"
-              ><span class="text-success">$</span> cat TOC</span
-            >
-            <span class="ml-2 font-sans text-base-content/55"># outline</span>
-          </summary>
+          <span class="font-mono font-normal text-primary">&lt;</span>{{ title
+          }}<span class="font-mono font-normal text-primary"> /&gt;</span>
+        </h1>
+
+        <p
+          v-if="description"
+          class="mb-6 text-base leading-relaxed text-base-content/85"
+        >
+          <span class="mr-2 font-mono text-sm text-base-content/45">//</span
+          >{{ description }}
+        </p>
+
+        <div
+          class="flex flex-wrap items-center gap-3 font-sans text-xs sm:text-sm"
+        >
           <div
-            class="border-t-2 border-dashed border-error/25 px-4 py-3 transition-colors"
+            v-if="publishedLabel"
+            class="inline-flex items-baseline gap-2 border-2 border-success/45 px-3 py-1.5"
+            style="border-style: solid"
+          >
+            <span
+              class="font-mono text-[0.65rem] uppercase tracking-wide text-base-content/45"
+              >date</span
+            >
+            <span class="text-base-content/50">[</span>
+            <time class="font-mono text-sm font-semibold text-success">{{
+              publishedLabel
+            }}</time>
+            <span class="text-base-content/50">]</span>
+          </div>
+          <div
+            v-if="doc.readTime"
+            class="inline-flex items-baseline gap-2 border-2 border-warning/60 px-3 py-1.5"
+            style="border-style: solid"
+          >
+            <span
+              class="font-mono text-[0.65rem] uppercase tracking-wide text-base-content/45"
+              >read</span
+            >
+            <span class="text-base-content/50">[</span>
+            <span class="font-mono text-sm font-medium text-base-content"
+              >{{ doc.readTime }} read</span
+            >
+            <span class="text-base-content/50">]</span>
+          </div>
+          <div
+            v-if="doc.category"
+            class="inline-flex items-baseline gap-2 border border-dashed border-error/45 px-3 py-1.5"
+            style="border-style: dashed"
+          >
+            <span
+              class="font-mono text-[0.65rem] uppercase tracking-wide text-error/60"
+              >tag</span
+            >
+            <span class="font-mono text-error/80">#</span>
+            <span class="font-medium text-error">{{ doc.category }}</span>
+          </div>
+        </div>
+      </header>
+
+      <div
+        :class="
+          hasToc
+            ? 'xl:grid xl:grid-cols-[minmax(0,1fr)_16rem] xl:items-start xl:gap-10 2xl:grid-cols-[minmax(0,1fr)_18.5rem] 2xl:gap-12'
+            : ''
+        "
+      >
+        <div class="min-w-0">
+          <details
+            v-if="hasToc"
+            class="toc-shell toc-mobile mb-6 border-2 border-dashed border-error/35 bg-base-200 transition-all duration-300 hover:border-error/55 hover:border-solid xl:hidden"
+          >
+            <summary
+              class="cursor-pointer list-none px-4 py-3 text-sm text-base-content transition-colors hover:bg-base-300/60 [&::-webkit-details-marker]:hidden"
+            >
+              <span class="font-mono"
+                ><span class="text-success">$</span> cat TOC</span
+              >
+              <span class="ml-2 font-sans text-base-content/55"># outline</span>
+            </summary>
+            <div
+              class="border-t-2 border-dashed border-error/25 px-4 py-3 transition-colors"
+            >
+              <BlogPostToc :links="tocLinks" />
+            </div>
+          </details>
+
+          <div v-if="doc.body">
+            <div
+              class="mb-2 font-mono text-xs uppercase tracking-wider text-base-content/45"
+            >
+              stdout
+            </div>
+            <div
+              class="post-shell border-2 border-dashed border-base-content/20 bg-base-200 p-6 transition-all duration-300 sm:p-8 md:p-10 hover:border-success/60 hover:border-solid"
+            >
+              <div
+                class="post-body prose prose-lg max-w-none font-sans text-base-content/90 prose-headings:font-sans"
+              >
+                <ContentRenderer :value="doc" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-else
+            class="border-2 border-dashed border-error/40 bg-base-200 p-8 font-mono text-sm text-base-content/70"
+          >
+            <span class="text-error">stderr:</span>
+            <span class="text-base-content/50"> //</span> empty document body
+          </div>
+        </div>
+
+        <aside
+          v-if="hasToc"
+          class="toc-aside z-10 max-h-[calc(100vh-5.5rem)] max-xl:hidden self-start overflow-y-auto xl:sticky xl:top-24"
+        >
+          <div
+            class="toc-shell border-2 border-dashed border-error/35 bg-base-200 p-4 transition-all duration-300 hover:border-error/55 hover:border-solid 2xl:p-5"
           >
             <BlogPostToc :links="tocLinks" />
           </div>
-        </details>
-
-        <div v-if="doc.body">
-          <div
-            class="mb-2 font-mono text-xs uppercase tracking-wider text-base-content/45"
-          >
-            stdout
-          </div>
-          <div
-            class="post-shell border-2 border-dashed border-base-content/20 bg-base-200 p-6 transition-all duration-300 sm:p-8 md:p-10 hover:border-success/60 hover:border-solid"
-          >
-            <div
-              class="post-body prose prose-lg max-w-none font-sans text-base-content/90 prose-headings:font-sans"
-            >
-              <ContentRenderer :value="doc" />
-            </div>
-          </div>
-        </div>
-
-        <div
-          v-else
-          class="border-2 border-dashed border-error/40 bg-base-200 p-8 font-mono text-sm text-base-content/70"
-        >
-          <span class="text-error">stderr:</span>
-          <span class="text-base-content/50"> //</span> empty document body
-        </div>
+        </aside>
       </div>
-
-      <aside
-        v-if="hasToc"
-        class="toc-aside z-10 max-h-[calc(100vh-5.5rem)] max-xl:hidden self-start overflow-y-auto xl:sticky xl:top-24"
-      >
-        <div
-          class="toc-shell border-2 border-dashed border-error/35 bg-base-200 p-4 transition-all duration-300 hover:border-error/55 hover:border-solid 2xl:p-5"
-        >
-          <BlogPostToc :links="tocLinks" />
-        </div>
-      </aside>
-    </div>
     </template>
   </main>
 </template>
 
 <style scoped>
 @reference '~/assets/css/tailwind.css';
+
+/* Hash / TOC scroll margin */
+.post-page {
+  --post-anchor-scroll-margin: calc(4rem + 4rem);
+}
+
+/* Same offset for every in-body heading (TOC / #hash targets) */
+.post-body :deep(:is(h2, h3, h4, h5, h6)) {
+  scroll-margin-top: var(--post-anchor-scroll-margin);
+}
+
 /* Page-only: overrides global `a` / prose (uses Tailwind @apply like tailwind.css) */
 .post-page :deep(a) {
   @apply no-underline;
@@ -290,7 +301,7 @@ useHead({
 }
 
 .post-body :deep(h2) {
-  @apply mt-10 mb-4 scroll-mt-20 font-sans text-[1.375rem] leading-[1.35] font-bold text-success;
+  @apply mt-10 mb-4 font-sans text-[1.375rem] leading-[1.35] font-bold text-success;
 }
 
 .post-body :deep(h2)::before {
@@ -303,7 +314,7 @@ useHead({
 }
 
 .post-body :deep(h3) {
-  @apply mt-7 mb-2 scroll-mt-20 font-sans text-[1.0625rem] font-bold text-error;
+  @apply mt-7 mb-2 font-sans text-[1.0625rem] font-bold text-error;
 }
 
 .post-body :deep(h3)::before {
@@ -321,6 +332,13 @@ useHead({
 
 .post-body :deep(blockquote) {
   @apply my-7 rounded-r-lg border-l-4 border-warning bg-base-300/55 py-4 pr-4 pl-5 not-italic;
+  /* Typography plugin adds open/close-quote pseudo-elements; content already has quotes */
+  quotes: none;
+}
+
+.post-body :deep(blockquote p:first-of-type::before),
+.post-body :deep(blockquote p:last-of-type::after) {
+  content: none;
 }
 
 .post-body :deep(blockquote p) {
@@ -352,16 +370,27 @@ useHead({
   @apply mb-1 last:mb-0;
 }
 
-.post-body :deep(code) {
+/* Inline code only — `pre code` is handled below so Shiki token colors are not overridden */
+.post-body :deep(:not(pre) code) {
   @apply rounded bg-base-300 px-[0.35rem] py-0.5 font-mono text-[0.875em] text-base-content/90;
 }
 
 .post-body :deep(pre) {
-  @apply my-5 overflow-x-auto rounded-lg border border-base-content/20 bg-base-300 p-4;
+  @apply my-5 overflow-x-auto rounded-lg border border-dashed border-info/40 p-4;
 }
 
+/* Plain fenced blocks (no Shiki) */
+.post-body :deep(pre:not(.shiki)) {
+  @apply bg-base-300;
+}
+
+.post-body :deep(pre:not(.shiki) code) {
+  @apply text-base-content/95;
+}
+
+/* Shiki sets background + token colors on `pre` / spans — do not force a text color here */
 .post-body :deep(pre code) {
-  @apply bg-transparent p-0 text-base-content/95;
+  @apply bg-transparent p-0 font-mono text-[0.875em];
 }
 
 .post-body :deep(a) {
