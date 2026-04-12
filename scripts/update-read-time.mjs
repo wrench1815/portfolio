@@ -51,14 +51,31 @@ function minutesFromWords(words) {
   return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE))
 }
 
+/** Strip BOM and normalize all newlines to LF so parsing/writes are stable on Windows. */
+function normalizeEol(s) {
+  return s.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+}
+
 /**
- * @param {string} raw
+ * Split on a line that is exactly `---` (closing frontmatter). Avoids regex
+ * issues with mixed CR/LF and broken `readTime` replaces that glued lines.
+ *
+ * @param {string} raw — already LF-normalized
  * @returns {{ frontmatter: string, body: string } | null}
  */
 function splitFrontmatter(raw) {
-  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)
-  if (!m) return null
-  return { frontmatter: m[1], body: m[2] }
+  if (!raw.startsWith('---\n')) return null
+  const lines = raw.split('\n')
+  if (lines[0] !== '---') return null
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i] === '---') {
+      return {
+        frontmatter: lines.slice(1, i).join('\n'),
+        body: lines.slice(i + 1).join('\n'),
+      }
+    }
+  }
+  return null
 }
 
 /**
@@ -66,10 +83,18 @@ function splitFrontmatter(raw) {
  * @returns {string | undefined}
  */
 function getReadTimeLine(fm) {
-  const line = fm.split(/\r?\n/).find((l) => /^\s*readTime\s*:/.test(l))
+  const line = fm.split('\n').find((l) => /^\s*readTime\s*:/.test(l))
   if (!line) return undefined
   const m = line.match(/readTime\s*:\s*(.+)/)
-  return m ? m[1].trim() : undefined
+  if (!m) return undefined
+  let v = m[1].trim()
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1).trim()
+  }
+  return v
 }
 
 /**
@@ -78,14 +103,19 @@ function getReadTimeLine(fm) {
  * @returns {string}
  */
 function upsertReadTime(fm, minutes) {
-  const newLine = `readTime: ${minutes} min`
+  const row = `readTime: ${minutes} min\n`
   if (/^\s*readTime\s*:/m.test(fm)) {
-    return fm.replace(/^\s*readTime\s*:.+$/m, newLine)
+    return fm.replace(/^\s*readTime\s*:\s*[^\n]*\n?/m, row)
   }
   if (/^publishedAt\s*:/m.test(fm)) {
-    return fm.replace(/^(publishedAt\s*:[^\n]+\n)/m, `$1${newLine}\n`)
+    return fm.replace(/^(publishedAt\s*:[^\n]+\n)/m, `$1${row}`)
   }
-  return `${fm.trimEnd()}\n${newLine}\n`
+  return `${fm.trimEnd()}\n${row}`
+}
+
+/** @param {{ frontmatter: string, body: string }} split */
+function serializeMarkdown(split) {
+  return `---\n${split.frontmatter}\n---\n${split.body}`
 }
 
 /**
@@ -127,7 +157,8 @@ function main() {
 
   for (const abs of files) {
     const raw = readFileSync(abs, 'utf8')
-    const split = splitFrontmatter(raw)
+    const normalized = normalizeEol(raw)
+    const split = splitFrontmatter(normalized)
     if (!split) {
       skipped++
       console.log(`skip (no YAML frontmatter): ${relative(ROOT, abs)}`)
@@ -142,12 +173,18 @@ function main() {
     const rel = relative(ROOT, abs)
     if (prev === newLine) {
       unchanged++
+      const out = serializeMarkdown(split)
+      /* Disk may still be CRLF or corrupted (e.g. lone CR gluing YAML lines) while
+       * parse used normalizeEol — persist canonical LF when bytes differ. */
+      if (!dryRun && raw !== out) {
+        writeFileSync(abs, out, 'utf8')
+      }
       console.log(`ok ${rel} — ${newLine} (${words} words)`)
       continue
     }
 
     const newFm = upsertReadTime(split.frontmatter, minutes)
-    const newRaw = `---\n${newFm}\n---\n${split.body}`
+    const newRaw = serializeMarkdown({ frontmatter: newFm, body: split.body })
 
     console.log(
       `update ${rel} — ${prev ?? '(no readTime)'} → ${newLine} (${words} words)`,

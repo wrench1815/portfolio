@@ -4,7 +4,8 @@ title: 'Semantic HTML Beyond "div Soup"'
 description: >-
   Why your div-heavy markup hurts accessibility, SEO, and maintainability —
   and why choosing elements for what things *are* beats styling-first thinking.
-publishedAt: 2026-04-12readTime: 9 min
+publishedAt: 2026-04-12
+readTime: 9 min
 author: Hardeep Kumar
 category: Accessibility
 topicId: accessibility

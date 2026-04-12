@@ -5,7 +5,8 @@ description: >-
   Keyboard navigation isn’t a niche preference — it’s capability. Why invisible
   focus rings and chaotic tab order fail everyone, and how to design for “no
   mouse” from the start.
-publishedAt: 2026-04-12readTime: 6 min
+publishedAt: 2026-04-12
+readTime: 6 min
 author: Hardeep Kumar
 category: Accessibility
 topicId: accessibility
