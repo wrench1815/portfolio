@@ -49,6 +49,9 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ['@remixicon/vue'],
+    },
   },
 
   compatibilityDate: '2025-03-24',
