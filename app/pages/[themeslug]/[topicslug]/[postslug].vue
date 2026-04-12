@@ -129,7 +129,7 @@ useHead({
       footer-tail="→ no document; query OK, no matching row"
     />
     <template v-else-if="postPayload && doc">
-      <header class="mb-10 animate-slide-up">
+      <header class="mb-10">
         <div
           class="mb-1 font-mono text-xs uppercase tracking-wider text-base-content/45"
         >
