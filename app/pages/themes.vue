@@ -97,7 +97,7 @@ useHead({
   <main class="blog-content-shell">
     <BlogBreadcrumb :items="blogBreadcrumbItems" />
     <!-- Header Section -->
-    <div class="text-center mb-16 animate-slide-up">
+    <div class="mb-16">
       <div class="text-sm mb-2 opacity-60">
         <span class="text-nord-green">$</span> cd theme/
       </div>

@@ -37,7 +37,7 @@ onMounted(() => {
         <!-- Navbar -->
         <NavBar />
 
-        <CursorFollowRing />
+        <CursorFollowRing mouse-variant="fill" />
 
         <!-- content -->
         <slot />

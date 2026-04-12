@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CodeNotFoundState from '~/components/errors/CodeNotFoundState.vue'
 import {
   flattenTocLinks,
   getPostTocLinksFromPage,
@@ -60,16 +61,9 @@ const [{ data: postPayload }, { data: trailMeta }] = await Promise.all([
   }),
 ])
 
-if (!postPayload.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Post not found',
-  })
-}
+const doc = computed(() => postPayload.value?.doc)
 
-const doc = computed(() => postPayload.value!.doc)
-
-const title = computed(() => doc.value.title ?? postSlug)
+const title = computed(() => doc.value?.title ?? postSlug)
 
 const blogBreadcrumbItems = computed(() => {
   const trail = trailMeta.value ?? {
@@ -85,10 +79,10 @@ const blogBreadcrumbItems = computed(() => {
   ]
 })
 
-const description = computed(() => doc.value.description ?? '')
+const description = computed(() => doc.value?.description ?? '')
 
 const publishedLabel = computed(() => {
-  const raw = doc.value.publishedAt
+  const raw = doc.value?.publishedAt
   if (!raw) return ''
   return new Date(raw).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -97,16 +91,24 @@ const publishedLabel = computed(() => {
   })
 })
 
-const tocLinks = computed(() => postPayload.value!.tocLinks ?? [])
+const tocLinks = computed(() => postPayload.value?.tocLinks ?? [])
 
 const hasToc = computed(() => tocLinks.value.length > 0)
 
 useHead({
-  title: computed(() => `${title.value} — Portfolio`),
+  title: computed(() =>
+    postPayload.value
+      ? `${title.value} — Portfolio`
+      : `Not found: ${postSlug} — Portfolio`,
+  ),
   meta: [
     {
       name: 'description',
-      content: computed(() => description.value || title.value),
+      content: computed(() =>
+        postPayload.value
+          ? description.value || title.value
+          : `No post “${postSlug}” for this topic.`,
+      ),
     },
   ],
 })
@@ -115,6 +117,18 @@ useHead({
 <template>
   <main class="post-page font-sans blog-content-shell">
     <BlogBreadcrumb :items="blogBreadcrumbItems" />
+    <CodeNotFoundState
+      v-if="!postPayload"
+      :field-value="topicSlug"
+      second-where-field="slug"
+      :second-field-value="postSlug"
+      query-method="first"
+      shell-command="resolvePost()"
+      error-message="empty result; no post matched this topicId and slug. Nothing to render."
+      footer-highlight="doc"
+      footer-tail="→ no document; query OK, no matching row"
+    />
+    <template v-else-if="postPayload && doc">
     <header class="mb-10 animate-slide-up">
       <div
         class="mb-1 font-mono text-xs uppercase tracking-wider text-base-content/45"
@@ -260,6 +274,7 @@ useHead({
         </div>
       </aside>
     </div>
+    </template>
   </main>
 </template>
 
