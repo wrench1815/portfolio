@@ -141,6 +141,10 @@ layer(base);
   animation: cursorRingRotate 18s linear infinite;
 }
 
+@utility animate-cursor-ripple-sm {
+  animation: cursorRippleSmall 0.42s ease-out forwards;
+}
+
 @utility link-slide-out-anim-secondary {
   @apply link-slide-out-anim text-secondary after:bg-secondary;
 }
@@ -186,6 +190,12 @@ layer(base);
 @layer utilities {
   html {
     --vh: calc(100vh / 100);
+  }
+
+  /* CursorFollowRing: Remix mouse icon + cursor: none (see CursorFollowRing.vue) */
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
   }
 }
 
@@ -287,6 +297,17 @@ layer(base);
   @keyframes cursorRingRotate {
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes cursorRippleSmall {
+    0% {
+      transform: translate(-50%, -50%) scale(0.4);
+      opacity: 0.55;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2.1);
+      opacity: 0;
     }
   }
 

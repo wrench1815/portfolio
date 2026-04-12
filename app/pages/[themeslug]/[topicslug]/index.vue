@@ -1,4 +1,11 @@
 <script lang="ts" setup>
+import CodeNotFoundState from '~/components/errors/CodeNotFoundState.vue'
+import { contentToneFromStableId } from '~/utils/content-tone-palette'
+import {
+  contentToneAccentText,
+  contentToneFrameBorder,
+} from '~/utils/content-tone-style'
+
 const route = useRoute()
 const themeSlug = computed(() => (route.params.themeslug as string) ?? '')
 const topicSlug = computed(() => (route.params.topicslug as string) ?? '')
@@ -63,6 +70,43 @@ const posts = computed<PostItem[]>(
   () => (Array.isArray(postItems.value) ? postItems.value : []) as PostItem[],
 )
 
+const hasPosts = computed(() => posts.value.length > 0)
+
+const themeMeta = computed(
+  () =>
+    themeForBreadcrumb.value as
+      | { name?: string; color?: string }
+      | null
+      | undefined,
+)
+
+const headerTone = computed(() => {
+  const c = themeMeta.value?.color
+  if (c) return c
+  return contentToneFromStableId(`${themeSlug.value}/${topicSlug.value}`)
+})
+
+const headerTextClass = computed(() => contentToneAccentText(headerTone.value))
+const headerFrameClass = computed(() =>
+  contentToneFrameBorder(headerTone.value),
+)
+
+const postAccentBySlug = computed(() => {
+  const m = new Map<string, { text: string; frame: string }>()
+  for (const post of posts.value) {
+    const tone = contentToneFromStableId(post.slug)
+    m.set(post.slug, {
+      text: contentToneAccentText(tone),
+      frame: contentToneFrameBorder(tone),
+    })
+  }
+  return m
+})
+
+function postAccent(slug: string) {
+  return postAccentBySlug.value.get(slug)!
+}
+
 const formatDate = (d: string | undefined) =>
   d
     ? new Date(d).toLocaleDateString('en-US', {
@@ -91,19 +135,23 @@ useHead({
   <main class="blog-content-shell">
     <BlogBreadcrumb :items="blogBreadcrumbItems" />
     <div class="mb-16 animate-slide-up">
-      <div class="text-sm mb-2 opacity-60">
+      <div class="text-sm mb-2 font-mono opacity-60">
         <span class="text-nord-green">$</span> ls -la {{ themeSlug }}/{{
           topicSlug
         }}/
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-nord-blue">
+      <h1 :class="['text-4xl md:text-5xl font-bold mb-4', headerTextClass]">
         &lt;{{ topicTitle ?? 'All Posts' }} /&gt;
       </h1>
-      <p class="text-lg opacity-80 mb-4">
+      <p class="mb-4 text-lg font-mono opacity-80">
         // {{ topic?.description ?? `Posts in ${topicTitle}` }}
       </p>
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 border-2 border-nord-blue/30 text-nord-blue text-sm font-semibold"
+        :class="[
+          'inline-flex items-center gap-2 border-2 px-4 py-2 font-mono text-sm font-semibold',
+          headerTextClass,
+          headerFrameClass,
+        ]"
         style="border-style: solid"
       >
         <span class="opacity-60">[</span>
@@ -112,7 +160,7 @@ useHead({
       </div>
     </div>
 
-    <div class="space-y-6 mb-12">
+    <div v-if="hasPosts" class="space-y-6 mb-12">
       <NuxtLink
         v-for="post in posts"
         :key="post.slug"
@@ -120,18 +168,29 @@ useHead({
         class="link-no-slide-anim block post-card"
       >
         <div
-          class="bg-base-200 border-2 p-6 transition-all duration-300 relative overflow-hidden group h-full border-nord-blue/30 hover:shadow-xl hover:border-opacity-70"
+          :class="[
+            'bg-base-200 border-2 p-6 transition-all duration-300 relative overflow-hidden group h-full',
+            postAccent(post.slug).frame,
+            'hover:shadow-xl hover:border-opacity-70',
+          ]"
         >
           <h2
-            class="text-2xl font-bold mb-3 text-nord-blue group-hover:text-nord-frost transition-colors"
+            :class="[
+              'text-2xl font-bold mb-3 opacity-80 transition-opacity duration-300 group-hover:opacity-100',
+              postAccent(post.slug).text,
+            ]"
           >
             &lt;{{ post.title }} /&gt;
           </h2>
-          <p class="opacity-70 mb-4 leading-relaxed text-sm">
+          <p class="mb-4 text-sm font-mono leading-relaxed opacity-70">
             // {{ post.description ?? post.title }}
           </p>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 border border-nord-blue/30 text-nord-blue text-xs font-bold"
+            :class="[
+              'inline-flex items-center gap-2 border px-3 py-1.5 font-mono text-xs font-bold',
+              postAccent(post.slug).text,
+              postAccent(post.slug).frame,
+            ]"
             style="border-style: solid"
           >
             <span class="opacity-60">[</span>
@@ -145,14 +204,7 @@ useHead({
       </NuxtLink>
     </div>
 
-    <div class="text-center mt-12">
-      <NuxtLink
-        :to="`/${themeSlug}`"
-        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-nord-blue/50 text-nord-blue text-sm hover:border-nord-blue hover:bg-base-200 transition-all duration-300 group cta-button"
-      >
-        <span class="text-nord-green">$</span> cd ..
-      </NuxtLink>
-    </div>
+    <CodeNotFoundState v-else :field-value="topicSlug" />
   </main>
 </template>
 

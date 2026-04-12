@@ -1,4 +1,11 @@
 <script lang="ts" setup>
+import CodeNotFoundState from '~/components/errors/CodeNotFoundState.vue'
+import { contentToneFromStableId } from '~/utils/content-tone-palette'
+import {
+  contentToneAccentText,
+  contentToneFrameBorder,
+} from '~/utils/content-tone-style'
+
 const route = useRoute()
 const themeSlugParam = (route.params.themeslug as string) ?? ''
 const themeSlug = computed(() => (route.params.themeslug as string) ?? '')
@@ -16,20 +23,23 @@ interface Topic {
   title: string
   description: string
   themeslug: string
-  postCount?: number
 }
 
-const [{ data: themeItems }, { data: topicItems }] = await Promise.all([
-  useAsyncData(`blog-theme-${themeSlugParam}`, () =>
-    queryCollection('blog').where('type', '=', 'theme').all(),
-  ),
-  useAsyncData(`topics-theme-${themeSlugParam}`, () =>
-    queryCollection('blog')
-      .where('type', '=', 'topic')
-      .where('themeslug', '=', themeSlugParam)
-      .all(),
-  ),
-])
+const [{ data: themeItems }, { data: topicItems }, { data: allPosts }] =
+  await Promise.all([
+    useAsyncData(`blog-theme-${themeSlugParam}`, () =>
+      queryCollection('blog').where('type', '=', 'theme').all(),
+    ),
+    useAsyncData(`topics-theme-${themeSlugParam}`, () =>
+      queryCollection('blog')
+        .where('type', '=', 'topic')
+        .where('themeslug', '=', themeSlugParam)
+        .all(),
+    ),
+    useAsyncData('blog-posts-all', () =>
+      queryCollection('blog').where('type', '=', 'post').all(),
+    ),
+  ])
 
 const themesList = computed<ThemeItem[]>(
   () =>
@@ -39,44 +49,77 @@ const topicsList = computed<Topic[]>(
   () => (Array.isArray(topicItems.value) ? topicItems.value : []) as Topic[],
 )
 
-const theme = computed(() => {
-  const t = themesList.value.find((x) => x.slug === themeSlug.value)
-  return (
-    t ?? {
-      slug: themeSlug.value,
-      name: themeSlug.value,
-      description: '',
-      code: themeSlug.value,
-      color: 'nord-blue',
-    }
-  )
+const theme = computed(
+  () => themesList.value.find((x) => x.slug === themeSlug.value) ?? null,
+)
+
+const themeExists = computed(() => theme.value !== null)
+const hasTopics = computed(() => topicsList.value.length > 0)
+
+const blogBreadcrumbItems = computed(() => {
+  const items: { label: string; to?: string }[] = [
+    { label: 'Home', to: '/' },
+    { label: 'Themes', to: '/themes' },
+  ]
+  if (theme.value) {
+    items.push({ label: theme.value.name })
+  } else {
+    items.push({ label: themeSlug.value })
+  }
+  return items
 })
 
-const blogBreadcrumbItems = computed(() => [
-  { label: 'Home', to: '/' },
-  { label: 'Themes', to: '/themes' },
-  { label: theme.value.name },
-])
+const headerTone = computed(() => theme.value?.color ?? 'nord-blue')
+const headerTextClass = computed(() => contentToneAccentText(headerTone.value))
+const headerFrameClass = computed(() =>
+  contentToneFrameBorder(headerTone.value),
+)
 
-const getThemeColorClasses = (color: string) => {
-  const colorMap: Record<string, { text: string; border: string }> = {
-    'nord-blue': { text: 'text-nord-blue', border: 'border-nord-blue/30' },
-    'nord-green': { text: 'text-nord-green', border: 'border-nord-green/30' },
-    'nord-frost': { text: 'text-nord-frost', border: 'border-nord-frost/30' },
-    'nord-yellow': {
-      text: 'text-nord-yellow',
-      border: 'border-nord-yellow/30',
-    },
+const topicAccentBySlug = computed(() => {
+  const m = new Map<string, { text: string; frame: string }>()
+  for (const topic of topicsList.value) {
+    const tone = contentToneFromStableId(topic.slug)
+    m.set(topic.slug, {
+      text: contentToneAccentText(tone),
+      frame: contentToneFrameBorder(tone),
+    })
   }
-  return colorMap[color] ?? colorMap['nord-blue']
+  return m
+})
+
+function topicAccent(slug: string) {
+  return topicAccentBySlug.value.get(slug)!
+}
+
+const postCountByTopicSlug = computed(() => {
+  const slugs = new Set(topicsList.value.map((t) => t.slug))
+  const counts = new Map<string, number>()
+  const list = Array.isArray(allPosts.value) ? allPosts.value : []
+  for (const p of list as { topicId?: string }[]) {
+    const tid = p.topicId
+    if (tid && slugs.has(tid)) {
+      counts.set(tid, (counts.get(tid) ?? 0) + 1)
+    }
+  }
+  return counts
+})
+
+function topicPostCount(slug: string): number {
+  return postCountByTopicSlug.value.get(slug) ?? 0
 }
 
 useHead({
-  title: `${theme.value.name} - Themes`,
+  title: computed(() =>
+    theme.value ? `${theme.value.name} - Themes` : `${themeSlug.value} — theme`,
+  ),
   meta: [
     {
       name: 'description',
-      content: theme.value.description || `Topics under ${theme.value.name}`,
+      content: computed(() =>
+        theme.value
+          ? theme.value.description || `Topics under ${theme.value.name}`
+          : `No theme matches ${themeSlug.value}`,
+      ),
     },
   ],
 })
@@ -85,17 +128,23 @@ useHead({
 <template>
   <main class="blog-content-shell">
     <BlogBreadcrumb :items="blogBreadcrumbItems" />
-    <!-- Header: this theme -->
-    <div class="mb-16 animate-slide-up">
-      <div class="text-sm mb-2 opacity-60">
+
+    <div v-if="themeExists" class="mb-16">
+      <div class="mb-2 text-sm font-mono opacity-60">
         <span class="text-nord-green">$</span> cat {{ themeSlug }}.md
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-nord-blue">
-        &lt;{{ theme.name }} /&gt;
+      <h1 :class="['mb-4 text-4xl font-bold md:text-5xl', headerTextClass]">
+        &lt;{{ theme?.name }} /&gt;
       </h1>
-      <p class="text-lg opacity-80 mb-4">// {{ theme.description }}</p>
+      <p class="mb-4 text-lg font-mono opacity-80">
+        // {{ theme?.description }}
+      </p>
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 border-2 border-nord-blue/30 text-nord-blue text-sm font-semibold"
+        :class="[
+          'inline-flex items-center gap-2 border-2 px-4 py-2 font-mono text-sm font-semibold',
+          headerTextClass,
+          headerFrameClass,
+        ]"
         style="border-style: solid"
       >
         <span class="opacity-60">[</span>
@@ -104,8 +153,7 @@ useHead({
       </div>
     </div>
 
-    <!-- Topics list -->
-    <div class="space-y-6 mb-12">
+    <div v-if="themeExists && hasTopics" class="mb-12 space-y-6">
       <NuxtLink
         v-for="topic in topicsList"
         :key="topic.slug"
@@ -114,52 +162,71 @@ useHead({
       >
         <div
           :class="[
-            'bg-base-200 border-2 p-6 transition-all duration-300  relative overflow-hidden group h-full',
-            getThemeColorClasses(theme.color ?? 'nord-blue')?.border ??
-              'border-nord-blue/30',
+            'relative h-full overflow-hidden border-2 bg-base-200 p-6 transition-all group',
+            topicAccent(topic.slug).frame,
             'hover:shadow-xl hover:border-opacity-70',
           ]"
         >
           <h2
             :class="[
-              'text-2xl font-bold mb-3 text-nord-blue group-hover:text-nord-frost transition-colors',
-              getThemeColorClasses(theme.color ?? 'nord-blue')?.text ??
-                'text-nord-blue',
+              'mb-3 text-2xl font-bold opacity-80 transition-opacity duration-300 group-hover:opacity-100',
+              topicAccent(topic.slug).text,
             ]"
           >
             &lt;{{ topic.title }} /&gt;
           </h2>
-          <p class="opacity-70 mb-4 leading-relaxed text-sm">
+          <p class="mb-4 text-sm font-mono leading-relaxed opacity-70">
             // {{ topic.description }}
           </p>
           <div
-            :class="[
-              'inline-flex items-center gap-2 px-3 py-1.5 border text-xs font-bold',
-              getThemeColorClasses(theme.color ?? 'nord-blue')?.text ??
-                'text-nord-blue',
-              getThemeColorClasses(theme.color ?? 'nord-blue')?.border ??
-                'border-nord-blue/30',
-            ]"
-            style="border-style: solid"
+            class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
           >
-            <span class="opacity-60">[</span>
-            <span>{{ topic.postCount ?? 0 }}</span>
-            <span class="opacity-60">posts]</span>
+            <div
+              :class="[
+                'inline-flex items-center gap-2 border px-3 py-1.5 font-mono text-xs font-bold',
+                topicPostCount(topic.slug) > 0
+                  ? [
+                      topicAccent(topic.slug).text,
+                      topicAccent(topic.slug).frame,
+                    ]
+                  : ['text-warning', 'border-warning/40'],
+              ]"
+              style="border-style: solid"
+            >
+              <span class="opacity-60">[</span>
+              <span>{{ topicPostCount(topic.slug) }}</span>
+              <span class="opacity-60">posts]</span>
+            </div>
+            <p
+              v-if="topicPostCount(topic.slug) === 0"
+              class="text-xs font-mono text-warning opacity-70"
+            >
+              // 404: no posts in repo
+            </p>
           </div>
         </div>
       </NuxtLink>
     </div>
 
-    <!-- Back link -->
-    <div class="text-center mt-12">
-      <NuxtLink
-        to="/themes"
-        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-nord-blue/50 text-nord-blue text-sm hover:border-nord-blue hover:bg-base-200 transition-all duration-300 group cta-button"
-      >
-        <span class="text-nord-green">$</span>
-        <span>cd ..</span>
-      </NuxtLink>
-    </div>
+    <CodeNotFoundState
+      v-else-if="themeExists && !hasTopics"
+      :field-value="themeSlug"
+      content-type="topic"
+      where-field="themeslug"
+      shell-command="listTopicsForTheme()"
+      footer-highlight="topics.length"
+      footer-tail="→ theme loaded above; zero topic rows for this themeslug"
+    />
+
+    <CodeNotFoundState
+      v-else-if="!themeExists"
+      :field-value="themeSlug"
+      content-type="theme"
+      where-field="slug"
+      shell-command="resolveTheme()"
+      footer-highlight="matchedTheme"
+      footer-tail="→ slug not in blog collection; nothing to mount"
+    />
   </main>
 </template>
 
