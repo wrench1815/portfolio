@@ -101,7 +101,7 @@ defineOgImage(
     title,
     description,
     readTime: computed(() => doc.value?.readTime ?? ''),
-    author: computed(() => doc.value?.author ?? site.name ?? 'Hardeep Kumar'),
+    author: computed(() => doc.value?.author),
     date: publishedLabel,
     kindLabel: 'Category',
     kindValue: computed(() => doc.value?.category ?? ''),
@@ -112,15 +112,26 @@ defineOgImage(
   },
 )
 
+// schema org for post. inlcuding date, auuthor
+useSchemaOrg([
+  defineArticle({
+    datePublished: publishedLabel.value,
+    author: {
+      name: computed(() => doc.value?.author),
+    },
+  }),
+  defineBreadcrumb({
+    itemListElement: computed(() => blogBreadcrumbItems.value),
+  }),
+])
+
 const tocLinks = computed(() => postPayload.value?.tocLinks ?? [])
 
 const hasToc = computed(() => tocLinks.value.length > 0)
 
 useHead({
   title: computed(() =>
-    postPayload.value
-      ? `${title.value} — Portfolio`
-      : `Not found: ${postSlug} — Portfolio`,
+    postPayload.value ? `${title.value}` : `Not found: ${postSlug}`,
   ),
   meta: [
     {

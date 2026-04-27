@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/image', '@nuxt/content', '@nuxtjs/seo'],
+  modules: ['@nuxt/image', '@nuxt/content', '@nuxtjs/seo', 'nuxt-ai-ready'],
 
   content: {
     build: {
@@ -63,5 +63,16 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true,
+  },
+
+  robots: {},
+
+  aiReady: {
+    contentSignal: {
+      aiInput: true,
+      search: true,
+      aiTrain: true,
+    },
+    indexNow: true,
   },
 })
