@@ -201,7 +201,7 @@ layer(base);
 
 @layer base {
   * {
-    @apply selection:bg-secondary! selection:text-secondary-content! transition-colors duration-300;
+    @apply selection:bg-secondary! selection:text-secondary-content! transition-colors! duration-300;
     /* opacity of elements foreced to 100% on selection */
     ::selection {
       opacity: 1 !important;

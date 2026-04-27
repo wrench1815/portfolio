@@ -7,6 +7,7 @@ import {
 } from '~/utils/content-tone-style'
 
 const route = useRoute()
+const site = useSiteConfig()
 const themeSlugParam = (route.params.themeslug as string) ?? ''
 const themeSlug = computed(() => (route.params.themeslug as string) ?? '')
 
@@ -118,6 +119,31 @@ if (!themesFromDb.some((t) => t.slug === themeSlugParam)) {
     statusMessage: 'Page not found',
   })
 }
+
+defineOgImage(
+  'Post.takumi',
+  {
+    pathFormat: 'bare',
+    pathLabel: computed(() => `${themeSlug.value}/index.vue`),
+    title: computed(() => theme.value?.name ?? themeSlug.value),
+    description: computed(() =>
+      theme.value
+        ? theme.value.description || `Topics under ${theme.value.name}`
+        : `Topics for ${themeSlug.value}`,
+    ),
+    kindLabel: 'Theme',
+    kindValue: computed(() => theme.value?.name ?? themeSlug.value),
+    primaryStat: computed(() => `${topicsList.value.length} topics`),
+    colorMode: 'dark',
+  },
+  {
+    alt: computed(() =>
+      theme.value
+        ? `${theme.value.name} — ${site.name ?? 'Blog'}`
+        : `${themeSlug.value} — ${site.name ?? 'Blog'}`,
+    ),
+  },
+)
 
 useHead({
   title: computed(() =>

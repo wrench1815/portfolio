@@ -55,4 +55,13 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-03-24',
+
+  site: {
+    url: 'https://hardeepkumar.in',
+    name: 'Hardeep Kumar',
+  },
+
+  sitemap: {
+    zeroRuntime: true,
+  },
 })

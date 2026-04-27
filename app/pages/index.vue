@@ -3,54 +3,27 @@ import AnimatedBackground from '~/components/AnimatedBackground/AnimatedBackgrou
 import HeaderSection from '~/components/Home/Hero/HeaderSection.vue'
 import ThemeSection from '~/components/Home/Theme/ThemeSection.vue'
 
-useHead({
-  meta: [
-    {
-      name: 'description',
-      content:
-        "Hi! I'm Hardeep Kumar, a Web Developer. I work with Django. Django REST Framework, FastAPI, Vue JS and Nuxt JS.",
-    },
-    {
-      name: 'keywords',
-      content:
-        'Hardeep Kumar, wrench1815, portfolio, Hardeep, website, Web Developer, Nuxt Developer, Vue JS Developer, Django Developer, FastAPI Developer',
-    },
+const site = useSiteConfig()
 
-    // open graph
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://hardeepkumar.in' },
-    { property: 'og:title', content: 'Hardeep Kumar' },
-    {
-      property: 'og:description',
-      content:
-        "Hi! I'm Hardeep Kumar, a Web Developer. I work with Django. Django REST Framework, FastAPI, Vue JS and Nuxt JS.",
-    },
-    {
-      property: 'og:image',
-      content:
-        'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg',
-    },
-    {
-      property: 'og:image:alt',
-      content: 'Hardeep Kumar AI generated art image',
-    },
+const homeTitle = 'Hardeep Kumar'
+const homeDescription =
+  "Hi! I'm Hardeep Kumar, a Web Developer. I work with Django. Django REST Framework, FastAPI, Vue JS and Nuxt JS."
 
-    // twitter
-    { property: 'twitter:card', content: 'summary_large_image' },
-    { property: 'twitter:url', content: 'https://hardeepkumar.in' },
-    { property: 'twitter:title', content: 'Hardeep Kumar' },
-    {
-      property: 'twitter:description',
-      content:
-        "Hi! I'm Hardeep Kumar, a Web Developer. I work with Django. Django REST Framework, FastAPI, Vue JS and Nuxt JS.",
-    },
-    {
-      property: 'twitter:image',
-      content:
-        'https://res.cloudinary.com/dnzbu6wqv/image/upload/v1669702340/myself/94FKLoemnSP7ikhmOunf--3--2fao5_4x_at5csh.jpg',
-    },
-  ],
-})
+defineOgImage(
+  'Post.takumi',
+  {
+    pathFormat: 'bare',
+    pathLabel: 'pages/index.vue',
+    title: homeTitle,
+    description: homeDescription,
+    kindLabel: 'Page',
+    kindValue: 'Home',
+    colorMode: 'dark',
+  },
+  {
+    alt: `${homeTitle} — ${site.name ?? 'Portfolio'}`,
+  },
+)
 </script>
 
 <template>

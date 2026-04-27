@@ -34,6 +34,7 @@
     "@remixicon/vue": "^4.9.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
+    "@takumi-rs/core": "^1.0.7",
     "better-sqlite3": "^12.9.0",
     "daisyui": "^5.5.19",
     "nuxt": "^4.4.2",

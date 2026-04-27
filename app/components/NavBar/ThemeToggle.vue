@@ -231,7 +231,7 @@ onMounted(() => {
   <button
     v-else
     type="button"
-    class="btn btn-circle swap swap-rotate border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50 !h-8 !w-8"
+    class="btn btn-circle swap swap-rotate border-2 border-dashed border-base-content/25 bg-base-100 text-nord-blue transition-all duration-300 hover:border-solid hover:border-nord-blue/50 h-8! w-8!"
     :class="{
       'swap-active': theme == 'nordDark',
     }"
