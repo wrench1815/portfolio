@@ -13,7 +13,7 @@ import SimpleAnimatedBackground from './SimpleAnimatedBackground.vue'
 <template>
   <div class="fixed inset-0 z-[-1]">
     <div
-      class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200 to-base-100"
+      class="absolute inset-0 bg-linear-to-br from-base-100 via-base-200 to-base-100"
     />
     <!-- <ScrollAnimatedBackground /> -->
     <!-- <SimpleAnimatedBackground /> -->

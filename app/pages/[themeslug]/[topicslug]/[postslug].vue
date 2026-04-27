@@ -7,6 +7,7 @@ import {
 } from '~/utils/post-toc'
 
 const route = useRoute()
+const site = useSiteConfig()
 const themeSlug = (route.params.themeslug as string) ?? ''
 const topicSlug = (route.params.topicslug as string) ?? ''
 const postSlug = (route.params.postslug as string) ?? ''
@@ -91,15 +92,46 @@ const publishedLabel = computed(() => {
   })
 })
 
+const ogPathLabel = computed(() => `${themeSlug}/${topicSlug}/${postSlug}`)
+
+defineOgImage(
+  'Post.takumi',
+  {
+    pathLabel: ogPathLabel,
+    title,
+    description,
+    readTime: computed(() => doc.value?.readTime ?? ''),
+    author: computed(() => doc.value?.author),
+    date: publishedLabel,
+    kindLabel: 'Category',
+    kindValue: computed(() => doc.value?.category ?? ''),
+    colorMode: 'dark',
+  },
+  {
+    alt: computed(() => `${title.value} — ${site.name ?? 'Blog'}`),
+  },
+)
+
+// schema org for post. inlcuding date, auuthor
+useSchemaOrg([
+  defineArticle({
+    datePublished: publishedLabel.value,
+    author: {
+      name: computed(() => doc.value?.author),
+    },
+  }),
+  defineBreadcrumb({
+    itemListElement: computed(() => blogBreadcrumbItems.value),
+  }),
+])
+
 const tocLinks = computed(() => postPayload.value?.tocLinks ?? [])
 
 const hasToc = computed(() => tocLinks.value.length > 0)
 
 useHead({
   title: computed(() =>
-    postPayload.value
-      ? `${title.value} — Portfolio`
-      : `Not found: ${postSlug} — Portfolio`,
+    postPayload.value ? `${title.value}` : `Not found: ${postSlug}`,
   ),
   meta: [
     {
@@ -140,7 +172,7 @@ useHead({
           <span class="text-primary">{{ postSlug }}</span
           ><span class="text-base-content/50">.md</span>
         </div>
-        <p class="mb-6 font-mono text-xs text-base-content/55 break-words">
+        <p class="mb-6 font-mono text-xs text-base-content/55 wrap-break-word">
           <span class="text-base-content/40">/*</span> {{ themeSlug }}/{{
             topicSlug
           }}/{{ postSlug }}
@@ -408,13 +440,13 @@ useHead({
 }
 
 .post-body :deep(.post-table-scroll table) {
-  @apply w-full max-w-full min-w-0 table-auto border-separate border-spacing-0 text-left font-mono text-xs text-base-content/90 tabular-nums sm:text-sm !my-0;
+  @apply w-full max-w-full min-w-0 table-auto border-separate border-spacing-0 text-left font-mono text-xs text-base-content/90 tabular-nums sm:text-sm my-0!;
 }
 
 /* Inner grid: dashed + success (same token as outer frame) */
 .post-body :deep(.post-table-scroll th),
 .post-body :deep(.post-table-scroll td) {
-  @apply min-w-36 border-b border-r border-dashed px-3 py-2 align-top whitespace-normal break-words [hyphens:auto];
+  @apply min-w-36 border-b border-r border-dashed px-3 py-2 align-top whitespace-normal wrap-break-word [hyphens:auto];
   border-bottom-color: color-mix(
     in srgb,
     var(--color-success) 40%,

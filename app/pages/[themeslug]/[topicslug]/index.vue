@@ -7,6 +7,7 @@ import {
 } from '~/utils/content-tone-style'
 
 const route = useRoute()
+const site = useSiteConfig()
 const themeSlug = computed(() => (route.params.themeslug as string) ?? '')
 const topicSlug = computed(() => (route.params.topicslug as string) ?? '')
 
@@ -115,6 +116,29 @@ const formatDate = (d: string | undefined) =>
         day: 'numeric',
       })
     : ''
+
+defineOgImage(
+  'Post.takumi',
+  {
+    pathFormat: 'bare',
+    pathLabel: computed(
+      () => `${themeSlug.value}/${topicSlug.value}/index.vue`,
+    ),
+    title: topicTitle,
+    description: computed(() =>
+      topic.value?.description
+        ? topic.value.description
+        : `Browse all posts in ${topicTitle.value}`,
+    ),
+    kindLabel: 'Topic',
+    kindValue: topicTitle,
+    primaryStat: computed(() => `${posts.value.length} posts`),
+    colorMode: 'dark',
+  },
+  {
+    alt: computed(() => `${topicTitle.value} — ${site.name ?? 'Blog'}`),
+  },
+)
 
 useHead({
   title: computed(() => `Posts — ${topicTitle.value}`),

@@ -77,6 +77,26 @@ const blogBreadcrumbItems: { label: string; to?: string }[] = [
   { label: 'Themes' },
 ]
 
+const site = useSiteConfig()
+
+defineOgImage(
+  'Post.takumi',
+  {
+    pathFormat: 'bare',
+    pathLabel: 'pages/themes.vue',
+    title: 'All Themes',
+    description:
+      'Browse all available themes and categories — explore technology, design, and innovation',
+    kindLabel: 'Page',
+    kindValue: 'Themes',
+    primaryStat: computed(() => `${themes.value.length} themes`),
+    colorMode: 'dark',
+  },
+  {
+    alt: computed(() => `All Themes — ${site.name ?? 'Portfolio'}`),
+  },
+)
+
 useHead({
   title: 'Themes',
   meta: [

@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/image', '@nuxt/content'],
+  modules: ['@nuxt/image', '@nuxt/content', '@nuxtjs/seo', 'nuxt-ai-ready'],
 
   content: {
     build: {
@@ -55,4 +55,24 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-03-24',
+
+  site: {
+    url: 'https://hardeepkumar.in',
+    name: 'Hardeep Kumar',
+  },
+
+  sitemap: {
+    zeroRuntime: true,
+  },
+
+  robots: {},
+
+  aiReady: {
+    contentSignal: {
+      aiInput: true,
+      search: true,
+      aiTrain: true,
+    },
+    indexNow: true,
+  },
 })

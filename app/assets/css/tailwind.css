@@ -109,7 +109,7 @@ layer(base);
 */
 
 @utility link-slide-out-anim {
-  @apply inline-block relative after:content-[''] after:absolute after:w-full after:transform after:scale-x-0 after:h-[0.125rem] after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left;
+  @apply inline-block relative after:content-[''] after:absolute after:w-full after:transform after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 hover:after:origin-bottom-left;
 }
 
 @utility link-slide-out-anim-neutral {
@@ -201,7 +201,7 @@ layer(base);
 
 @layer base {
   * {
-    @apply selection:bg-secondary! selection:text-secondary-content! transition-colors duration-300;
+    @apply selection:bg-secondary! selection:text-secondary-content! transition-colors! duration-300;
     /* opacity of elements foreced to 100% on selection */
     ::selection {
       opacity: 1 !important;
