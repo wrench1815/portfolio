@@ -11,37 +11,27 @@
     "content:read-time": "node scripts/update-read-time.mjs",
     "content:read-time:dry": "node scripts/update-read-time.mjs --dry-run"
   },
+  "packageManager": "pnpm@11.1.3",
   "devDependencies": {
-    "@types/hast": "^3.0.4",
-    "@types/node": "^22.19.17",
-    "unist-util-visit": "^5.1.0"
-  },
-  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "vue-demi"
-    ]
+    "@types/hast": "3.0.4",
+    "@types/node": "24.12.4",
+    "unist-util-visit": "5.1.0"
   },
   "dependencies": {
-    "@nuxt/content": "^3.12.0",
-    "@nuxt/image": "^2.0.0",
+    "@nuxt/content": "3.14.0",
+    "@nuxt/image": "2.0.0",
     "@nuxtjs/seo": "5.1.3",
-    "@remixicon/vue": "^4.9.0",
-    "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.2",
-    "@takumi-rs/core": "^1.0.7",
-    "better-sqlite3": "^12.9.0",
-    "daisyui": "^5.5.19",
-    "nuxt": "^4.4.2",
-    "nuxt-ai-ready": "^1.3.0",
-    "tailwindcss": "^4.2.2",
-    "typed.js": "^3.0.0",
-    "vue": "^3.5.18",
-    "vue-router": "^5.0.4"
+    "@remixicon/vue": "4.9.0",
+    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/vite": "4.3.0",
+    "@takumi-rs/core": "1.3.0",
+    "better-sqlite3": "12.10.0",
+    "daisyui": "5.5.20",
+    "nuxt": "4.4.6",
+    "nuxt-ai-ready": "1.3.7",
+    "tailwindcss": "4.3.0",
+    "typed.js": "3.0.0",
+    "vue": "3.5.34",
+    "vue-router": "5.0.7"
   }
 }
