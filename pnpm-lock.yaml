@@ -7,10 +7,10 @@ importers:
     configDependencies: {}
     packageManagerDependencies:
       '@pnpm/exe':
-        specifier: ^11.1.3
+        specifier: 11.1.3
         version: 11.1.3
       pnpm:
-        specifier: ^11.1.3
+        specifier: 11.1.3
         version: 11.1.3
 
 packages:
@@ -208,59 +208,59 @@ importers:
   .:
     dependencies:
       '@nuxt/content':
-        specifier: ^3.12.0
+        specifier: 3.14.0
         version: 3.14.0(@valibot/to-json-schema@1.7.0(valibot@1.4.0(typescript@5.9.3)))(better-sqlite3@12.10.0)(drizzle-orm@0.45.2(better-sqlite3@12.10.0))(magicast@0.5.3)(valibot@1.4.0(typescript@5.9.3))
       '@nuxt/image':
-        specifier: ^2.0.0
+        specifier: 2.0.0
         version: 2.0.0(db0@0.3.4(better-sqlite3@12.10.0)(drizzle-orm@0.45.2(better-sqlite3@12.10.0)))(ioredis@5.10.1)(magicast@0.5.3)(srvx@0.11.15)
       '@nuxtjs/seo':
         specifier: 5.1.3
         version: 5.1.3(5832e0e7f777055d67ff5b6d578b5481)
       '@remixicon/vue':
-        specifier: ^4.9.0
+        specifier: 4.9.0
         version: 4.9.0(vue@3.5.34(typescript@5.9.3))
       '@tailwindcss/typography':
-        specifier: ^0.5.19
+        specifier: 0.5.19
         version: 0.5.19(tailwindcss@4.3.0)
       '@tailwindcss/vite':
-        specifier: ^4.2.2
+        specifier: 4.3.0
         version: 4.3.0(vite@7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(yaml@2.9.0))
       '@takumi-rs/core':
-        specifier: ^1.0.7
+        specifier: 1.3.0
         version: 1.3.0
       better-sqlite3:
-        specifier: ^12.9.0
+        specifier: 12.10.0
         version: 12.10.0
       daisyui:
-        specifier: ^5.5.19
+        specifier: 5.5.20
         version: 5.5.20
       nuxt:
-        specifier: ^4.4.2
+        specifier: 4.4.6
         version: 4.4.6(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@babel/plugin-syntax-typescript@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@24.12.4)(@vue/compiler-sfc@3.5.34)(better-sqlite3@12.10.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.10.0)(drizzle-orm@0.45.2(better-sqlite3@12.10.0)))(drizzle-orm@0.45.2(better-sqlite3@12.10.0))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.3)(rollup-plugin-visualizer@7.0.1(rollup@4.60.4))(rollup@4.60.4)(srvx@0.11.15)(terser@5.47.1)(typescript@5.9.3)(vite@7.3.3(@types/node@24.12.4)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.47.1)(yaml@2.9.0))(yaml@2.9.0)
       nuxt-ai-ready:
-        specifier: ^1.3.0
+        specifier: 1.3.7
         version: 1.3.7(c4f33951fc8a36021c320dcce5c7f68b)
       tailwindcss:
-        specifier: ^4.2.2
+        specifier: 4.3.0
         version: 4.3.0
       typed.js:
-        specifier: ^3.0.0
+        specifier: 3.0.0
         version: 3.0.0
       vue:
-        specifier: ^3.5.18
+        specifier: 3.5.34
         version: 3.5.34(typescript@5.9.3)
       vue-router:
-        specifier: ^5.0.4
+        specifier: 5.0.7
         version: 5.0.7(@vue/compiler-sfc@3.5.34)(vue@3.5.34(typescript@5.9.3))
     devDependencies:
       '@types/hast':
-        specifier: ^3.0.4
+        specifier: 3.0.4
         version: 3.0.4
       '@types/node':
-        specifier: ^24.12.4
+        specifier: 24.12.4
         version: 24.12.4
       unist-util-visit:
-        specifier: ^5.1.0
+        specifier: 5.1.0
         version: 5.1.0
 
 packages:
