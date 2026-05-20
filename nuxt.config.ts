@@ -73,6 +73,7 @@ export default defineNuxtConfig({
       search: true,
       aiTrain: true,
     },
-    indexNow: true,
+    indexNow:
+      '4a3b92b09e86e87059555e1621e979e9c2209ee83fc0527d027cffbb287af09c',
   },
 })
