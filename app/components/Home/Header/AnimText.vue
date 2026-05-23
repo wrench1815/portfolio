@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="flex flex-wrap">
+  <h1 data-no-decrypt class="flex flex-wrap">
     Myself Hardeep Kumar and I develop
     <span class="text-primary" v-if="loading">Vue/Nuxt</span>
     <span class="text-primary" ref="typing"></span>

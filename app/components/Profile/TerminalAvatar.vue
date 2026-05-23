@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { scrambleString } from '~/utils/text-scramble'
+
 type Phase = 'idle' | 'blink' | 'decode' | 'stable'
 
 const props = withDefaults(
@@ -16,8 +18,6 @@ const TARGETS = {
   handle: 'wrench1815',
   status: 'status: online',
 } as const
-
-const MATRIX_POOL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%*<>[]{}|/\\_'
 
 const phase = ref<Phase>('idle')
 const display = reactive({
@@ -46,24 +46,6 @@ let cycleTimer: ReturnType<typeof setTimeout> | undefined
 let decodeTimer: ReturnType<typeof setInterval> | undefined
 let decodeStart = 0
 const prefersReducedMotion = ref(false)
-
-function randomGlyph() {
-  return MATRIX_POOL[Math.floor(Math.random() * MATRIX_POOL.length)] ?? '0'
-}
-
-function scrambleChar(target: string, index: number, lockedCount: number) {
-  const char = target[index] ?? ''
-  if (index < lockedCount) return char
-  if (char === ' ') return ' '
-  if (char === ':') return ':'
-  if (char === '@') return '@'
-  return randomGlyph()
-}
-
-function scrambleString(target: string, progress: number) {
-  const locked = Math.floor(progress * target.length)
-  return [...target].map((_, i) => scrambleChar(target, i, locked)).join('')
-}
 
 function setDisplayStable() {
   display.prompt = TARGETS.prompt
@@ -160,6 +142,7 @@ onUnmounted(() => {
 
 <template>
   <div
+    data-no-decrypt
     class="terminal-avatar relative flex flex-col overflow-hidden border-2 border-dashed border-nord-blue/45 bg-base-200 transition-all duration-300 hover:border-solid hover:border-nord-blue/70 hover:shadow-lg hover:shadow-nord-blue/15"
     :class="sizeClass"
     role="img"

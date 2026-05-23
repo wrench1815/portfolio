@@ -79,6 +79,9 @@ const IDLE_MS = 3000
 
 const HUGE_RING_VW = 100
 const HUGE_RING_MAX_REM = 15
+const IDLE_RING_REM = 3
+/** How long the ring takes to grow / shrink when idle state changes (ms). */
+const RING_SCALE_TRANSITION_MS = 500
 
 const enabled = ref(false)
 const targetX = ref(0)
@@ -90,6 +93,8 @@ const y = ref(0)
 const pressed = ref(false)
 const visible = ref(false)
 const isIdle = ref(false)
+/** Animated ring diameter (rem); lerped when idle / active changes. */
+const ringSizeRem = ref(HUGE_RING_MAX_REM)
 
 type Ripple = { id: number; x: number; y: number }
 const ripples = ref<Ripple[]>([])
@@ -97,23 +102,58 @@ let rippleSeq = 0
 
 function spawnRipple(e: PointerEvent) {
   if (!enabled.value) return
-  ripples.value = [...ripples.value, { id: ++rippleSeq, x: e.clientX, y: e.clientY }]
+  ripples.value = [
+    ...ripples.value,
+    { id: ++rippleSeq, x: e.clientX, y: e.clientY },
+  ]
 }
 
 function removeRipple(id: number) {
   ripples.value = ripples.value.filter((r) => r.id !== id)
 }
 
-const ringStyle = computed(() => {
-  const base = { left: `${x.value}px`, top: `${y.value}px` }
-  const big = !isIdle.value || pressed.value
-  if (!big) return base
-  return {
-    ...base,
-    width: `min(${HUGE_RING_VW}vw, ${HUGE_RING_MAX_REM}rem)`,
-    height: `min(${HUGE_RING_VW}vw, ${HUGE_RING_MAX_REM}rem)`,
+function targetRingRem() {
+  return !isIdle.value || pressed.value ? HUGE_RING_MAX_REM : IDLE_RING_REM
+}
+
+function easeInOutCubic(t: number) {
+  return t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2
+}
+
+let sizeAnimRaf = 0
+
+function animateRingSize() {
+  if (sizeAnimRaf) cancelAnimationFrame(sizeAnimRaf)
+
+  const from = ringSizeRem.value
+  const to = targetRingRem()
+  if (Math.abs(from - to) < 0.001) return
+
+  const start = performance.now()
+  const step = (now: number) => {
+    const t = Math.min((now - start) / RING_SCALE_TRANSITION_MS, 1)
+    ringSizeRem.value = from + (to - from) * easeInOutCubic(t)
+    if (t < 1) sizeAnimRaf = requestAnimationFrame(step)
+    else {
+      ringSizeRem.value = to
+      sizeAnimRaf = 0
+    }
   }
-})
+  sizeAnimRaf = requestAnimationFrame(step)
+}
+
+watch([isIdle, pressed], () => animateRingSize())
+
+const ringFollowStyle = computed(() => ({
+  left: `${x.value}px`,
+  top: `${y.value}px`,
+  transform: 'translate(-50%, -50%)',
+}))
+
+const ringSizeStyle = computed(() => ({
+  width: `min(${HUGE_RING_VW}vw, ${ringSizeRem.value}rem)`,
+  height: `min(${HUGE_RING_VW}vw, ${ringSizeRem.value}rem)`,
+}))
 
 const iconWrapperStyle = computed(() => ({
   left: `${iconX.value}px`,
@@ -223,7 +263,9 @@ onUnmounted(() => {
   setCursorClass(false)
   clearIdleTimer()
   if (rafId) cancelAnimationFrame(rafId)
+  if (sizeAnimRaf) cancelAnimationFrame(sizeAnimRaf)
   rafId = 0
+  sizeAnimRaf = 0
   detach?.()
 })
 </script>
@@ -259,13 +301,17 @@ onUnmounted(() => {
   <div
     v-if="enabled && visible"
     aria-hidden="true"
-    class="pointer-events-none fixed z-[9999] box-border -translate-x-1/2 -translate-y-1/2 transition-[width,height] duration-500 ease-out"
-    :class="[isIdle && !pressed ? 'size-12' : '']"
-    :style="ringStyle"
+    class="pointer-events-none fixed z-[9999]"
+    :style="ringFollowStyle"
   >
-    <div
-      class="animate-cursor-ring-spin size-full rounded-full border-2 bg-transparent backdrop-blur-[0px] box-border transition-colors duration-150"
-      :class="[ringBorderToneClass, pressed ? 'border-solid' : 'border-dashed']"
-    />
+    <div class="box-border" :style="ringSizeStyle">
+      <div
+        class="animate-cursor-ring-spin size-full rounded-full border-2 bg-transparent box-border transition-colors duration-150"
+        :class="[
+          ringBorderToneClass,
+          pressed ? 'border-solid' : 'border-dashed',
+        ]"
+      />
+    </div>
   </div>
 </template>
