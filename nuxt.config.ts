@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // @nuxt/image: https://v1.image.nuxt.com/get-started/installation
+  // @nuxt/image: https://image.nuxt.com/get-started/installation
   image: {
     cloudinary: {
       baseURL: `https://res.cloudinary.com/${process.env.NUXT_CLOUDINARY_CLOUD_NAME}/image/upload/`,

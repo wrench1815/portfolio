@@ -173,6 +173,10 @@ layer(base);
   @apply link-slide-out-anim text-error after:bg-error;
 }
 
+@utility link-slide-out-anim-nord-frost {
+  @apply link-slide-out-anim text-nord-frost after:bg-nord-frost;
+}
+
 @utility link-no-slide-anim {
   @apply after:content-none;
 }

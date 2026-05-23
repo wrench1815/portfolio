@@ -1,33 +1,6 @@
 <script lang="ts" setup>
-import { RiTwitterXFill, RiGithubFill } from '@remixicon/vue'
-import DevDotTo from './SVG/DevDotTo.vue'
-
 const year = new Date().getFullYear()
-
-/** Chromatic daisy tokens only — secondary/neutral often read as “black” on base-200. */
-const socialLinks = [
-  {
-    href: 'https://twitter.com/wrench1815',
-    label: 'Twitter / X',
-    icon: 'twitter',
-    toneClass:
-      'text-warning hover:border-warning/55 hover:bg-warning/10 hover:text-warning hover:shadow-md',
-  },
-  {
-    href: 'https://dev.to/wrench1815/',
-    label: 'DEV Community',
-    icon: 'devto',
-    toneClass:
-      'text-nord-green hover:border-nord-green/55 hover:bg-nord-green/10 hover:text-nord-green hover:shadow-md',
-  },
-  {
-    href: 'https://github.com/wrench1815/',
-    label: 'GitHub',
-    icon: 'github',
-    toneClass:
-      'text-error hover:border-error/55 hover:bg-error/10 hover:text-error hover:shadow-md',
-  },
-] as const
+const socialLinks = useSocialLinks()
 </script>
 
 <template>
@@ -81,22 +54,11 @@ const socialLinks = [
           :href="item.href"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-dashed hover:border-solid border-base-content/20 transition-all duration-300 link-no-slide-anim"
+          class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-dashed border-base-content/20 transition-all duration-300 hover:border-solid link-no-slide-anim"
           :class="item.toneClass"
           :aria-label="item.label"
         >
-          <RiTwitterXFill
-            v-if="item.icon === 'twitter'"
-            class="h-5 w-5 shrink-0"
-          />
-          <DevDotTo
-            v-else-if="item.icon === 'devto'"
-            class="h-5 w-5 shrink-0"
-          />
-          <RiGithubFill
-            v-else-if="item.icon === 'github'"
-            class="h-5 w-5 shrink-0"
-          />
+          <component :is="item.icon" class="h-5 w-5 shrink-0" />
         </a>
       </nav>
     </div>
