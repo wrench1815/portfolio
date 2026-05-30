@@ -173,6 +173,10 @@ layer(base);
   @apply link-slide-out-anim text-error after:bg-error;
 }
 
+@utility link-slide-out-anim-nord-frost {
+  @apply link-slide-out-anim text-nord-frost after:bg-nord-frost;
+}
+
 @utility link-no-slide-anim {
   @apply after:content-none;
 }
@@ -200,6 +204,47 @@ layer(base);
 }
 
 @layer base {
+  [data-page-decrypt],
+  [data-page-decrypt-once] {
+    position: relative;
+  }
+
+  .page-decrypt-loading {
+    display: none;
+    visibility: visible;
+    pointer-events: none;
+  }
+
+  [data-page-decrypt]:not(.page-decrypt-revealed) > :not(.page-decrypt-loading),
+  [data-page-decrypt-once]:not(.page-decrypt-revealed)
+    > :not(.page-decrypt-loading) {
+    visibility: hidden;
+  }
+
+  [data-page-decrypt]:not(.page-decrypt-revealed) > .page-decrypt-loading,
+  [data-page-decrypt-once]:not(.page-decrypt-revealed) > .page-decrypt-loading {
+    display: block;
+  }
+
+  .page-decrypt-loading--main {
+    @apply absolute top-0 right-0 left-0 z-10 px-4 pt-6;
+  }
+
+  .page-decrypt-loading--compact {
+    @apply absolute top-0 right-0 left-0 z-10 px-3 py-2;
+  }
+
+  .page-decrypt-loading__line {
+    @apply font-mono text-sm text-base-content/55;
+  }
+
+  .page-decrypt-loading__line--compact {
+    @apply font-mono text-[0.65rem] uppercase tracking-wider text-base-content/45;
+  }
+
+  .page-decrypt-loading__filler {
+    @apply mt-2 space-y-0.5 font-mono text-xs leading-snug tracking-wide text-base-content/30;
+  }
   * {
     @apply selection:bg-secondary! selection:text-secondary-content! transition-colors! duration-300;
     /* opacity of elements foreced to 100% on selection */

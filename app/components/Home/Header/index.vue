@@ -8,7 +8,7 @@
         <div class="prose prose-headings:mb-3 prose-h1:mb-8">
           <HomeHeaderAnimText />
 
-          <HomeHeaderSocials />
+          <ProfileContactSocials />
         </div>
       </div>
     </div>

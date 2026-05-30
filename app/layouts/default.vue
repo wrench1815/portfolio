@@ -34,17 +34,22 @@ onMounted(() => {
         v-model="drawerToggle"
       />
       <div class="drawer-content flex flex-col">
-        <!-- Navbar -->
-        <NavBar />
+        <div data-page-decrypt-once class="relative">
+          <PageDecryptLoading compact />
+          <NavBar />
+        </div>
 
         <CursorFollowRing mouse-variant="fill" />
 
-        <!-- content -->
-        <slot />
-        <!-- content -->
+        <main data-page-decrypt class="relative flex min-h-0 flex-1 flex-col">
+          <PageDecryptLoading />
+          <slot />
+        </main>
 
-        <!-- Footer -->
-        <Footer />
+        <div data-page-decrypt-once class="relative">
+          <PageDecryptLoading compact />
+          <Footer />
+        </div>
       </div>
       <NavBarDrawer />
     </div>

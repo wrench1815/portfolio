@@ -72,11 +72,11 @@ const blogBreadcrumbItems = computed(() => {
     topicTitle: topicSlug,
   }
   return [
-    { label: 'Home', to: '/' },
-    { label: 'Themes', to: '/themes' },
-    { label: trail.themeName, to: `/${themeSlug}` },
-    { label: trail.topicTitle, to: `/${themeSlug}/${topicSlug}` },
-    { label: title.value },
+    { name: 'Home', item: '/' },
+    { name: 'Themes', item: '/themes' },
+    { name: trail.themeName, item: `/${themeSlug}` },
+    { name: trail.topicTitle, item: `/${themeSlug}/${topicSlug}` },
+    { name: title.value },
   ]
 })
 
@@ -121,7 +121,7 @@ useSchemaOrg([
     },
   }),
   defineBreadcrumb({
-    itemListElement: computed(() => blogBreadcrumbItems.value),
+    itemListElement: blogBreadcrumbItems,
   }),
 ])
 

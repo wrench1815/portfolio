@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { BlogBreadcrumbItem } from '~/components/BlogBreadcrumb.vue'
+
 interface Theme {
   slug: string
   name: string
@@ -72,9 +74,9 @@ const getThemeColorClasses = (seed: string) => {
   return colorMap[key] ?? colorMap['nord-blue']
 }
 
-const blogBreadcrumbItems: { label: string; to?: string }[] = [
-  { label: 'Home', to: '/' },
-  { label: 'Themes' },
+const blogBreadcrumbItems: BlogBreadcrumbItem[] = [
+  { name: 'Home', item: '/' },
+  { name: 'Themes' },
 ]
 
 const site = useSiteConfig()

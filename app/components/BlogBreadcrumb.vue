@@ -13,9 +13,9 @@ const stripBorderClass = computed(() => contentToneFrameBorder(stripTone.value))
 const linkTextClass = computed(() => contentToneAccentText(stripTone.value))
 
 export interface BlogBreadcrumbItem {
-  label: string
+  name: string
   /** Omit on the current page segment */
-  to?: string
+  item?: string
 }
 
 defineProps<{
@@ -44,21 +44,21 @@ defineProps<{
           >/</span
         >
         <NuxtLink
-          v-if="item.to"
-          :to="item.to"
+          v-if="item.item"
+          :to="item.item"
           :class="[
             'link link-hover max-w-[min(100%,11rem)] truncate sm:max-w-[18rem]',
             linkTextClass,
           ]"
         >
-          {{ item.label }}
+          {{ item.name }}
         </NuxtLink>
         <span
           v-else
-          class="max-w-[min(100%,13rem)] truncate font-semibold text-base-content/90 sm:max-w-[22rem]"
+          class="max-w-[min(100%,13rem)] truncate font-semibold text-base-content/90 sm:max-w-88"
           aria-current="page"
         >
-          {{ item.label }}
+          {{ item.name }}
         </span>
       </template>
     </div>

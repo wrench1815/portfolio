@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import CodeNotFoundState from '~/components/errors/CodeNotFoundState.vue'
+import type { BlogBreadcrumbItem } from '~/components/BlogBreadcrumb.vue'
 import { contentToneFromStableId } from '~/utils/content-tone-palette'
 import {
   contentToneAccentText,
@@ -58,14 +59,14 @@ const themeExists = computed(() => theme.value !== null)
 const hasTopics = computed(() => topicsList.value.length > 0)
 
 const blogBreadcrumbItems = computed(() => {
-  const items: { label: string; to?: string }[] = [
-    { label: 'Home', to: '/' },
-    { label: 'Themes', to: '/themes' },
+  const items: BlogBreadcrumbItem[] = [
+    { name: 'Home', item: '/' },
+    { name: 'Themes', item: '/themes' },
   ]
   if (theme.value) {
-    items.push({ label: theme.value.name })
+    items.push({ name: theme.value.name })
   } else {
-    items.push({ label: themeSlug.value })
+    items.push({ name: themeSlug.value })
   }
   return items
 })

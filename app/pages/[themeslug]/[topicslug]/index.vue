@@ -61,10 +61,10 @@ const themeBreadcrumbName = computed(() => {
 })
 
 const blogBreadcrumbItems = computed(() => [
-  { label: 'Home', to: '/' },
-  { label: 'Themes', to: '/themes' },
-  { label: themeBreadcrumbName.value, to: `/${themeSlug.value}` },
-  { label: topicTitle.value },
+  { name: 'Home', item: '/' },
+  { name: 'Themes', item: '/themes' },
+  { name: themeBreadcrumbName.value, item: `/${themeSlug.value}` },
+  { name: topicTitle.value },
 ])
 
 const posts = computed<PostItem[]>(
