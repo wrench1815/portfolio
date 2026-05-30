@@ -32,21 +32,49 @@ const routeList = useRouteList()
       <ul
         class="menu menu-vertical w-full flex-1 gap-1 overflow-y-auto p-3 font-mono text-sm"
       >
-        <li v-for="item in routeList" :key="item.to">
+        <li v-for="item in routeList" :key="item.to ?? item.pathLabel">
           <NuxtLink
-            :to="item.to"
+            v-if="item.type === 'link'"
+            :to="item.to!"
             :aria-label="item.name"
             :title="item.name"
-            class="flex items-center gap-2 rounded-lg border-2 border-transparent font-mono no-underline transition-all duration-300 hover:border-dashed hover:border-nord-blue/40 hover:bg-base-300/60 link-no-slide-anim"
+            class="link-no-slide-anim flex items-center gap-2 rounded-lg border-2 border-transparent font-mono no-underline transition-all duration-300 hover:border-dashed hover:border-nord-blue/40 hover:bg-base-300/60"
             active-class="border-dashed border-success/45 bg-base-300/40 text-success"
           >
             <span class="text-base-content/45" aria-hidden="true">→</span>
             <span>{{ item.pathLabel }}</span>
           </NuxtLink>
+
+          <details v-else-if="item.type === 'collection'" open>
+            <summary
+              class="flex cursor-pointer list-none items-center gap-2 rounded-lg border-2 border-transparent px-4 py-2 font-mono transition-all duration-300 hover:border-dashed hover:border-nord-blue/40 hover:bg-base-300/60 [&::-webkit-details-marker]:hidden"
+              :aria-label="item.name"
+              :title="item.name"
+            >
+              <span class="text-base-content/45" aria-hidden="true">→</span>
+              <span>{{ item.pathLabel }}</span>
+              <span class="ml-auto text-base-content/45" aria-hidden="true"
+                >▾</span
+              >
+            </summary>
+            <ul class="ms-2 mt-1 border-s border-dashed border-base-content/15 ps-2">
+              <li v-for="sub in item.items" :key="sub.to">
+                <NuxtLink
+                  :to="sub.to!"
+                  :aria-label="sub.name"
+                  :title="sub.name"
+                  class="link-no-slide-anim flex items-center gap-2 rounded-lg border-2 border-transparent py-2 font-mono no-underline transition-all duration-300 hover:border-dashed hover:border-nord-blue/40 hover:bg-base-300/60"
+                  active-class="border-dashed border-success/45 bg-base-300/40 text-success"
+                >
+                  <span class="text-base-content/45" aria-hidden="true">→</span>
+                  <span>{{ sub.pathLabel }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </details>
         </li>
       </ul>
     </div>
   </div>
 </template>
-
 <style scoped></style>

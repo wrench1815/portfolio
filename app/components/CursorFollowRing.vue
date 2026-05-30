@@ -276,7 +276,7 @@ onUnmounted(() => {
       <div
         v-if="enabled && visible && hideBrowserCursor"
         aria-hidden="true"
-        class="pointer-events-none fixed z-[100000] flex select-none items-center justify-center drop-shadow-sm transition-colors duration-150"
+        class="pointer-events-none fixed z-100000 flex select-none items-center justify-center drop-shadow-sm transition-colors duration-150"
         :class="iconToneClass"
         :style="iconWrapperStyle"
       >
@@ -290,7 +290,7 @@ onUnmounted(() => {
         v-for="r in ripples"
         :key="r.id"
         aria-hidden="true"
-        class="animate-cursor-ripple-sm pointer-events-none fixed z-[99990] size-7 rounded-full border-2 bg-transparent"
+        class="animate-cursor-ripple-sm pointer-events-none fixed z-99990 size-7 rounded-full border-2 bg-transparent"
         :class="PRESS_BORDER[pressTone]"
         :style="{ left: `${r.x}px`, top: `${r.y}px` }"
         @animationend="removeRipple(r.id)"
@@ -301,7 +301,7 @@ onUnmounted(() => {
   <div
     v-if="enabled && visible"
     aria-hidden="true"
-    class="pointer-events-none fixed z-[9999]"
+    class="pointer-events-none fixed z-9999"
     :style="ringFollowStyle"
   >
     <div class="box-border" :style="ringSizeStyle">

@@ -39,19 +39,55 @@ const routeList = useRouteList()
         <div
           class="flex max-w-full flex-wrap items-center justify-center gap-2 font-mono text-sm sm:gap-3 sm:text-base"
         >
-          <NuxtLink
-            v-for="item in routeList"
-            :key="item.to"
-            role="listitem"
-            :to="item.to"
-            :aria-label="item.name"
-            :title="item.name"
-            class="link-no-slide-anim flex items-center gap-2 px-2 pb-0 pt-1 leading-none text-base-content/80 no-underline transition-colors duration-200 hover:border-solid hover:border-nord-blue/55 hover:text-nord-blue sm:px-3"
-            active-class="border-b-solid border-b-success text-success"
-          >
-            <span class="opacity-55" aria-hidden="true">→</span>
-            <span>{{ item.pathLabel }}</span>
-          </NuxtLink>
+          <template v-for="item in routeList" :key="item.to ?? item.pathLabel">
+            <NuxtLink
+              v-if="item.type === 'link'"
+              role="listitem"
+              :to="item.to!"
+              :aria-label="item.name"
+              :title="item.name"
+              class="link-no-slide-anim flex items-center gap-2 px-2 pb-0 pt-1 leading-none text-base-content/80 no-underline transition-colors duration-200 hover:border-solid hover:border-nord-blue/55 hover:text-nord-blue sm:px-3"
+              active-class="border-b-solid border-b-success text-success"
+            >
+              <span class="opacity-55" aria-hidden="true">→</span>
+              <span>{{ item.pathLabel }}</span>
+            </NuxtLink>
+
+            <div
+              v-else-if="item.type === 'collection'"
+              role="listitem"
+              class="dropdown dropdown-hover dropdown-bottom"
+            >
+              <div
+                tabindex="0"
+                role="button"
+                :aria-label="item.name"
+                :title="item.name"
+                class="link-no-slide-anim flex cursor-pointer items-center gap-2 px-2 pb-0 pt-1 leading-none text-base-content/80 no-underline transition-colors duration-200 hover:border-solid hover:border-nord-blue/55 hover:text-nord-blue sm:px-3"
+              >
+                <span class="opacity-55" aria-hidden="true">→</span>
+                <span>{{ item.pathLabel }}</span>
+                <span class="opacity-45" aria-hidden="true">▾</span>
+              </div>
+              <ul
+                tabindex="0"
+                class="dropdown-content menu z-50 w-52 rounded-box border border-dashed border-nord-blue/35 bg-base-100 p-2 font-mono text-sm shadow-md"
+              >
+                <li v-for="sub in item.items" :key="sub.to">
+                  <NuxtLink
+                    :to="sub.to!"
+                    :aria-label="sub.name"
+                    :title="sub.name"
+                    class="link-no-slide-anim flex items-center gap-2 rounded-lg no-underline"
+                    active-class="bg-base-200 text-success"
+                  >
+                    <span class="opacity-55" aria-hidden="true">→</span>
+                    <span>{{ sub.pathLabel }}</span>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </template>
         </div>
       </div>
 
@@ -70,5 +106,4 @@ const routeList = useRouteList()
     </div>
   </nav>
 </template>
-
 <style scoped></style>

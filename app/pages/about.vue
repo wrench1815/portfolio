@@ -80,7 +80,7 @@ const colorMap = {
   },
 } as const
 
-const breadcrumbItems = [{ label: 'Home', to: '/' }, { label: 'About' }]
+const breadcrumbItems = [{ name: 'Home', item: '/' }, { name: 'About' }]
 
 const pageTitle = 'About'
 const pageDescription =
